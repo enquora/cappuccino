@@ -487,16 +487,21 @@ CPPopUpButtonStatePullsDown = CPThemeState("pulls-down");
     }
     else
     {
-        var index = [self indexOfItemWithTitle:aTitle];
-
-        if (index < 0)
+        if ([aTitle isEqualToString:@""])
         {
-            [self addItemWithTitle:aTitle];
-
-            index = [self numberOfItems] - 1;
+            self._title = @"";
+            self._selectedIndex = nil;
         }
-
-        [self selectItemAtIndex:index];
+        else
+        {
+            var index = [self indexOfItemWithTitle:aTitle];
+            if (index < 0)
+            {
+                [self addItemWithTitle:aTitle];
+                index = [self numberOfItems] - 1;
+            }
+            [self selectItemAtIndex:index];
+        }
     }
 }
 
