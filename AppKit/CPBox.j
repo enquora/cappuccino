@@ -630,6 +630,10 @@ var CPBoxTypeKey          = @"CPBoxTypeKey",
             [_contentView setSubviews:[malformedContentView subviews]];
             [self replaceSubview:malformedContentView with:_contentView];
         }
+        else
+        {
+            _titlePosition = CPNoTitle;        
+        }
 
         [self setAutoresizesSubviews:YES];
         [_contentView setAutoresizingMask:CPViewWidthSizable | CPViewHeightSizable];
