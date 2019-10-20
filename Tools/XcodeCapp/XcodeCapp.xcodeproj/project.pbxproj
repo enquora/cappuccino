@@ -467,6 +467,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -509,6 +510,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -522,7 +524,7 @@
 				INFOPLIST_FILE = XcodeCapp/Info.plist;
 				INSTALL_PATH = $USER_APPS_DIR;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MARKETING_VERSION = 4.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cappuccino.xcodecapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -539,7 +541,7 @@
 				INFOPLIST_FILE = XcodeCapp/Info.plist;
 				INSTALL_PATH = $USER_APPS_DIR;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				MARKETING_VERSION = 4.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.cappuccino.xcodecapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
