@@ -98,7 +98,7 @@
     NSLog(@"\n******************************\n**    XcodeCapp started     **\n******************************\n");
 
     self.version = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-
+    self.copyrightMessage = [NSBundle mainBundle].infoDictionary[@"NSHumanReadableCopyright"];
     [self _initUserDefaults];
     [self _initOperationQueue];
     [self _initStatusItem];

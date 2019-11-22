@@ -376,7 +376,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Zlj-Y5-TaS">
                                             <rect key="frame" x="0.0" y="0.0" width="263" height="634"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView appearanceType="vibrantLight" verticalHuggingPriority="750" ambiguous="YES" allowsExpansionToolTips="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="72" rowSizeStyle="automatic" viewBased="YES" id="Mss-Tu-7kR">
                                                     <rect key="frame" x="0.0" y="0.0" width="263" height="634"/>
@@ -391,7 +391,7 @@
                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                             </tableHeaderCell>
                                                             <textFieldCell key="dataCell" lineBreakMode="truncatingTail" truncatesLastVisibleLine="YES" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="kCT-Pt-mfG">
-                                                                <font key="font" metaFont="system"/>
+                                                                <font key="font" metaFont="message"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -405,7 +405,7 @@
                                                                             <rect key="frame" x="17" y="49" width="223" height="17"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                             <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" title="Table View Cell" id="HCp-It-Jhp">
-                                                                                <font key="font" metaFont="system"/>
+                                                                                <font key="font" metaFont="message"/>
                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
@@ -543,7 +543,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSAddTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="ari-l9-Qyx">
                                                         <behavior key="behavior" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" metaFont="message"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="addProject:" target="923-ke-ovW" id="WcS-qH-gsc"/>
@@ -554,7 +554,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Wwg-4A-3Ad">
                                                         <behavior key="behavior" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" metaFont="message"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="removeProject:" target="923-ke-ovW" id="Rde-gu-4ob"/>
@@ -595,7 +595,7 @@
                                                             <rect key="frame" x="14" y="24" width="580" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" title="Project Name" id="ylH-C3-MHM">
-                                                                <font key="font" metaFont="system"/>
+                                                                <font key="font" metaFont="message"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
@@ -632,7 +632,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <buttonCell key="cell" type="square" title="Settings" bezelStyle="shadowlessSquare" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="Fel-8z-zmY">
                                                                 <behavior key="behavior" lightByContents="YES"/>
-                                                                <font key="font" metaFont="system"/>
+                                                                <font key="font" metaFont="message"/>
                                                             </buttonCell>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="tag">
@@ -648,7 +648,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <buttonCell key="cell" type="square" title="Errors &amp; Warnings" bezelStyle="shadowlessSquare" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="x1c-0h-XNs">
                                                                 <behavior key="behavior" lightByContents="YES"/>
-                                                                <font key="font" metaFont="system"/>
+                                                                <font key="font" metaFont="message"/>
                                                             </buttonCell>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="tag">
@@ -664,7 +664,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <buttonCell key="cell" type="square" title="Operations" bezelStyle="shadowlessSquare" alignment="center" refusesFirstResponder="YES" imageScaling="proportionallyDown" inset="2" id="ZxW-hd-KKo">
                                                                 <behavior key="behavior" lightByContents="YES"/>
-                                                                <font key="font" metaFont="system"/>
+                                                                <font key="font" metaFont="message"/>
                                                             </buttonCell>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="tag">
@@ -687,7 +687,7 @@
                                             <tabView fixedFrame="YES" drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="00d-fn-q41">
                                                 <rect key="frame" x="0.0" y="0.0" width="599" height="562"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="message"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="923-ke-ovW" id="A2n-ft-vRP"/>
                                                 </connections>
@@ -714,14 +714,14 @@
         </window>
         <window title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="EMp-Db-uhU" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="296" height="191"/>
+            <rect key="contentRect" x="196" y="240" width="338" height="213"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="dj4-iP-S2b">
-                <rect key="frame" x="0.0" y="0.0" width="296" height="191"/>
+                <rect key="frame" x="0.0" y="0.0" width="338" height="213"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3j4-r5-Ybe">
-                        <rect key="frame" x="74" y="64" width="149" height="17"/>
+                        <rect key="frame" x="74" y="86" width="191" height="17"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="XcodeCapp" id="qvL-bN-A9R">
                             <font key="font" metaFont="systemBold" size="15"/>
@@ -730,34 +730,43 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IH1-cn-Xc9">
-                        <rect key="frame" x="18" y="20" width="260" height="14"/>
+                        <rect key="frame" x="18" y="42" width="302" height="14"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2012-2018 Cappuccino Project." id="8lT-Ky-ecV">
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2012-2019 Cappuccino Project." id="8lT-Ky-ecV">
                             <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q2t-aL-TDg">
-                        <rect key="frame" x="107" y="89" width="82" height="82"/>
+                        <rect key="frame" x="107" y="111" width="124" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="zF2-py-kAi"/>
                     </imageView>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIx-Hh-v8Z">
-                        <rect key="frame" x="108" y="42" width="81" height="14"/>
+                        <rect key="frame" x="108" y="64" width="123" height="14"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Version 4.0.1" id="WUW-Ut-m7V">
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="use project property rather than hard-coded value" id="WUW-Ut-m7V">
                             <font key="font" metaFont="message" size="11"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="Voe-Tx-rLC" name="value" keyPath="self.version" id="Nfs-HY-nea"/>
+                            <binding destination="Voe-Tx-rLC" name="value" keyPath="self.version" id="lF6-WP-KAA"/>
                         </connections>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fTg-kp-yS8">
+                        <rect key="frame" x="20" y="20" width="298" height="14"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="All rights reserved" id="hoW-Eo-84q">
+                            <font key="font" metaFont="message" size="11"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="-218" y="94.5"/>
+            <point key="canvasLocation" x="-390" y="53.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="GHK-nR-IEq" userLabel="User Defaults Controller"/>
         <window title="XcodeCapp Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="xcc-prefs" animationBehavior="default" id="ekp-cc-W2F">
@@ -774,7 +783,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Automatically open Projects in Xcode" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="VNE-DB-5fX">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="message"/>
                         </buttonCell>
                         <connections>
                             <action selector="save:" target="GHK-nR-IEq" id="fuj-dR-oLv"/>
@@ -789,7 +798,7 @@
                         <rect key="frame" x="18" y="70" width="186" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Maximum parallel operations:" id="feI-Ow-URM">
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="message"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
@@ -799,7 +808,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="20" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UjK-Ie-IaQ" id="niA-cT-acm">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
+                            <font key="font" metaFont="message"/>
                             <menu key="menu" title="OtherViews" id="lgh-Ml-epM">
                                 <items>
                                     <menuItem title="10" id="eqb-Oz-H0j"/>
@@ -901,7 +910,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAddTemplate" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="o7j-4e-NNJ">
                                                 <behavior key="behavior" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
+                                                <font key="font" metaFont="message"/>
                                             </buttonCell>
                                             <connections>
                                                 <action selector="addProject:" target="923-ke-ovW" id="YGQ-yu-Glg"/>
@@ -921,7 +930,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="logo" imagePosition="only" alignment="center" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="OC7-Ci-3pt">
                                     <behavior key="behavior" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
+                                    <font key="font" metaFont="message"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="addProject:" target="923-ke-ovW" id="uyu-VJ-KmD"/>
