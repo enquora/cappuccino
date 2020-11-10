@@ -65,6 +65,30 @@
     return [self mutableArrayValueForKey:@"childNodes"];
 }
 
+- (CPIndexPath)indexPath
+{
+    if (_parentNode != nil)
+    {
+        var path,
+		    index = nil;
+
+        index = [[_parentNode childNodes] indexOfObject:self];
+        path = [_parentNode indexPath];
+        if (path != nil)
+        {
+            return [path indexPathByAddingIndex:index];
+        }
+        else
+        {
+            return [CPIndexPath indexPathWithIndex:index];
+        }
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 - (void)insertObject:(id)aTreeNode inChildNodesAtIndex:(CPInteger)anIndex
 {
     [[aTreeNode._parentNode mutableChildNodes] removeObjectIdenticalTo:aTreeNode];
