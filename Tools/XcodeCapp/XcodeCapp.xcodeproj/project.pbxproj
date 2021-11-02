@@ -337,10 +337,9 @@
 			};
 			buildConfigurationList = 6841F2361AF98CE600CFE60E /* Build configuration list for PBXProject "XcodeCapp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
