@@ -91,14 +91,14 @@ static NSColor * XCCCappuccinoProjectDataViewColorError;
     {
         case XCCCappuccinoProjectStatusStopped:
             self->boxStatus.fillColor                   = XCCCappuccinoProjectDataViewColorStopped;
-            self->buttonSwitchStatus.image              = self.backgroundStyle == NSBackgroundStyleDark ? [NSImage imageNamed:@"run-white"] : [NSImage imageNamed:@"run"];
+        self->buttonSwitchStatus.image              = self.backgroundStyle == NSBackgroundStyleEmphasized ? [NSImage imageNamed:@"run-white"] : [NSImage imageNamed:@"run"];
             self->operationsProgressIndicator.hidden    = YES;
             [self->operationsProgressIndicator stopAnimation:self];
             break;
 
         case XCCCappuccinoProjectStatusListening:
             self->boxStatus.fillColor       = [self.controller.errors count] ? XCCCappuccinoProjectDataViewColorError : XCCCappuccinoProjectDataViewColorListening;
-            self->buttonSwitchStatus.image  = self.backgroundStyle == NSBackgroundStyleDark ? [NSImage imageNamed:@"stop-white"] : [NSImage imageNamed:@"stop"];
+        self->buttonSwitchStatus.image  = self.backgroundStyle == NSBackgroundStyleEmphasized ? [NSImage imageNamed:@"stop-white"] : [NSImage imageNamed:@"stop"];
 
             if (self.controller.operationsTotal == 0)
             {
@@ -129,7 +129,7 @@ static NSColor * XCCCappuccinoProjectDataViewColorError;
 {
     BOOL isStopped = self.controller.cappuccinoProject.status == XCCCappuccinoProjectStatusStopped;
     
-    if (backgroundStyle == NSBackgroundStyleDark)
+    if (backgroundStyle == NSBackgroundStyleEmphasized)
     {
         self->lineBottom.hidden = YES;
 
