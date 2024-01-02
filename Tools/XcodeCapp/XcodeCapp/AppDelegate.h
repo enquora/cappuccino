@@ -15,9 +15,9 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 {
     IBOutlet NSMenu                         *statusMenu;
-    IBOutlet NSUserDefaultsController       *preferencesController;
+    IBOutlet NSUserDefaultsController       *settingsController;
     IBOutlet NSPanel                        *aboutWindow;
-    IBOutlet NSWindow                       *preferencesWindow;
+    IBOutlet NSWindow                       *settingsWindow;
 
     NSImage                                 *imageStatusInactive;
     NSImage                                 *imageStatusProcessing;
@@ -30,6 +30,6 @@
 @property NSString                          *version;
 
 - (IBAction)openAbout:(id)aSender;
-- (IBAction)openPreferences:(id)aSender;
+- (IBAction)openSettingsWindow:(id)aSender;
 
 @end

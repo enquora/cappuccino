@@ -48,9 +48,9 @@
 
 #pragma mark - Actions
 
-- (IBAction)openPreferences:(id)aSender
+- (IBAction)openSettingsWindow:(id)aSender
 {
-    [self->preferencesWindow makeKeyAndOrderFront:nil];
+    [self->settingsWindow makeKeyAndOrderFront:nil];
 }
 
 - (IBAction)openAbout:(id)aSender
