@@ -11,7 +11,7 @@
 @class XCCAbstractOperation;
 @class XCCCappuccinoProject;
 @class XCCTaskLauncher;
-@class XCCMainController;
+@class XCCMainWindowController;
 @class XCCPPXOperation;
 @class XCCSourcesFinderOperation;
 
@@ -35,7 +35,7 @@
 @property NSString              *operationsRemainingString;
 @property NSString              *errorsCountString;
 @property XCCCappuccinoProject  *cappuccinoProject;
-@property XCCMainController     *mainXcodeCappController;
+@property XCCMainWindowController     *mainXcodeCappController;
 
 - (instancetype)initWithPath:(NSString*)aPath controller:(id)aController;
 - (void)reinitializeProjectFromSettings;

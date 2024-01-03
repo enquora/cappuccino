@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <CoreServices/CoreServices.h>
 
-@class XCCMainController;
+@class XCCMainWindowController;
 
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
@@ -25,7 +25,7 @@
     NSStatusItem                            *statusItem;
 }
 
-@property IBOutlet  XCCMainController       *mainWindowController;
+@property IBOutlet  XCCMainWindowController       *mainWindowController;
 @property NSOperationQueue                  *mainOperationQueue;
 @property NSString                          *version;
 

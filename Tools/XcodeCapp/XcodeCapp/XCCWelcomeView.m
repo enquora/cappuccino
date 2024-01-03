@@ -7,7 +7,7 @@
 //
 
 #import "XCCWelcomeView.h"
-#import "XCCMainController.h"
+#import "XCCMainWindowController.h"
 
 @implementation XCCWelcomeView
 

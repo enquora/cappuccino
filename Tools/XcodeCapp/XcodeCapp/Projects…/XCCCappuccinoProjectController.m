@@ -13,7 +13,7 @@
 #import "XCCSourcesFinderOperation.h"
 #import "XCCPPXOperation.h"
 #import "XCCSourceProcessingOperation.h"
-#import "XCCMainController.h"
+#import "XCCMainWindowController.h"
 #import "XCCOperationDataView.h"
 #import "XCCOperationError.h"
 #import "XCCOperationErrorDataView.h"

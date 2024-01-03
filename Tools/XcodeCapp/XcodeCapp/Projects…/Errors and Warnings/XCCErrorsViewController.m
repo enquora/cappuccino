@@ -11,7 +11,7 @@
 #import "XCCCappuccinoProject.h"
 #import "XCCOperationErrorDataView.h"
 #import "XCCOperationErrorHeaderDataView.h"
-#import "XCCMainController.h"
+#import "XCCMainWindowController.h"
 #import "XCCSourceProcessingOperation.h"
 
 @implementation XCCErrorsViewController

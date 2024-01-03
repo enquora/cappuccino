@@ -15,7 +15,7 @@
 @class XCCSettingsViewController;
 @class XCCWelcomeView;
 
-@interface XCCMainController : NSWindowController <NSSplitViewDelegate, NSTableViewDataSource, NSTableViewDelegate, NSUserNotificationCenterDelegate>
+@interface XCCMainWindowController : NSWindowController <NSSplitViewDelegate, NSTableViewDataSource, NSTableViewDelegate, NSUserNotificationCenterDelegate>
 {
     IBOutlet NSMenu                         *menuTableViewProject;
     IBOutlet NSBox                          *maskingView;

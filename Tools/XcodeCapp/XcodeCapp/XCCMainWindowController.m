@@ -7,7 +7,7 @@
 //
 
 #import "NSMutableArray+moveIndexes.h"
-#import "XCCMainController.h"
+#import "XCCMainWindowController.h"
 #import "XCCCappuccinoProject.h"
 #import "XCCCappuccinoProjectController.h"
 #import "XCCCappuccinoProjectControllerDataView.h"
@@ -18,7 +18,7 @@
 #import "XCCWelcomeView.h"
 
 
-@implementation XCCMainController
+@implementation XCCMainWindowController
 
 #pragma mark - Initialization
 

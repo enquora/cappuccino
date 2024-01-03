@@ -26,7 +26,7 @@
 		6815BBEB1AFC24430030D8BB /* XcodeProjectCloser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6815BBEA1AFC24430030D8BB /* XcodeProjectCloser.m */; };
 		681ADE8F1B0D032C00FC8E08 /* XCCPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 681ADE8E1B0D032C00FC8E08 /* XCCPath.m */; };
 		6824CDDA1B0D5AA700F73447 /* XCCOperationDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6824CDD91B0D5AA700F73447 /* XCCOperationDataView.m */; };
-		6824CDDE1B0DA34500F73447 /* XCCMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6824CDDD1B0DA34500F73447 /* XCCMainController.m */; };
+		6824CDDE1B0DA34500F73447 /* XCCMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6824CDDD1B0DA34500F73447 /* XCCMainWindowController.m */; };
 		6824CDEA1B0E9CDB00F73447 /* XCCOperationErrorDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6824CDE91B0E9CDB00F73447 /* XCCOperationErrorDataView.m */; };
 		6824CDF01B0E9F1400F73447 /* XCCOperationError.m in Sources */ = {isa = PBXBuildFile; fileRef = 6824CDEF1B0E9F1400F73447 /* XCCOperationError.m */; };
 		6841F2441AF98CE600CFE60E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6841F2431AF98CE600CFE60E /* main.m */; };
@@ -77,8 +77,8 @@
 		681ADE8E1B0D032C00FC8E08 /* XCCPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCPath.m; sourceTree = "<group>"; };
 		6824CDD81B0D5AA700F73447 /* XCCOperationDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCOperationDataView.h; sourceTree = "<group>"; };
 		6824CDD91B0D5AA700F73447 /* XCCOperationDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCOperationDataView.m; sourceTree = "<group>"; };
-		6824CDDC1B0DA34500F73447 /* XCCMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCMainController.h; sourceTree = "<group>"; };
-		6824CDDD1B0DA34500F73447 /* XCCMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCMainController.m; sourceTree = "<group>"; };
+		6824CDDC1B0DA34500F73447 /* XCCMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCMainWindowController.h; sourceTree = "<group>"; };
+		6824CDDD1B0DA34500F73447 /* XCCMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCMainWindowController.m; sourceTree = "<group>"; };
 		6824CDE81B0E9CDB00F73447 /* XCCOperationErrorDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCOperationErrorDataView.h; sourceTree = "<group>"; };
 		6824CDE91B0E9CDB00F73447 /* XCCOperationErrorDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCOperationErrorDataView.m; sourceTree = "<group>"; };
 		6824CDEE1B0E9F1400F73447 /* XCCOperationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCOperationError.h; sourceTree = "<group>"; };
@@ -242,10 +242,10 @@
 				6841F2471AF98CE600CFE60E /* MainMenu.xib */,
 				6841F2401AF98CE600CFE60E /* AppDelegate.h */,
 				0255B83F1B1F71FB000CA4BC /* AppDelegate.m */,
+				6824CDDC1B0DA34500F73447 /* XCCMainWindowController.h */,
+				6824CDDD1B0DA34500F73447 /* XCCMainWindowController.m */,
 				021B94731B21112500F12DDA /* XCCWelcomeView.h */,
 				021B94741B21112500F12DDA /* XCCWelcomeView.m */,
-				6824CDDC1B0DA34500F73447 /* XCCMainController.h */,
-				6824CDDD1B0DA34500F73447 /* XCCMainController.m */,
 				41EF277C2B45CDF6002D0A2F /* Projects… */,
 				41EF277B2B45CD15002D0A2F /* Application Settings */,
 				6841F2C01AFABD0900CFE60E /* Utility Classes */,
@@ -400,7 +400,7 @@
 				021B94651B20CECA00F12DDA /* XCCOperationsViewController.m in Sources */,
 				6841F2CB1AFADEBC00CFE60E /* XCCSourceProcessingOperation.m in Sources */,
 				6815BBEB1AFC24430030D8BB /* XcodeProjectCloser.m in Sources */,
-				6824CDDE1B0DA34500F73447 /* XCCMainController.m in Sources */,
+				6824CDDE1B0DA34500F73447 /* XCCMainWindowController.m in Sources */,
 				6863FBA31AFD55A900040C8E /* XCCFSEventLogUtils.m in Sources */,
 				680621191B015BF400CB24CD /* XCCCappuccinoProjectControllerDataView.m in Sources */,
 				025800451B1E3F010000EB7D /* XCCAbstractOperation.m in Sources */,

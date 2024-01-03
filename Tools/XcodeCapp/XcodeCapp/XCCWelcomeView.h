@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class XCCMainController;
+@class XCCMainWindowController;
 
 
 @interface XCCWelcomeView : NSBox <NSDraggingDestination>
@@ -17,7 +17,7 @@
     IBOutlet NSProgressIndicator    *loadingIndicator;
 }
 
-@property XCCMainController         *mainXcodeCappController;
+@property XCCMainWindowController         *mainXcodeCappController;
 
 - (void)showLoading:(BOOL)shouldShow;
 
