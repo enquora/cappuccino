@@ -16,7 +16,18 @@
         <customView id="c22-O7-iKe">
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <connections>
+                <outlet property="menu" destination="6M2-uN-aDY" id="2Ns-5e-6c0"/>
+            </connections>
             <point key="canvasLocation" x="72" y="-36"/>
         </customView>
+        <menu id="6M2-uN-aDY" userLabel="ContextMenu">
+            <items>
+                <menuItem title="Send Message To App Controller" id="wof-AJ-M28">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-10" y="207"/>
+        </menu>
     </objects>
 </document>
