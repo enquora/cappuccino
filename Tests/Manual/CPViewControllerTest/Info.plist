@@ -5,10 +5,10 @@
 	<key>Main cib file base name</key>
 	<string>MainMenu.cib</string>
 	<key>CPBundleName</key>
-	<string>CPViewController</string>
-    <key>CPBundleVersion</key>
-    <string>1.0</string>
-    <key>CPHumanReadableCopyright</key>
-    <string>Copyright © 2015, Your Company All rights reserved.</string>
+	<string>CPViewControllerTest</string>
+	<key>CPBundleVersion</key>
+	<string>1.0</string>
+	<key>CPHumanReadableCopyright</key>
+	<string>Copyright © 2015, Your Company All rights reserved.</string>
 </dict>
 </plist>

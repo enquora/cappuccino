@@ -30,9 +30,9 @@
 @implementation AppController : CPObject
 {
     @outlet CPWindow    theWindow;
-    @outlet CPView holderView;
+    @outlet CPView      containerView;
 
-    BOOL async @accessors;
+            BOOL        async @accessors;
 }
 
 - (void)applicationDidFinishLaunching:(CPNotification)aNotification
@@ -61,39 +61,39 @@
 
 - (void)loadAsync
 {
-    var vc = [[CPViewController alloc] initWithCibName:@"ViewController" bundle:nil];
-    var vc2 = [[CPViewController alloc] initWithCibName:@"ViewController2" bundle:nil];
+    var vcOuter = [[CPViewController alloc] initWithCibName:@"ViewControllerOuter" bundle:nil];
+    var vcInner = [[CPViewController alloc] initWithCibName:@"ViewControllerInner" bundle:nil];
 
-    [vc loadViewWithCompletionHandler:function(view1, error)
+    [vcOuter loadViewWithCompletionHandler:function(viewOuter, error)
     {
-        [view1 setBackgroundColor:[CPColor redColor]];
-        [holderView addSubview:view1];
+        [viewOuter setBackgroundColor:[CPColor redColor]];
+		[containerView addSubview:viewOuter];
 
-        [vc2 loadViewWithCompletionHandler:function(view2, error)
+        [vcInner loadViewWithCompletionHandler:function(viewInner, error)
         {
-            [view2 setBackgroundColor:[CPColor greenColor]];
-            [view1 addSubview:view2];
+            [viewInner setBackgroundColor:[CPColor greenColor]];
+            [viewOuter addSubview:viewInner];
         }];
     }];
 }
 
 - (void)loadSync
 {
-    var vc = [[CPViewController alloc] initWithCibName:@"ViewController" bundle:nil];
-    var vc2 = [[CPViewController alloc] initWithCibName:@"ViewController2" bundle:nil];
+    var vcOuter = [[CPViewController alloc] initWithCibName:@"ViewControllerOuter" bundle:nil];
+    var vcInner = [[CPViewController alloc] initWithCibName:@"ViewControllerInner" bundle:nil];
 
-    var view1 = [vc view];
-    [view1 setBackgroundColor:[CPColor redColor]];
-    [holderView addSubview:view1];
+    var viewOuter = [vcOuter view];
+    [viewOuter setBackgroundColor:[CPColor redColor]];
+	[containerView addSubview:viewOuter];
 
-    var view2 = [vc2 view];
-    [view2 setBackgroundColor:[CPColor greenColor]];
-    [view1 addSubview:view2];
+    var viewInner = [vcInner view];
+    [viewInner setBackgroundColor:[CPColor greenColor]];
+    [viewOuter addSubview:viewInner];
 }
 
 - (@action)removeSubviews:(id)sender
 {
-    [[holderView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+	[[containerView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 @end
