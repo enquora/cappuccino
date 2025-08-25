@@ -11,7 +11,7 @@
 @class XCCCappuccinoProjectController;
 
 
-@interface XCCSettingsViewController : NSViewController  <NSTableViewDataSource, NSTableViewDelegate>
+@interface XCCProjectSettingsViewController : NSViewController  <NSTableViewDataSource, NSTableViewDelegate>
 {
     IBOutlet    NSTableView     *tableViewBinaryPaths;
     IBOutlet    NSButton        *checkBoxProcessNib2Cib;

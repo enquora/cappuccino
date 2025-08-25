@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 cappuccino-project. All rights reserved.
 //
 
-#import "XCCSettingsViewController.h"
+#import "XCCProjectSettingsViewController.h"
 #import "XCCCappuccinoProjectController.h"
 #import "XCCCappuccinoProject.h"
 #import "XCCPath.h"
 
-@implementation XCCSettingsViewController
+@implementation XCCProjectSettingsViewController
 
 @synthesize cappuccinoProjectController = _cappuccinoProjectController;
 

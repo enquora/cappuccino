@@ -12,7 +12,7 @@
 @class XCCCappuccinoProjectController;
 @class XCCOperationsViewController;
 @class XCCErrorsViewController;
-@class XCCSettingsViewController;
+@class XCCProjectSettingsViewController;
 @class XCCWelcomeView;
 
 @interface XCCMainController : NSWindowController <NSSplitViewDelegate, NSTableViewDataSource, NSTableViewDelegate, NSUserNotificationCenterDelegate>
@@ -29,7 +29,7 @@
     IBOutlet XCCWelcomeView                 *welcomeViewMask;
 }
 
-@property IBOutlet XCCSettingsViewController    *settingsViewController;
+@property IBOutlet XCCProjectSettingsViewController    *settingsViewController;
 @property IBOutlet XCCOperationsViewController  *operationsViewController;
 @property IBOutlet XCCErrorsViewController      *errorsViewController;
 @property NSMutableArray                        *cappuccinoProjectControllers;

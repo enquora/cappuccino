@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24123.1" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24123.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,7 +41,7 @@
         </customObject>
         <viewController nibName="OperationsView" id="Exl-QQ-kUS" customClass="XCCOperationsViewController"/>
         <viewController nibName="ErrorsView" id="Pbk-dx-QfG" userLabel="ErrorView" customClass="XCCErrorsViewController"/>
-        <viewController nibName="SettingsView" id="SVc-KD-eve" userLabel="SettingsView" customClass="XCCSettingsViewController"/>
+        <viewController nibName="ProjectSettingsView" id="SVc-KD-eve" userLabel="SettingsView" customClass="XCCProjectSettingsViewController"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="XcodeCapp" id="1Xt-HY-uBw">
@@ -376,7 +376,7 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" drawsBackground="NO" id="Zlj-Y5-TaS">
                                             <rect key="frame" x="0.0" y="0.0" width="263" height="634"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowHeight="72" rowSizeStyle="automatic" viewBased="YES" id="Mss-Tu-7kR">
                                                     <rect key="frame" x="0.0" y="0.0" width="263" height="634"/>

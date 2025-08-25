@@ -11,8 +11,8 @@
 		021B94671B20D1F800F12DDA /* OperationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B94661B20D1F800F12DDA /* OperationsView.xib */; };
 		021B94691B20D6FC00F12DDA /* ErrorsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B94681B20D6FC00F12DDA /* ErrorsView.xib */; };
 		021B946C1B20D71200F12DDA /* XCCErrorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B946B1B20D71200F12DDA /* XCCErrorsViewController.m */; };
-		021B94701B20E31F00F12DDA /* XCCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B946E1B20E31F00F12DDA /* XCCSettingsViewController.m */; };
-		021B94711B20E31F00F12DDA /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B946F1B20E31F00F12DDA /* SettingsView.xib */; };
+		021B94701B20E31F00F12DDA /* XCCProjectSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B946E1B20E31F00F12DDA /* XCCProjectSettingsViewController.m */; };
+		021B94711B20E31F00F12DDA /* ProjectSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 021B946F1B20E31F00F12DDA /* ProjectSettingsView.xib */; };
 		021B94751B21112500F12DDA /* XCCWelcomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 021B94741B21112500F12DDA /* XCCWelcomeView.m */; };
 		0255B8401B1F71FB000CA4BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0255B83F1B1F71FB000CA4BC /* AppDelegate.m */; };
 		0257A65B1B3A2B0000015C1F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6841F2471AF98CE600CFE60E /* MainMenu.xib */; };
@@ -50,9 +50,9 @@
 		021B94681B20D6FC00F12DDA /* ErrorsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorsView.xib; sourceTree = "<group>"; };
 		021B946A1B20D71200F12DDA /* XCCErrorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCErrorsViewController.h; sourceTree = "<group>"; };
 		021B946B1B20D71200F12DDA /* XCCErrorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCErrorsViewController.m; sourceTree = "<group>"; };
-		021B946D1B20E31F00F12DDA /* XCCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCSettingsViewController.h; sourceTree = "<group>"; };
-		021B946E1B20E31F00F12DDA /* XCCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCSettingsViewController.m; sourceTree = "<group>"; };
-		021B946F1B20E31F00F12DDA /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		021B946D1B20E31F00F12DDA /* XCCProjectSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCProjectSettingsViewController.h; sourceTree = "<group>"; };
+		021B946E1B20E31F00F12DDA /* XCCProjectSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCProjectSettingsViewController.m; sourceTree = "<group>"; };
+		021B946F1B20E31F00F12DDA /* ProjectSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectSettingsView.xib; sourceTree = "<group>"; };
 		021B94731B21112500F12DDA /* XCCWelcomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCCWelcomeView.h; sourceTree = "<group>"; };
 		021B94741B21112500F12DDA /* XCCWelcomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCCWelcomeView.m; sourceTree = "<group>"; };
 		0255B83F1B1F71FB000CA4BC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		021B94721B20E41B00F12DDA /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				021B946F1B20E31F00F12DDA /* SettingsView.xib */,
+				021B946F1B20E31F00F12DDA /* ProjectSettingsView.xib */,
 				021B94681B20D6FC00F12DDA /* ErrorsView.xib */,
 				021B94661B20D1F800F12DDA /* OperationsView.xib */,
 				6841F2471AF98CE600CFE60E /* MainMenu.xib */,
@@ -147,6 +147,20 @@
 				027539101B227D7500F6D824 /* YRKSpinningProgressIndicator.m */,
 			);
 			name = YRKSpinningProgressIndicator;
+			sourceTree = "<group>";
+		};
+		417509AC2E5CF0230063A123 /* Project Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Project Settings";
+			sourceTree = "<group>";
+		};
+		417509AD2E5CF0340063A123 /* Application Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Application Settings";
 			sourceTree = "<group>";
 		};
 		680621161B015BDB00CB24CD /* Views */ = {
@@ -177,8 +191,8 @@
 				021B94641B20CECA00F12DDA /* XCCOperationsViewController.m */,
 				021B946A1B20D71200F12DDA /* XCCErrorsViewController.h */,
 				021B946B1B20D71200F12DDA /* XCCErrorsViewController.m */,
-				021B946D1B20E31F00F12DDA /* XCCSettingsViewController.h */,
-				021B946E1B20E31F00F12DDA /* XCCSettingsViewController.m */,
+				021B946D1B20E31F00F12DDA /* XCCProjectSettingsViewController.h */,
+				021B946E1B20E31F00F12DDA /* XCCProjectSettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +217,8 @@
 		6841F23D1AF98CE600CFE60E /* XcodeCapp */ = {
 			isa = PBXGroup;
 			children = (
+				417509AD2E5CF0340063A123 /* Application Settings */,
+				417509AC2E5CF0230063A123 /* Project Settings */,
 				6841F2401AF98CE600CFE60E /* AppDelegate.h */,
 				0255B83F1B1F71FB000CA4BC /* AppDelegate.m */,
 				6824CDDB1B0D976400F73447 /* Controllers */,
@@ -361,7 +377,7 @@
 			files = (
 				6841F2461AF98CE600CFE60E /* Images.xcassets in Resources */,
 				021B94671B20D1F800F12DDA /* OperationsView.xib in Resources */,
-				021B94711B20E31F00F12DDA /* SettingsView.xib in Resources */,
+				021B94711B20E31F00F12DDA /* ProjectSettingsView.xib in Resources */,
 				0258004B1B1E67090000EB7D /* supawhich in Resources */,
 				6841F26E1AF98DDD00CFE60E /* pbxprojModifier.py in Resources */,
 				6841F2A51AF9932300CFE60E /* project.pbxproj in Resources */,
@@ -379,7 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68B6BF321B1E2546003B265B /* XCCPPXOperation.m in Sources */,
-				021B94701B20E31F00F12DDA /* XCCSettingsViewController.m in Sources */,
+				021B94701B20E31F00F12DDA /* XCCProjectSettingsViewController.m in Sources */,
 				0255B8401B1F71FB000CA4BC /* AppDelegate.m in Sources */,
 				0258003C1B1E1C470000EB7D /* NSMutableArray+moveIndexes.m in Sources */,
 				6841F2BF1AFA965300CFE60E /* XCCTaskLauncher.m in Sources */,

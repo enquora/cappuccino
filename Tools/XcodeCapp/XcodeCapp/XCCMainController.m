@@ -14,7 +14,7 @@
 #import "XCCUserDefaults.h"
 #import "XCCOperationsViewController.h"
 #import "XCCErrorsViewController.h"
-#import "XCCSettingsViewController.h"
+#import "XCCProjectSettingsViewController.h"
 #import "XCCWelcomeView.h"
 
 
