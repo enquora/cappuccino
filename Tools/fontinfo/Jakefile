@@ -1,53 +1,183 @@
 require("../../common.jake");
 
 const child_process = require("child_process");
+const fs = require("fs");
+const path = require("path");
 const task = JAKE.task;
 
-task ("build", function()
-{
-    if (executableExists("xcodebuild"))
-    {
-        var args = "-alltargets -configuration Release";
+// Find project root by looking for AppKit and Tools directories
+function findProjectRoot() {
+    let currentDir = process.cwd();
+    
+    // Walk up the directory tree looking for project root
+    while (currentDir !== path.dirname(currentDir)) {
+        const hasAppKit = fs.existsSync(path.join(currentDir, "AppKit"));
+        const hasTools = fs.existsSync(path.join(currentDir, "Tools"));
+        
+        if (hasAppKit && hasTools) {
+            return currentDir;
+        }
+        
+        currentDir = path.dirname(currentDir);
+    }
+    
+    throw new Error("Could not find Cappuccino project root (looking for directories containing both AppKit and Tools)");
+}
 
-        if (xcodebuildHasTenPointFiveSDK())
-            args = "-sdk macosx10.5 " + args;
+const projectRoot = findProjectRoot();
+const toolDir = path.join(projectRoot, "Tools", "fontinfo");
+const buildDir = path.join(toolDir, "build");
+const binDir = path.join(projectRoot, "dist", "cappuccino", "bin");
 
-        else
-            args = "-sdk macosx " + args;
-
-        var xcodebuild = process.env.CAPP_BUILD ? "xcodebuild " : "CAPP_BUILD=../../Build xcodebuild ";
+// Ensure directories exist
+function ensureDir(dir) {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+        
+        // Mark as created by build system so Xcode can clean it
         try {
-            child_process.execSync(xcodebuild + args, {stdio: 'inherit'});
+            child_process.execSync(`xattr -w com.apple.xcode.CreatedByBuildSystem true "${dir}"`);
         } catch (error) {
-            process.exit(1);
+            // Ignore xattr errors - not critical
         }
     }
-    else
-    {
+}
+
+function getXcodebuildArgs(configuration, isUniversal = false) {
+    let args = `-configuration ${configuration}`;
+    
+    if (isUniversal) {
+        // Build universal binary for both Intel and Apple Silicon
+        args += " ARCHS='x86_64 arm64' VALID_ARCHS='x86_64 arm64'";
+    }
+    
+    if (xcodebuildHasTenPointFiveSDK()) {
+        args = "-sdk macosx10.5 " + args;
+    } else {
+        args = "-sdk macosx " + args;
+    }
+    
+    return args;
+}
+
+function runXcodebuild(args, workingDir = toolDir) {
+    const xcodebuild = process.env.CAPP_BUILD ? "xcodebuild " : `CAPP_BUILD=${path.join(projectRoot, "Build")} xcodebuild `;
+    const fullCommand = xcodebuild + args;
+    
+    console.log(`Running: ${fullCommand}`);
+    console.log(`Working directory: ${workingDir}`);
+    
+    try {
+        child_process.execSync(fullCommand, {
+            stdio: 'inherit',
+            cwd: workingDir
+        });
+    } catch (error) {
+        console.error(`Build failed: ${error.message}`);
+        process.exit(1);
+    }
+}
+
+task("build", function() {
+    if (!executableExists("xcodebuild")) {
         console.log("Building fontinfo requires Xcode.");
+        return;
     }
+    
+    console.log("Building fontinfo (universal binary)...");
+    ensureDir(buildDir);
+    
+    const args = getXcodebuildArgs("Release", true);
+    runXcodebuild(args);
+    
+    console.log("Build complete. Binary available at:", path.join(buildDir, "Release", "fontinfo"));
 });
 
-task ("clean", function()
-{
-    if (executableExists("xcodebuild")) {
-        try {
-            child_process.execSync("xcodebuild clean", {stdio: 'inherit'});
-        } catch (error) {
-            process.exit(1);
+task("build-debug", function() {
+    if (!executableExists("xcodebuild")) {
+        console.log("Building fontinfo requires Xcode.");
+        return;
+    }
+    
+    console.log("Building fontinfo debug version...");
+    ensureDir(buildDir);
+    
+    const args = getXcodebuildArgs("Debug", true);
+    runXcodebuild(args);
+});
+
+task("dist", ["build"], function() {
+    console.log("Creating distribution...");
+    console.log(`Project root: ${projectRoot}`);
+    console.log(`Tool directory: ${toolDir}`);
+    console.log(`Build directory: ${buildDir}`);
+    console.log(`Bin directory: ${binDir}`);
+    
+    // Ensure dist/cappuccino/bin directory exists
+    ensureDir(binDir);
+    
+    // Find the built executable
+    const builtExecutable = path.join(buildDir, "Release", "fontinfo");
+    const distExecutable = path.join(binDir, "fontinfo");
+    
+    console.log(`Looking for built executable at: ${builtExecutable}`);
+    console.log(`Will copy to: ${distExecutable}`);
+    
+    if (!fs.existsSync(builtExecutable)) {
+        console.error(`Built executable not found at: ${builtExecutable}`);
+        
+        // Try alternative build locations
+        const alternatives = [
+            path.join(toolDir, "build", "Release", "fontinfo"),
+            path.join(toolDir, "build", "fontinfo"),
+            path.join(process.cwd(), "build", "Release", "fontinfo"),
+            path.join(process.cwd(), "build", "fontinfo")
+        ];
+        
+        console.log("Checking alternative locations:");
+        for (const alt of alternatives) {
+            console.log(`  Checking: ${alt}`);
+            if (fs.existsSync(alt)) {
+                console.log(`  ✓ Found executable at: ${alt}`);
+                fs.copyFileSync(alt, distExecutable);
+                fs.chmodSync(distExecutable, 0o755);
+                console.log(`Copied fontinfo to: ${distExecutable}`);
+                return;
+            }
         }
+        
+        console.error("Could not find built executable in any expected location");
+        process.exit(1);
+    } else {
+        console.log(`✓ Found executable at: ${builtExecutable}`);
+        fs.copyFileSync(builtExecutable, distExecutable);
+        fs.chmodSync(distExecutable, 0o755);
+        console.log(`Copied fontinfo to: ${distExecutable}`);
     }
 });
 
-task ("clobber", function()
-{
-    if (executableExists("xcodebuild")) {
-        try {
-            child_process.execSync("xcodebuild clean", {stdio: 'inherit'});
-        } catch (error) {
-            process.exit(1);
-        }
+task("clean", function() {
+    if (!executableExists("xcodebuild")) {
+        return;
+    }
+    
+    console.log("Cleaning fontinfo...");
+    runXcodebuild("clean");
+    
+    // Also remove any built artifacts
+    if (fs.existsSync(buildDir)) {
+        console.log("Removing build directory...");
+        fs.rmSync(buildDir, { recursive: true, force: true });
     }
 });
 
-task ("default", ["build"]);
+task("clobber", ["clean"], function() {
+    // Remove distribution binary as well
+    const distExecutable = path.join(binDir, "fontinfo");
+    if (fs.existsSync(distExecutable)) {
+        console.log("Removing distributed binary...");
+        fs.unlinkSync(distExecutable);
+    }
+});
+
+task("default", ["build"]);

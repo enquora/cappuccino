@@ -1,0 +1,37 @@
+//
+//  fontinfo.xcconfig
+//  CappuccinoSource
+//
+//  Created by David Richardson on 2025-09-26.
+//
+
+// Configuration for fontinfo native tool
+
+// Deployment and SDK settings
+MACOSX_DEPLOYMENT_TARGET = 10.13
+SDKROOT = macosx
+
+// Architecture settings for universal binary
+ARCHS = x86_64 arm64
+VALID_ARCHS = x86_64 arm64
+
+// Build settings
+GCC_C_LANGUAGE_STANDARD = gnu11
+CLANG_CXX_LANGUAGE_STANDARD = gnu++17
+GCC_OPTIMIZATION_LEVEL = s
+GCC_SYMBOLS_PRIVATE_EXTERN = YES
+GCC_INLINES_ARE_PRIVATE_EXTERN = YES
+
+// Warning settings
+WARNING_CFLAGS = -Wall -Wextra -Wno-unused-parameter
+GCC_WARN_UNUSED_VARIABLE = YES
+GCC_WARN_UNUSED_FUNCTION = YES
+CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES
+
+// Output settings
+CONFIGURATION_BUILD_DIR = $(PROJECT_DIR)/build/$(CONFIGURATION)
+OBJROOT = $(PROJECT_DIR)/build/$(CONFIGURATION)/obj
+SYMROOT = $(PROJECT_DIR)/build/$(CONFIGURATION)
+
+// Ensure clean builds
+SHARED_PRECOMPS_DIR = $(PROJECT_DIR)/build/SharedPrecompiledHeaders
