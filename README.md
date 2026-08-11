@@ -4,12 +4,30 @@
 # Cappuccino: Build Desktop-Class Web Applications
 
 > **✨ Project Status: v1.5.0 Baseline & Upcoming v2.0.0 Toolchain**
-> 
-> Cappuccino has been under continuous development since 2008 and is actively maintained. This v1.5.0 release establishes the new resolution-independent Aristo3 theme as the baseline. While Aristo2 remains included, using it requires explicitly setting the theme descriptor.
+>
+> Cappuccino has been under continuous development since 2008 and is actively maintained. The v1.5.0 release establishes a baseline as we move to the new resolution-independent Aristo3 theme and Go-based toolchain.
 
 > For users seeking a complication-free alternative who wish to avoid the Aristo3 work entirely, the legacy-1.4.0 branch provides an unambiguous freeze point. Please note, however, that this legacy branch is not guaranteed to receive any future bug fixes or improvements.
 
 > Active development is now focused on the upcoming v2.0.0 release, which will transition the full toolchain to Golang and the platform-native binaries it produces, leaving Node.js and npm behind.
+
+> **🚨 Aristo3 Theme: Community Testing Required**
+>
+> Aristo3 represents a non-trivial refactoring of AppKit UI classes. While unit tests pass, it must be tested against real-world applications before being merged into `main`. Community members testing against their own applications will accelerate the process. We are not concerned with minor visual breakages or cosmetic regressions at this stage; **the primary concern is structural failures.**
+>
+> The fully merged state has been pushed to the `aristo3` branch on the canonical repo.
+>
+> **How to help:**
+> 1. Check out the `aristo3` branch: `git fetch origin && git checkout aristo3`
+> 2. Build the frameworks and run your existing applications against this branch.
+> 3. Open your browser's developer console and watch for:
+>    - Uncaught `CPException`s or JavaScript errors.
+>    - Infinite layout loops (browser freezing/tab crashing).
+>    - Broken responder chains or keyboard event handling.
+>    - KVO/Binding failures or `valueForThemeAttribute:` resolving to `nil` unexpectedly.
+>    - View hierarchy corruption (subviews disappearing or failing to clip).
+>
+> Please leave a 👍 on the [Aristo3 Pull Request](https://github.com/cappuccino/cappuccino/pull/3038) if your apps run without structural failures. If you encounter exceptions or crashes, please leave a comment with the stack trace. **A solid response of thumbs up is required before `main` can be merged. Our intention is to leave no community member behind.**
 
 ## Why Use Cappuccino?
 
