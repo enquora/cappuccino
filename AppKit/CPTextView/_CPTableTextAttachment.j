@@ -19,9 +19,10 @@
  */
 
 @import "CPView.j"
-@import "CPTextView.j"
 @import "CPTextField.j"
 @import <Foundation/CPAttributedString.j>
+
+@class CPTextView;
 
 @implementation _CPTableTextAttachment : CPView
 {

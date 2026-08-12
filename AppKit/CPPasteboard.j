@@ -389,3 +389,4 @@ var DOMDataTransferPasteboard = nil;
 @end
 
 #endif
+

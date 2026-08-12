@@ -230,7 +230,6 @@ var CPViewHighDPIDrawingEnabled = YES;
 
     // Layout Support
     BOOL                _needsLayout;
-    JSObject            _ephemeralSubviews;
 
     JSObject            _ephemeralSubviewsForNames;
     CPSet               _ephemeralSubviews;

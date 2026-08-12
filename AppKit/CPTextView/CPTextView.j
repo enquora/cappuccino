@@ -29,13 +29,12 @@
 @import "CPColorPanel.j"
 @import "CPFontManager.j"
 @import "CPTextStorage.j"
-@import "CPTextContainer.j"
 @import "CPLayoutManager.j"
 @import "CPParagraphStyle.j"
+@import "CPTextContainer.j"
 
 @import "_CPRTFParser.j"
 @import "_CPRTFProducer.j"
-
 
 @class CPClipView;
 @class CPMenu;
@@ -149,7 +148,6 @@ var kDelegateRespondsTo_textShouldBeginEditing                                  
     int                         _startTrackingLocation;
 
     _CPCaret                    _caret;
-    CPTimer                     _scrollingTimer;
 
     BOOL                        _scrollingDownward;
     CPRange                     _movingSelection;

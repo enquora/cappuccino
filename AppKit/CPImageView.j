@@ -354,10 +354,10 @@ var CPImageViewEmptyPlaceholderImage = nil;
 
     if (imageScaling === CPImageScaleAxesIndependently)
     {
-        #if PLATFORM(DOM)
+#if PLATFORM(DOM)
             _DOMImageElement.width = ROUND(width);
             _DOMImageElement.height = ROUND(height);
-        #endif
+#endif
     }
     else
     {
@@ -395,10 +395,10 @@ var CPImageViewEmptyPlaceholderImage = nil;
                 break;
         }
 
-        #if PLATFORM(DOM)
+#if PLATFORM(DOM)
             _DOMImageElement.width = ROUND(width);
             _DOMImageElement.height = ROUND(height);
-        #endif
+#endif
 
         var x,
             y;

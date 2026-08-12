@@ -1001,19 +1001,16 @@ url("data:image/png;base64,BASE64ENCODEDDATA")  // if there is a pattern image
 
 + (void)restorePreviousCSSState:(CPArrayRef)aPreviousStateRef forDOMElement:(DOMElement)aDOMElement
 {
-#if PLATFORM(DOM)
     var aPreviousState = @deref(aPreviousStateRef);
 
     for (var i = 0, count = aPreviousState.length; i < count; i++)
         aDOMElement.style[aPreviousState[i][0]] = aPreviousState[i][1];
 
     @deref(aPreviousStateRef) = @[];
-#endif
 }
 
 - (DOMElement)applyCSSColorForView:(CPView)aView onDOMElement:(DOMElement)aDOMElement styleNode:(DOMElement)aStyleNode previousState:(CPArrayRef)aPreviousStateRef
 {
-#if PLATFORM(DOM)
     var aPreviousState = @deref(aPreviousStateRef);
 
     [_cssDictionary enumerateKeysAndObjectsUsingBlock:function(aKey, anObject, stop)
@@ -1086,7 +1083,6 @@ url("data:image/png;base64,BASE64ENCODEDDATA")  // if there is a pattern image
     @deref(aPreviousStateRef) = aPreviousState;
 
     return aStyleNode;
-#endif
 }
 
 @end

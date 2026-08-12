@@ -388,7 +388,6 @@ function CPBrowserStyleProperty(aProperty)
     {
         var r = nil;
 
-#if PLATFORM(DOM)
         var testElement = document.createElement('div');
 
         switch (lowerProperty)
@@ -455,7 +454,6 @@ function CPBrowserStyleProperty(aProperty)
 
                 break;
         }
-#endif
 
         PLATFORM_STYLE_JS_PROPERTIES[lowerProperty] = r;
     }
