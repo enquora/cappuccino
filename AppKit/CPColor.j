@@ -563,9 +563,10 @@ var cachedBlackColor,
 {
     // Fix to avoid a problem when compiling a theme (missing the alpha component as theme compiler doesn't have CSS rgba capability)
     var hasAlpha = YES;
-#if PLATFORM(DOM)
-    hasAlpha = CPFeatureIsCompatible(CPCSSRGBAFeature) && _components[3] != 1.0;
-#endif
+    if (CPDOMAvailable)
+    {
+        hasAlpha = CPFeatureIsCompatible(CPCSSRGBAFeature) && _components[3] != 1.0;
+    }
 
     _cssString = (hasAlpha ? "rgba(" : "rgb(") +
         parseInt(_components[0] * 255.0) + ", " +
