@@ -89,9 +89,10 @@ var CPImageViewEmptyPlaceholderImage = nil;
 
     if (self)
     {
-#if PLATFORM(DOM)
-        [self _createDOMImageElement];
-#endif
+        if (CPDOMAvailable)
+        {
+            [self _createDOMImageElement];
+        }
     }
 
     return self;
@@ -99,7 +100,9 @@ var CPImageViewEmptyPlaceholderImage = nil;
 
 - (void)_createDOMImageElement
 {
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable)
+        return;
+
     var image = [self objectValue],
         isCSSBasedImage = [image isCSSBased],
         isIMGImageElement = _DOMImageElement && (_DOMImageElement.nodeName == "IMG");
@@ -140,7 +143,6 @@ var CPImageViewEmptyPlaceholderImage = nil;
     AppKitTagDOMElement(self, _DOMImageElement);
 
     CPDOMDisplayServerAppendChild(_DOMElement, _DOMImageElement);
-#endif
 }
 
 /*!
@@ -173,17 +175,18 @@ var CPImageViewEmptyPlaceholderImage = nil;
 
     var newImage = [self objectValue];
 
-#if PLATFORM(DOM)
-    [self _createDOMImageElement];
+    if (CPDOMAvailable)
+    {
+        [self _createDOMImageElement];
 
-    if ([newImage isCSSBased])
-        _cssStyleNode = [newImage applyCSSImageForView:self
-                                          onDOMElement:_DOMImageElement
-                                             styleNode:_cssStyleNode
-                                         previousState:@ref(_cssStylePreviousState)];
-    else
-        _DOMImageElement.src = newImage ? [newImage filename] : [CPImageViewEmptyPlaceholderImage filename];
-#endif
+        if ([newImage isCSSBased])
+            _cssStyleNode = [newImage applyCSSImageForView:self
+                                              onDOMElement:_DOMImageElement
+                                                 styleNode:_cssStyleNode
+                                             previousState:@ref(_cssStylePreviousState)];
+        else
+            _DOMImageElement.src = newImage ? [newImage filename] : [CPImageViewEmptyPlaceholderImage filename];
+    }
 
     var size = [newImage size];
 
@@ -191,10 +194,11 @@ var CPImageViewEmptyPlaceholderImage = nil;
     {
         [defaultCenter addObserver:self selector:@selector(imageDidLoad:) name:CPImageDidLoadNotification object:newImage];
 
-#if PLATFORM(DOM)
-        _DOMImageElement.width = 0;
-        _DOMImageElement.height = 0;
-#endif
+        if (CPDOMAvailable)
+        {
+            _DOMImageElement.width = 0;
+            _DOMImageElement.height = 0;
+        }
 
         [_shadowView setHidden:YES];
     }
@@ -287,12 +291,10 @@ var CPImageViewEmptyPlaceholderImage = nil;
 {
     [super setImageScaling:anImageScaling];
 
-#if PLATFORM(DOM)
-    if ([self currentValueForThemeAttribute:@"image-scaling"] === CPImageScaleAxesIndependently)
+    if (CPDOMAvailable && [self currentValueForThemeAttribute:@"image-scaling"] === CPImageScaleAxesIndependently)
     {
         CPDOMDisplayServerSetStyleLeftTop(_DOMImageElement, NULL, 0.0, 0.0);
     }
-#endif
 
     [self setNeedsLayout];
     [self setNeedsDisplay:YES];
@@ -310,16 +312,18 @@ var CPImageViewEmptyPlaceholderImage = nil;
 {
     if (![self image])
     {
-#if PLATFORM(DOM)
-        _DOMImageElement.style.visibility = "hidden";
-#endif
+        if (CPDOMAvailable)
+        {
+            _DOMImageElement.style.visibility = "hidden";
+        }
         [_shadowView setHidden:YES];
     }
     else
     {
-#if PLATFORM(DOM)
-        _DOMImageElement.style.visibility = "visible";
-#endif
+        if (CPDOMAvailable)
+        {
+            _DOMImageElement.style.visibility = "visible";
+        }
         [_shadowView setHidden:NO];
     }
 }
@@ -354,10 +358,11 @@ var CPImageViewEmptyPlaceholderImage = nil;
 
     if (imageScaling === CPImageScaleAxesIndependently)
     {
-#if PLATFORM(DOM)
+        if (CPDOMAvailable)
+        {
             _DOMImageElement.width = ROUND(width);
             _DOMImageElement.height = ROUND(height);
-#endif
+        }
     }
     else
     {
@@ -395,10 +400,11 @@ var CPImageViewEmptyPlaceholderImage = nil;
                 break;
         }
 
-#if PLATFORM(DOM)
+        if (CPDOMAvailable)
+        {
             _DOMImageElement.width = ROUND(width);
             _DOMImageElement.height = ROUND(height);
-#endif
+        }
 
         var x,
             y;
@@ -441,13 +447,13 @@ var CPImageViewEmptyPlaceholderImage = nil;
                 break;
         }
 
-#if PLATFORM(DOM)
-        CPDOMDisplayServerSetStyleLeftTop(_DOMImageElement, NULL, x, y);
-#endif
+        if (CPDOMAvailable)
+        {
+            CPDOMDisplayServerSetStyleLeftTop(_DOMImageElement, NULL, x, y);
+        }
     }
 
-#if PLATFORM(DOM)
-    if ([image isCSSBased] && [image _shouldBeResized])
+    if (CPDOMAvailable && [image isCSSBased] && [image _shouldBeResized])
     {
         [image _setDisplaySize:CGSizeMake(ROUND(width), ROUND(height))];
 
@@ -456,7 +462,6 @@ var CPImageViewEmptyPlaceholderImage = nil;
                                           styleNode:_cssStyleNode
                                       previousState:@ref(_cssStylePreviousState)];
     }
-#endif
 
     _imageRect = CGRectMake(x, y, width, height);
 
@@ -578,9 +583,10 @@ var CPImageViewImageKey          = @"CPImageViewImageKey",
 
     if (self)
     {
-#if PLATFORM(DOM)
-        [self _createDOMImageElement];
-#endif
+        if (CPDOMAvailable)
+        {
+            [self _createDOMImageElement];
+        }
 
         [self setHasShadow:[aCoder decodeBoolForKey:CPImageViewHasShadowKey]];
         [self setImageAlignment:[aCoder decodeIntForKey:CPImageViewImageAlignmentKey]];
