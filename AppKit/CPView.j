@@ -51,8 +51,6 @@
 
 @typedef _CPViewFullScreenModeState
 
-#if PLATFORM(DOM)
-
 if (typeof(appkit_tag_dom_elements) !== "undefined" && appkit_tag_dom_elements)
 {
     AppKitTagDOMElement = function(owner, element)
@@ -68,8 +66,6 @@ else
        // By default, do nothing.
     }
 }
-
-#endif
 
 /*
     @global
@@ -481,20 +477,21 @@ var CPViewHighDPIDrawingEnabled = YES;
     if (!_toolTipFunctionOut)
         _toolTipFunctionOut = function(e) { [_CPToolTip invalidateCurrentToolTipIfNeeded]; };
 
-#if PLATFORM(DOM)
-    if (_DOMElement.addEventListener)
+    if (CPDOMAvailable)
     {
-        _DOMElement.addEventListener("mouseover", _toolTipFunctionIn, YES);
-        _DOMElement.addEventListener("keypress", _toolTipFunctionOut, YES);
-        _DOMElement.addEventListener("mouseout", _toolTipFunctionOut, YES);
+        if (_DOMElement.addEventListener)
+        {
+            _DOMElement.addEventListener("mouseover", _toolTipFunctionIn, YES);
+            _DOMElement.addEventListener("keypress", _toolTipFunctionOut, YES);
+            _DOMElement.addEventListener("mouseout", _toolTipFunctionOut, YES);
+        }
+        else if (_DOMElement.attachEvent)
+        {
+            _DOMElement.attachEvent("onmouseover", _toolTipFunctionIn);
+            _DOMElement.attachEvent("onkeypress", _toolTipFunctionOut);
+            _DOMElement.attachEvent("onmouseout", _toolTipFunctionOut);
+        }
     }
-    else if (_DOMElement.attachEvent)
-    {
-        _DOMElement.attachEvent("onmouseover", _toolTipFunctionIn);
-        _DOMElement.attachEvent("onkeypress", _toolTipFunctionOut);
-        _DOMElement.attachEvent("onmouseout", _toolTipFunctionOut);
-    }
-#endif
 
     _toolTipInstalled = YES;
 }
@@ -508,20 +505,21 @@ var CPViewHighDPIDrawingEnabled = YES;
     if (!_toolTipInstalled)
         return;
 
-#if PLATFORM(DOM)
-    if (_DOMElement.removeEventListener)
+    if (CPDOMAvailable)
     {
-        _DOMElement.removeEventListener("mouseover", _toolTipFunctionIn, YES);
-        _DOMElement.removeEventListener("keypress", _toolTipFunctionOut, YES);
-        _DOMElement.removeEventListener("mouseout", _toolTipFunctionOut, YES);
+        if (_DOMElement.removeEventListener)
+        {
+            _DOMElement.removeEventListener("mouseover", _toolTipFunctionIn, YES);
+            _DOMElement.removeEventListener("keypress", _toolTipFunctionOut, YES);
+            _DOMElement.removeEventListener("mouseout", _toolTipFunctionOut, YES);
+        }
+        else if (_DOMElement.detachEvent)
+        {
+            _DOMElement.detachEvent("onmouseover", _toolTipFunctionIn);
+            _DOMElement.detachEvent("onkeypress", _toolTipFunctionOut);
+            _DOMElement.detachEvent("onmouseout", _toolTipFunctionOut);
+        }
     }
-    else if (_DOMElement.detachEvent)
-    {
-        _DOMElement.detachEvent("onmouseover", _toolTipFunctionIn);
-        _DOMElement.detachEvent("onkeypress", _toolTipFunctionOut);
-        _DOMElement.detachEvent("onmouseout", _toolTipFunctionOut);
-    }
-#endif
 
     _toolTipFunctionIn = nil;
     _toolTipFunctionOut = nil;
@@ -617,9 +615,10 @@ var CPViewHighDPIDrawingEnabled = YES;
 
         [_subviews removeObjectAtIndex:index];
 
-#if PLATFORM(DOM)
-        CPDOMDisplayServerRemoveChild(_DOMElement, aSubview._DOMElement);
-#endif
+        if (CPDOMAvailable)
+        {
+            CPDOMDisplayServerRemoveChild(_DOMElement, aSubview._DOMElement);
+        }
 
         if (anIndex > index)
             --anIndex;
@@ -645,25 +644,28 @@ var CPViewHighDPIDrawingEnabled = YES;
     {
         _subviews.push(aSubview);
 
-#if PLATFORM(DOM)
-        // Attach the actual node.
-        CPDOMDisplayServerAppendChild(_DOMElement, aSubview._DOMElement);
-#endif
+        if (CPDOMAvailable)
+        {
+            // Attach the actual node.
+            CPDOMDisplayServerAppendChild(_DOMElement, aSubview._DOMElement);
+        }
     }
     else
     {
         _subviews.splice(anIndex, 0, aSubview);
 
-#if PLATFORM(DOM)
-        // Attach the actual node.
-        CPDOMDisplayServerInsertBefore(_DOMElement, aSubview._DOMElement, _subviews[anIndex + 1]._DOMElement);
-#endif
+        if (CPDOMAvailable)
+        {
+            // Attach the actual node.
+            CPDOMDisplayServerInsertBefore(_DOMElement, aSubview._DOMElement, _subviews[anIndex + 1]._DOMElement);
+        }
     }
 
-#if PLATFORM(DOM)
-    var origin = aSubview._frame.origin;
-    CPDOMDisplayServerSetStyleLeftTop(aSubview._DOMElement, _boundsTransform, origin.x, origin.y);
-#endif
+    if (CPDOMAvailable)
+    {
+        var origin = aSubview._frame.origin;
+        CPDOMDisplayServerSetStyleLeftTop(aSubview._DOMElement, _boundsTransform, origin.x, origin.y);
+    }
 
     [aSubview setNextResponder:self];
     [aSubview _scaleSizeUnitSquareToSize:[self _hierarchyScaleSize]];
@@ -735,9 +737,10 @@ var CPViewHighDPIDrawingEnabled = YES;
 
     [_superview._subviews removeObjectIdenticalTo:self];
 
-#if PLATFORM(DOM)
-    CPDOMDisplayServerRemoveChild(_superview._DOMElement, _DOMElement);
-#endif
+    if (CPDOMAvailable)
+    {
+        CPDOMDisplayServerRemoveChild(_superview._DOMElement, _DOMElement);
+    }
 
     // If the view is not hidden and one of its ancestors is hidden,
     // notify the view that it is now unhidden.
@@ -820,7 +823,9 @@ var CPViewHighDPIDrawingEnabled = YES;
 
     _subviews = [newSubviews copy];
 
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable)
+        return;
+
     var index = 0,
         count = [_subviews count];
 
@@ -831,7 +836,6 @@ var CPViewHighDPIDrawingEnabled = YES;
         CPDOMDisplayServerRemoveChild(_DOMElement, subview._DOMElement);
         CPDOMDisplayServerAppendChild(_DOMElement, subview._DOMElement);
     }
-#endif
 }
 
 /* @ignore */
@@ -1322,7 +1326,9 @@ var CPViewHighDPIDrawingEnabled = YES;
 */
 - (void)_setDisplayServerSetStyleSize:(CGSize)aSize
 {
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable)
+        return;
+
     var scale = [self scaleSize];
 
     if (!_inhibitDOMUpdates)
@@ -1335,7 +1341,6 @@ var CPViewHighDPIDrawingEnabled = YES;
 
         _needToSetTransformMatrix = YES;
     }
-#endif
 }
 
 /*!
@@ -2630,8 +2635,7 @@ setBoundsOrigin:
 */
 - (void)_applyCSSScalingTranformations
 {
-#if PLATFORM(DOM)
-    if (_isScaled)
+    if (CPDOMAvailable && _isScaled)
     {
         var scale = [self scaleSize],
             browserPropertyTransform = CPBrowserStyleProperty(@"transform"),
@@ -2642,7 +2646,6 @@ setBoundsOrigin:
 
         [self _setDisplayServerSetStyleSize:[self frameSize]];
     }
-#endif
 }
 
 // Displaying
@@ -2725,14 +2728,15 @@ setBoundsOrigin:
     if ([self isHidden])
         return;
 
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable)
+        return;
+
     [self lockFocus];
 
     CGContextClearRect([[CPGraphicsContext currentContext] graphicsPort], aRect);
 
     [self drawRect:aRect];
     [self unlockFocus];
-#endif
 }
 
 - (void)viewWillDraw
@@ -2748,42 +2752,41 @@ setBoundsOrigin:
     {
         var graphicsPort = CGBitmapGraphicsContextCreate();
 
-#if PLATFORM(DOM)
-        var width = CGRectGetWidth(_frame),
-            height = CGRectGetHeight(_frame),
-            devicePixelRatio = window.devicePixelRatio || 1,
-            backingStoreRatio = CPBrowserBackingStorePixelRatio(graphicsPort);
+        if (CPDOMAvailable)
+        {
+            var width = CGRectGetWidth(_frame),
+                height = CGRectGetHeight(_frame),
+                devicePixelRatio = window.devicePixelRatio || 1,
+                backingStoreRatio = CPBrowserBackingStorePixelRatio(graphicsPort);
 
-        _highDPIRatio = CPViewHighDPIDrawingEnabled ? (devicePixelRatio / backingStoreRatio) : 1;
+            _highDPIRatio = CPViewHighDPIDrawingEnabled ? (devicePixelRatio / backingStoreRatio) : 1;
 
-        _DOMContentsElement = graphicsPort.DOMElement;
+            _DOMContentsElement = graphicsPort.DOMElement;
 
-        _DOMContentsElement.style.zIndex = -100;
+            _DOMContentsElement.style.zIndex = -100;
 
-        _DOMContentsElement.style.overflow = "hidden";
-        _DOMContentsElement.style.position = "absolute";
-        _DOMContentsElement.style.visibility = "visible";
+            _DOMContentsElement.style.overflow = "hidden";
+            _DOMContentsElement.style.position = "absolute";
+            _DOMContentsElement.style.visibility = "visible";
 
-        CPDOMDisplayServerSetSize(_DOMContentsElement, width * _highDPIRatio, height * _highDPIRatio);
+            CPDOMDisplayServerSetSize(_DOMContentsElement, width * _highDPIRatio, height * _highDPIRatio);
 
-        CPDOMDisplayServerSetStyleLeftTop(_DOMContentsElement, NULL, 0.0, 0.0);
-        CPDOMDisplayServerSetStyleSize(_DOMContentsElement, width, height);
+            CPDOMDisplayServerSetStyleLeftTop(_DOMContentsElement, NULL, 0.0, 0.0);
+            CPDOMDisplayServerSetStyleSize(_DOMContentsElement, width, height);
 
-        // The performance implications of this aren't clear, but without this subviews might not be redrawn when this
-        // view moves.
-        if (CPPlatformHasBug(CPCanvasParentDrawErrorsOnMovementBug))
-            _DOMElement.style.webkitTransform = 'translateX(0)';
+            // The performance implications of this aren't clear, but without this subviews might not be redrawn when this
+            // view moves.
+            if (CPPlatformHasBug(CPCanvasParentDrawErrorsOnMovementBug))
+                _DOMElement.style.webkitTransform = 'translateX(0)';
 
-        CPDOMDisplayServerAppendChild(_DOMElement, _DOMContentsElement);
-#endif
+            CPDOMDisplayServerAppendChild(_DOMElement, _DOMContentsElement);
+        }
         _graphicsContext = [CPGraphicsContext graphicsContextWithGraphicsPort:graphicsPort flipped:YES];
         _needToSetTransformMatrix = YES;
     }
 
-#if PLATFORM(DOM)
-    if (_needToSetTransformMatrix && _highDPIRatio !== 1)
+    if (CPDOMAvailable && _needToSetTransformMatrix && _highDPIRatio !== 1)
         [_graphicsContext graphicsPort].setTransform(_highDPIRatio, 0, 0 , _highDPIRatio, 0, 0);
-#endif
 
     _needToSetTransformMatrix = NO;
     [CPGraphicsContext setCurrentContext:_graphicsContext];
@@ -3225,10 +3228,8 @@ setBoundsOrigin:
     if (_layer)
     {
         _layer._owningView = nil;
-#if PLATFORM(DOM)
-        if (_layer._DOMElement && _layer._DOMElement.parentNode === _DOMElement)
+        if (CPDOMAvailable && _layer._DOMElement && _layer._DOMElement.parentNode === _DOMElement)
             _DOMElement.removeChild(_layer._DOMElement);
-#endif
     }
 
     _layer = aLayer;
@@ -3238,10 +3239,11 @@ setBoundsOrigin:
         [_layer _setOwningView:self];
         [_layer setFrame:[self bounds]]; // Sync layer frame with view bounds
 
-#if PLATFORM(DOM)
-        _layer._DOMElement.style.zIndex = 100;
-        _DOMElement.appendChild(_layer._DOMElement);
-#endif
+        if (CPDOMAvailable)
+        {
+            _layer._DOMElement.style.zIndex = 100;
+            _DOMElement.appendChild(_layer._DOMElement);
+        }
     }
 }
 
@@ -3573,9 +3575,10 @@ setBoundsOrigin:
 
 - (void)setDOMClassName:(CPString)aClassName
 {
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable)
+        return;
+
     _DOMElement.className = aClassName;
-#endif
 }
 
 - (BOOL)isCSSBased
