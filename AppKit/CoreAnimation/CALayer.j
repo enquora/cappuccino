@@ -28,6 +28,7 @@
 @import "CGContext.j"
 @import "CGGeometry.j"
 @import "CPColor.j"
+@import "CPCompatibility.j"
 @import "CPView.j"
 @import "CAMediaTimingFunction.j"
 
@@ -166,18 +167,19 @@ var CALayerRegisteredRunLoopUpdates             = nil;
 
         _activeAnimations = [CPMutableDictionary dictionary];
 
-#if PLATFORM(DOM)
-        _DOMElement = document.createElement("div");
+        if (CPDOMAvailable)
+        {
+            _DOMElement = document.createElement("div");
 
-        _DOMElement.style.overflow = "visible";
-        _DOMElement.style.position = "absolute";
-        _DOMElement.style.visibility = "visible";
-        _DOMElement.style.top = "0px";
-        _DOMElement.style.left = "0px";
-        _DOMElement.style.zIndex = 0;
-        _DOMElement.style.width = "0px";
-        _DOMElement.style.height = "0px";
-#endif
+            _DOMElement.style.overflow = "visible";
+            _DOMElement.style.position = "absolute";
+            _DOMElement.style.visibility = "visible";
+            _DOMElement.style.top = "0px";
+            _DOMElement.style.left = "0px";
+            _DOMElement.style.zIndex = 0;
+            _DOMElement.style.width = "0px";
+            _DOMElement.style.height = "0px";
+        }
     }
 
     return self;
@@ -503,46 +505,47 @@ var CALayerRegisteredRunLoopUpdates             = nil;
 */
 - (void)display
 {
-#if PLATFORM(DOM)
-    if (!_context)
+    if (CPDOMAvailable)
     {
-        _context = CGBitmapGraphicsContextCreate();
+        if (!_context)
+        {
+            _context = CGBitmapGraphicsContextCreate();
 
-        _DOMContentsElement = _context.DOMElement;
+            _DOMContentsElement = _context.DOMElement;
 
-        _DOMContentsElement.style.zIndex = -100;
+            _DOMContentsElement.style.zIndex = -100;
 
-        _DOMContentsElement.style.overflow = "hidden";
-        _DOMContentsElement.style.position = "absolute";
-        _DOMContentsElement.style.visibility = "visible";
+            _DOMContentsElement.style.overflow = "hidden";
+            _DOMContentsElement.style.position = "absolute";
+            _DOMContentsElement.style.visibility = "visible";
 
-        _DOMContentsElement.width = ROUND(CGRectGetWidth(_backingStoreFrame));
-        _DOMContentsElement.height = ROUND(CGRectGetHeight(_backingStoreFrame));
+            _DOMContentsElement.width = ROUND(CGRectGetWidth(_backingStoreFrame));
+            _DOMContentsElement.height = ROUND(CGRectGetHeight(_backingStoreFrame));
 
-        _DOMContentsElement.style.top = "0px";
-        _DOMContentsElement.style.left = "0px";
-        _DOMContentsElement.style.width = ROUND(CGRectGetWidth(_backingStoreFrame)) + "px";
-        _DOMContentsElement.style.height = ROUND(CGRectGetHeight(_backingStoreFrame)) + "px";
+            _DOMContentsElement.style.top = "0px";
+            _DOMContentsElement.style.left = "0px";
+            _DOMContentsElement.style.width = ROUND(CGRectGetWidth(_backingStoreFrame)) + "px";
+            _DOMContentsElement.style.height = ROUND(CGRectGetHeight(_backingStoreFrame)) + "px";
 
-        _DOMElement.appendChild(_DOMContentsElement);
+            _DOMElement.appendChild(_DOMContentsElement);
+        }
+
+        if (USE_BUFFER)
+        {
+            if (_delegateRespondsToDisplayLayerSelector)
+                return [_delegate displayLayer:self];
+
+            if (CGRectGetWidth(_backingStoreFrame) == 0.0 || CGRectGetHeight(_backingStoreFrame) == 0.0)
+                return;
+
+            if (!_contents)
+                _contents = CABackingStoreCreate();
+
+            CABackingStoreSetSize(_contents, _bounds.size);
+
+            [self drawInContext:CABackingStoreGetContext(_contents)];
+        }
     }
-
-    if (USE_BUFFER)
-    {
-        if (_delegateRespondsToDisplayLayerSelector)
-            return [_delegate displayLayer:self];
-
-        if (CGRectGetWidth(_backingStoreFrame) == 0.0 || CGRectGetHeight(_backingStoreFrame) == 0.0)
-            return;
-
-        if (!_contents)
-            _contents = CABackingStoreCreate();
-
-        CABackingStoreSetSize(_contents, _bounds.size);
-
-        [self drawInContext:CABackingStoreGetContext(_contents)];
-    }
-#endif
 
     [self composite];
 }
@@ -724,12 +727,13 @@ if (_DOMContentsElement && aLayer._zPosition > _DOMContentsElement.style.zIndex)
 
     [_sublayers insertObject:aLayer atIndex:anIndex];
 
-#if PLATFORM(DOM)
-    if (anIndex >= _sublayers.length - 1)
-        _DOMElement.appendChild(DOM(aLayer));
-    else
-        _DOMElement.insertBefore(DOM(aLayer), _sublayers[anIndex + 1]._DOMElement);
-#endif
+    if (CPDOMAvailable)
+    {
+        if (anIndex >= _sublayers.length - 1)
+            _DOMElement.appendChild(DOM(aLayer));
+        else
+            _DOMElement.insertBefore(DOM(aLayer), _sublayers[anIndex + 1]._DOMElement);
+    }
 
     aLayer._superlayer = self;
 
@@ -1284,7 +1288,8 @@ function _CALayerUpdateSublayerTransformForSublayers(aLayer)
 
 function _CALayerUpdateDOM(aLayer, aMask)
 {
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable) return;
+
     var DOMElementStyle = aLayer._DOMElement.style;
 
     if (aMask & CALayerZPositionUpdateMask)
@@ -1315,7 +1320,6 @@ function _CALayerUpdateDOM(aLayer, aMask)
             DOMContentsElement.style.height = height + "px";
         }
     }
-#endif
 }
 
 function _CALayerRecalculateGeometry(aLayer, aGeometryChange)
