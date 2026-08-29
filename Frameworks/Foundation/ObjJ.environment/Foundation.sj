@@ -2894,7 +2894,7 @@ if (CFMutableData.prototype.isa !== CPData)
 {
     Object.defineProperties(CFMutableData.prototype, {isa: {value: CPData, enumerable: false, writable: true}});
 }
-p;8;CPDate.jt;11534;@STATIC;1.0;i;10;CPObject.ji;10;CPString.ji;13;CPException.jt;11466;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPException.j", YES);var CPDateReferenceDate = new Date(Date.UTC(2001, 0, 1, 0, 0, 0, 0));
+p;8;CPDate.jt;11494;@STATIC;1.0;i;10;CPObject.ji;10;CPString.ji;13;CPException.jt;11426;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPException.j", YES);var CPDateReferenceDate = new Date(Date.UTC(2001, 0, 1, 0, 0, 0, 0));
 
 {var the_class = objj_allocateClassPair(CPObject, "CPDate"),
 meta_class = the_class.isa;objj_registerClassPair(the_class);
@@ -2933,15 +2933,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithTimeIntervalSin
 ,["id","CPTimeInterval","CPDate"]), new objj_method(sel_getUid("initWithString:"), function $CPDate__initWithString_(self, _cmd, description)
 {
     var format = new RegExp("(\\d{4})-(\\d{2})-(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2}) ([-+])(\\d{2})(\\d{2})"),
-        d = description.match(new RegExp(format));
+        d = description.match(format);
     if (!d || d.length != 10)
         (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "initWithString: the string must be in YYYY-MM-DD HH:MM:SS ±HHMM format");
-    var date = new Date(d[1], d[2] - 1, d[3]),
-        timeZoneOffset = (Number(d[8]) * 60 + Number(d[9])) * (d[7] === '-' ? 1 : -1);
-    date.setHours(d[4]);
-    date.setMinutes(d[5]);
-    date.setSeconds(d[6]);
-    self = new Date(date.getTime() + (timeZoneOffset - date.getTimezoneOffset()) * 60 * 1000);
+    var timeZoneOffsetMinutes = (Number(d[8]) * 60 + Number(d[9])) * (d[7] === '-' ? 1 : -1),
+        utcMillis = Date.UTC(Number(d[1]), Number(d[2]) - 1, Number(d[3]), Number(d[4]), Number(d[5]), Number(d[6]));
+    self = new Date(utcMillis + timeZoneOffsetMinutes * 60 * 1000);
     return self;
 }
 
@@ -7131,7 +7128,7 @@ if (CFError.prototype.isa !== CPError)
 {
     Object.defineProperties(CFError.prototype, {isa: {value: CPError, enumerable: false, writable: true}});
 }
-p;13;CPException.jt;8908;@STATIC;1.0;i;10;CPObject.ji;10;CPString.jt;8859;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);CPInvalidArgumentException = "CPInvalidArgumentException";
+p;13;CPException.jt;8948;@STATIC;1.0;i;10;CPObject.ji;10;CPString.jt;8899;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);CPInvalidArgumentException = "CPInvalidArgumentException";
 CPUnsupportedMethodException = "CPUnsupportedMethodException";
 CPRangeException = "CPRangeException";
 CPInternalInconsistencyException = "CPInternalInconsistencyException";
@@ -7272,11 +7269,11 @@ _CPRaiseInvalidAbstractInvocation = function(anObject, aSelector)
 }
 _CPRaiseInvalidArgumentException = function(anObject, aSelector, aMessage)
 {
-    (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, METHOD_CALL_STRING() + aMessage);
+    (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, _CPMethodCallString(anObject, aSelector) + aMessage);
 }
 _CPRaiseRangeException = function(anObject, aSelector, anIndex, aCount)
 {
-    (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, METHOD_CALL_STRING() + "index (" + anIndex + ") beyond bounds (" + aCount + ")");
+    (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, _CPMethodCallString(anObject, aSelector) + "index (" + anIndex + ") beyond bounds (" + aCount + ")");
 }
 _CPReportLenientDeprecation = function(aClass, oldSelector, newSelector)
 {
@@ -10693,6 +10690,491 @@ var _CPKVOInfoMake = function(anObserver, theOptions, aContext, aForwarder)
 {
     return {observer: anObserver, options: theOptions, context: aContext, forwarder: aForwarder};
 };
+p;17;CPLanguageModel.jt;27581;@STATIC;1.0;i;10;CPObject.ji;10;CPString.ji;9;CPError.ji;14;CPDictionary.ji;10;CPBundle.ji;16;CPUserDefaults.jt;27463;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPError.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPBundle.j", YES);objj_executeFile("CPUserDefaults.j", YES);var CPLanguageModelSessionFallbackServiceType = "ollama",
+    CPLanguageModelSessionFallbackEndpoint = "http://localhost:11434/api/generate",
+    CPLanguageModelSessionFallbackModel = "gemma4:e4b",
+    CPLanguageModelSessionFallbackAPIKey = "",
+    CPLanguageModelSessionFallbackAPIKeyUserDefaultKey = "",
+    CPLanguageModelSessionEndorsesFallback = NO;
+
+{var the_class = objj_allocateClassPair(CPObject, "CPSystemLanguageModel"),
+meta_class = the_class.isa;var sharedInstance = nil;
+objj_registerClassPair(the_class);
+class_addMethods(the_class, [new objj_method(sel_getUid("supportsLocaleWithCompletionHandler:"), function $CPSystemLanguageModel__supportsLocaleWithCompletionHandler_(self, _cmd, completionHandler)
+{
+    if (typeof window === "undefined" || !completionHandler)
+    {
+        if (completionHandler)
+            completionHandler(NO);
+        return;
+    }
+    (    async function()
+    {
+        var supported = false;
+        try {
+            if (window.ai && window.ai.languageModel)
+            {
+                var options = {expectedInputs: [{type: "text", languages: ["en"]}], expectedOutputs: [{type: "text", languages: ["en"]}]};
+                if (typeof window.ai.languageModel.availability === 'function')
+                {
+                    var avail = await (window.ai.languageModel.availability(options));
+                    supported = avail === "readily" || avail === "available" || avail === "after-download";
+                }
+                else if (typeof window.ai.languageModel.capabilities === 'function')
+                {
+                    var caps = await (window.ai.languageModel.capabilities(options));
+                    supported = caps.available === "readily" || caps.available === "after-download";
+                }
+                else
+                {
+                    supported = true;
+                }
+            }
+            else if (window.LanguageModel)
+            {
+                supported = true;
+            }
+        }
+        catch(e) {
+            supported = false;
+        }
+        completionHandler(supported);
+    })();
+}
+
+,["void","Function"])]);
+class_addMethods(meta_class, [new objj_method(sel_getUid("defaultModel"), function $CPSystemLanguageModel__defaultModel(self, _cmd)
+{
+    if (!sharedInstance)
+        sharedInstance = ((___r1 = (CPSystemLanguageModel.isa.method_msgSend["alloc"] || _objj_forward)(CPSystemLanguageModel, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    return sharedInstance;
+    var ___r1;
+}
+
+,["id"])]);
+}
+
+{var the_class = objj_allocateClassPair(CPObject, "CPLanguageModelSession"),
+meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_chromeSession", "id"), new objj_ivar("_instructions", "CPString"), new objj_ivar("_fallbackServiceType", "CPString"), new objj_ivar("_fallbackEndpoint", "CPString"), new objj_ivar("_fallbackModel", "CPString"), new objj_ivar("_fallbackAPIKey", "CPString")]);objj_registerClassPair(the_class);
+class_addMethods(the_class, [new objj_method(sel_getUid("chromeSession"), function $CPLanguageModelSession__chromeSession(self, _cmd)
+{
+    return self._chromeSession;
+}
+
+,["id"]), new objj_method(sel_getUid("setChromeSession:"), function $CPLanguageModelSession__setChromeSession_(self, _cmd, newValue)
+{
+    self._chromeSession = newValue;
+}
+
+,["void","id"]), new objj_method(sel_getUid("instructions"), function $CPLanguageModelSession__instructions(self, _cmd)
+{
+    return self._instructions;
+}
+
+,["CPString"]), new objj_method(sel_getUid("setInstructions:"), function $CPLanguageModelSession__setInstructions_(self, _cmd, newValue)
+{
+    self._instructions = newValue;
+}
+
+,["void","CPString"]), new objj_method(sel_getUid("fallbackServiceType"), function $CPLanguageModelSession__fallbackServiceType(self, _cmd)
+{
+    return self._fallbackServiceType;
+}
+
+,["CPString"]), new objj_method(sel_getUid("setFallbackServiceType:"), function $CPLanguageModelSession__setFallbackServiceType_(self, _cmd, newValue)
+{
+    self._fallbackServiceType = newValue;
+}
+
+,["void","CPString"]), new objj_method(sel_getUid("fallbackEndpoint"), function $CPLanguageModelSession__fallbackEndpoint(self, _cmd)
+{
+    return self._fallbackEndpoint;
+}
+
+,["CPString"]), new objj_method(sel_getUid("setFallbackEndpoint:"), function $CPLanguageModelSession__setFallbackEndpoint_(self, _cmd, newValue)
+{
+    self._fallbackEndpoint = newValue;
+}
+
+,["void","CPString"]), new objj_method(sel_getUid("fallbackModel"), function $CPLanguageModelSession__fallbackModel(self, _cmd)
+{
+    return self._fallbackModel;
+}
+
+,["CPString"]), new objj_method(sel_getUid("setFallbackModel:"), function $CPLanguageModelSession__setFallbackModel_(self, _cmd, newValue)
+{
+    self._fallbackModel = newValue;
+}
+
+,["void","CPString"]), new objj_method(sel_getUid("fallbackAPIKey"), function $CPLanguageModelSession__fallbackAPIKey(self, _cmd)
+{
+    return self._fallbackAPIKey;
+}
+
+,["CPString"]), new objj_method(sel_getUid("setFallbackAPIKey:"), function $CPLanguageModelSession__setFallbackAPIKey_(self, _cmd, newValue)
+{
+    self._fallbackAPIKey = newValue;
+}
+
+,["void","CPString"]), new objj_method(sel_getUid("initWithInstructions:"), function $CPLanguageModelSession__initWithInstructions_(self, _cmd, instructions)
+{
+    self = (objj_getClass("CPLanguageModelSession").super_class.method_dtable["init"] || _objj_forward)(self, "init");
+    if (self)
+    {
+        self._instructions = instructions;
+        self._chromeSession = nil;
+        self._fallbackServiceType = nil;
+        self._fallbackEndpoint = nil;
+        self._fallbackModel = nil;
+        self._fallbackAPIKey = nil;
+    }
+    return self;
+}
+
+,["id","CPString"]), new objj_method(sel_getUid("initWithInstructions:apiKey:"), function $CPLanguageModelSession__initWithInstructions_apiKey_(self, _cmd, instructions, apiKey)
+{
+    self = (self == null ? self : (self.isa.method_msgSend["initWithInstructions:"] || _objj_forward)(self, "initWithInstructions:", instructions));
+    if (self)
+    {
+        self._fallbackAPIKey = apiKey;
+    }
+    return self;
+}
+
+,["id","CPString","CPString"]), new objj_method(sel_getUid("initWithInstructions:fallbackOptions:"), function $CPLanguageModelSession__initWithInstructions_fallbackOptions_(self, _cmd, instructions, options)
+{
+    self = (self == null ? self : (self.isa.method_msgSend["initWithInstructions:"] || _objj_forward)(self, "initWithInstructions:", instructions));
+    if (self)
+    {
+        if (options)
+        {
+            self._fallbackServiceType = (options == null ? options : (options.isa.method_msgSend["objectForKey:"] || _objj_forward)(options, "objectForKey:", "serviceType"));
+            self._fallbackEndpoint = (options == null ? options : (options.isa.method_msgSend["objectForKey:"] || _objj_forward)(options, "objectForKey:", "endpoint"));
+            self._fallbackModel = (options == null ? options : (options.isa.method_msgSend["objectForKey:"] || _objj_forward)(options, "objectForKey:", "model"));
+            self._fallbackAPIKey = (options == null ? options : (options.isa.method_msgSend["objectForKey:"] || _objj_forward)(options, "objectForKey:", "apiKey"));
+        }
+    }
+    return self;
+}
+
+,["id","CPString","CPDictionary"]), new objj_method(sel_getUid("respondToPrompt:options:completionHandler:"), function $CPLanguageModelSession__respondToPrompt_options_completionHandler_(self, _cmd, prompt, options, completionHandler)
+{
+    if (CPLanguageModelSessionEndorsesFallback)
+    {
+        (self.isa.method_msgSend["_executeRemoteFallbackWithPrompt:options:completionHandler:"] || _objj_forward)(self, "_executeRemoteFallbackWithPrompt:options:completionHandler:", prompt, options, completionHandler);
+        return;
+    }
+    if (self._chromeSession)
+    {
+        (self.isa.method_msgSend["_executePrompt:options:completionHandler:"] || _objj_forward)(self, "_executePrompt:options:completionHandler:", prompt, options, completionHandler);
+        return;
+    }
+    var instructions = (self.isa.method_msgSend["instructions"] || _objj_forward)(self, "instructions");
+    (CPLanguageModelSession.isa.method_msgSend["_getChromeFactoryWithCompletionHandler:"] || _objj_forward)(CPLanguageModelSession, "_getChromeFactoryWithCompletionHandler:",     function(factory, error)
+    {
+        if (error)
+        {
+            (self.isa.method_msgSend["_executeRemoteFallbackWithPrompt:options:completionHandler:"] || _objj_forward)(self, "_executeRemoteFallbackWithPrompt:options:completionHandler:", prompt, options, completionHandler);
+            return;
+        }
+        var sessionOptions = {expectedInputs: [{type: "text", languages: ["en"]}], expectedOutputs: [{type: "text", languages: ["en"]}]};
+        if (instructions)
+        {
+            sessionOptions.systemPrompt = instructions;
+        }
+        factory.create(sessionOptions).then(        function(session)
+        {
+            (self.isa.method_msgSend["setChromeSession:"] || _objj_forward)(self, "setChromeSession:", session);
+            (self.isa.method_msgSend["_executePrompt:options:completionHandler:"] || _objj_forward)(self, "_executePrompt:options:completionHandler:", prompt, options, completionHandler);
+        }).catch(        function(err)
+        {
+            (self.isa.method_msgSend["_executeRemoteFallbackWithPrompt:options:completionHandler:"] || _objj_forward)(self, "_executeRemoteFallbackWithPrompt:options:completionHandler:", prompt, options, completionHandler);
+        });
+    });
+}
+
+,["void","CPString","id","Function"]), new objj_method(sel_getUid("respondToPrompt:onChunkReceived:completed:"), function $CPLanguageModelSession__respondToPrompt_onChunkReceived_completed_(self, _cmd, prompt, chunkHandler, completionHandler)
+{
+    if (CPLanguageModelSessionEndorsesFallback)
+    {
+        (self.isa.method_msgSend["_executeRemoteFallbackWithPrompt:options:completionHandler:"] || _objj_forward)(self, "_executeRemoteFallbackWithPrompt:options:completionHandler:", prompt, nil,         function(res, err)
+        {
+            if (!err && chunkHandler)
+                chunkHandler(res);
+            completionHandler(res, err);
+            ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+            var ___r1;
+        });
+        return;
+    }
+    if (self._chromeSession)
+    {
+        (self.isa.method_msgSend["_executePromptStreaming:onChunkReceived:completed:"] || _objj_forward)(self, "_executePromptStreaming:onChunkReceived:completed:", prompt, chunkHandler, completionHandler);
+        return;
+    }
+    var instructions = (self.isa.method_msgSend["instructions"] || _objj_forward)(self, "instructions");
+    (CPLanguageModelSession.isa.method_msgSend["_getChromeFactoryWithCompletionHandler:"] || _objj_forward)(CPLanguageModelSession, "_getChromeFactoryWithCompletionHandler:",     function(factory, error)
+    {
+        if (error)
+        {
+            (self.isa.method_msgSend["_executeRemoteFallbackWithPrompt:options:completionHandler:"] || _objj_forward)(self, "_executeRemoteFallbackWithPrompt:options:completionHandler:", prompt, nil,             function(res, err)
+            {
+                if (!err && chunkHandler)
+                    chunkHandler(res);
+                completionHandler(res, err);
+                ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+                var ___r1;
+            });
+            return;
+        }
+        var options = {expectedInputs: [{type: "text", languages: ["en"]}], expectedOutputs: [{type: "text", languages: ["en"]}]};
+        if (instructions)
+            options.systemPrompt = instructions;
+        factory.create(options).then(        function(session)
+        {
+            (self.isa.method_msgSend["setChromeSession:"] || _objj_forward)(self, "setChromeSession:", session);
+            (self.isa.method_msgSend["_executePromptStreaming:onChunkReceived:completed:"] || _objj_forward)(self, "_executePromptStreaming:onChunkReceived:completed:", prompt, chunkHandler, completionHandler);
+        }).catch(        function(err)
+        {
+            (self.isa.method_msgSend["_executeRemoteFallbackWithPrompt:options:completionHandler:"] || _objj_forward)(self, "_executeRemoteFallbackWithPrompt:options:completionHandler:", prompt, nil,             function(res, err)
+            {
+                if (!err && chunkHandler)
+                    chunkHandler(res);
+                completionHandler(res, err);
+                ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+                var ___r1;
+            });
+        });
+    });
+}
+
+,["void","CPString","Function","Function"]), new objj_method(sel_getUid("destroy"), function $CPLanguageModelSession__destroy(self, _cmd)
+{
+    if (self._chromeSession && typeof self._chromeSession.destroy === "function")
+    {
+        self._chromeSession.destroy();
+        self._chromeSession = nil;
+    }
+}
+
+,["void"]), new objj_method(sel_getUid("_executePrompt:options:completionHandler:"), function $CPLanguageModelSession___executePrompt_options_completionHandler_(self, _cmd, prompt, options, completionHandler)
+{
+    var promptPromise = options ? self._chromeSession.prompt(prompt, options) : self._chromeSession.prompt(prompt);
+    promptPromise.then(    function(result)
+    {
+        completionHandler(result, nil);
+        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+        var ___r1;
+    }).catch(    function(err)
+    {
+        var cpError = (CPError.isa.method_msgSend["errorWithDomain:code:userInfo:"] || _objj_forward)(CPError, "errorWithDomain:code:userInfo:", "CPLanguageModelErrorDomain", 2, (CPDictionary.isa.method_msgSend["dictionaryWithObject:forKey:"] || _objj_forward)(CPDictionary, "dictionaryWithObject:forKey:", err.message, CPLocalizedDescriptionKey));
+        completionHandler(nil, cpError);
+        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+        var ___r1;
+    });
+}
+
+,["void","CPString","id","Function"]), new objj_method(sel_getUid("_resolvedFallbackServiceType"), function $CPLanguageModelSession___resolvedFallbackServiceType(self, _cmd)
+{
+    return self._fallbackServiceType || CPLanguageModelSessionFallbackServiceType;
+}
+
+,["CPString"]), new objj_method(sel_getUid("_resolvedFallbackEndpoint"), function $CPLanguageModelSession___resolvedFallbackEndpoint(self, _cmd)
+{
+    return self._fallbackEndpoint || CPLanguageModelSessionFallbackEndpoint;
+}
+
+,["CPString"]), new objj_method(sel_getUid("_resolvedFallbackModel"), function $CPLanguageModelSession___resolvedFallbackModel(self, _cmd)
+{
+    return self._fallbackModel || CPLanguageModelSessionFallbackModel;
+}
+
+,["CPString"]), new objj_method(sel_getUid("_resolvedFallbackAPIKey"), function $CPLanguageModelSession___resolvedFallbackAPIKey(self, _cmd)
+{
+    if (self._fallbackAPIKey)
+        return self._fallbackAPIKey;
+    if (CPLanguageModelSessionFallbackAPIKey)
+        return CPLanguageModelSessionFallbackAPIKey;
+    if (CPLanguageModelSessionFallbackAPIKeyUserDefaultKey)
+    {
+        var defaults = (CPUserDefaults.isa.method_msgSend["standardUserDefaults"] || _objj_forward)(CPUserDefaults, "standardUserDefaults"),
+            apiKey = (defaults == null ? defaults : (defaults.isa.method_msgSend["objectForKey:"] || _objj_forward)(defaults, "objectForKey:", CPLanguageModelSessionFallbackAPIKeyUserDefaultKey));
+        if (apiKey)
+            return apiKey;
+    }
+    return "";
+}
+
+,["CPString"]), new objj_method(sel_getUid("_executeRemoteFallbackWithPrompt:options:completionHandler:"), function $CPLanguageModelSession___executeRemoteFallbackWithPrompt_options_completionHandler_(self, _cmd, prompt, options, completionHandler)
+{
+    var systemPrompt = (self.isa.method_msgSend["instructions"] || _objj_forward)(self, "instructions"),
+        serviceType = (self.isa.method_msgSend["_resolvedFallbackServiceType"] || _objj_forward)(self, "_resolvedFallbackServiceType"),
+        endpoint = (self.isa.method_msgSend["_resolvedFallbackEndpoint"] || _objj_forward)(self, "_resolvedFallbackEndpoint"),
+        model = (self.isa.method_msgSend["_resolvedFallbackModel"] || _objj_forward)(self, "_resolvedFallbackModel"),
+        apiKey = (self.isa.method_msgSend["_resolvedFallbackAPIKey"] || _objj_forward)(self, "_resolvedFallbackAPIKey");
+    var reqUrl = "",
+        headers = {"Content-Type": "application/json"},
+        payload = {};
+    if (serviceType === "groq")
+    {
+        reqUrl = "https://api.groq.com/openai/v1/chat/completions";
+        headers["Authorization"] = "Bearer " + apiKey;
+        payload = {"model": model, "messages": [{"role": "system", "content": systemPrompt}, {"role": "user", "content": prompt}], "temperature": 0};
+    }
+    else if (serviceType === "gemini")
+    {
+        reqUrl = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + apiKey;
+        payload = {"contents": [{"parts": [{"text": systemPrompt + "\n\n" + prompt}]}], "generationConfig": {"temperature": 0}};
+    }
+    else if (serviceType === "openrouter")
+    {
+        reqUrl = "https://openrouter.ai/api/v1/chat/completions";
+        headers["Authorization"] = "Bearer " + apiKey;
+        payload = {"model": model, "messages": [{"role": "system", "content": systemPrompt}, {"role": "user", "content": prompt}], "temperature": 0};
+    }
+    else
+    {
+        reqUrl = endpoint || "http://localhost:11434/api/generate";
+        payload = {"model": model, "prompt": systemPrompt + "\n\n" + prompt, "stream": false, "options": {"temperature": 0}};
+    }
+    fetch(reqUrl, {method: 'POST', headers: headers, body: JSON.stringify(payload)}).then(    function(response)
+    {
+        if (!response.ok)
+        {
+            throw new Error("HTTP error! Status: " + response.status);
+        }
+        return response.json();
+    }).then(    function(data)
+    {
+        var responseText = "";
+        if (serviceType === "groq" || serviceType === "openrouter")
+        {
+            responseText = data.choices && data.choices[0] && data.choices[0].message ? data.choices[0].message.content : "";
+        }
+        else if (serviceType === "gemini")
+        {
+            responseText = data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts ? data.candidates[0].content.parts[0].text : "";
+        }
+        else
+        {
+            responseText = data.response || "";
+        }
+        completionHandler(responseText, nil);
+        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+        var ___r1;
+    }).catch(    function(err)
+    {
+        var cpError = (CPError.isa.method_msgSend["errorWithDomain:code:userInfo:"] || _objj_forward)(CPError, "errorWithDomain:code:userInfo:", "CPLanguageModelErrorDomain", 4, (CPDictionary.isa.method_msgSend["dictionaryWithObject:forKey:"] || _objj_forward)(CPDictionary, "dictionaryWithObject:forKey:", err.message, CPLocalizedDescriptionKey));
+        completionHandler(nil, cpError);
+        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+        var ___r1;
+    });
+}
+
+,["void","CPString","id","Function"]), new objj_method(sel_getUid("_executePromptStreaming:onChunkReceived:completed:"), function $CPLanguageModelSession___executePromptStreaming_onChunkReceived_completed_(self, _cmd, prompt, chunkHandler, completionHandler)
+{
+    var stream;
+    try {
+        stream = self._chromeSession.promptStreaming(prompt);
+    }
+    catch(err) {
+        var cpError = (CPError.isa.method_msgSend["errorWithDomain:code:userInfo:"] || _objj_forward)(CPError, "errorWithDomain:code:userInfo:", "CPLanguageModelErrorDomain", 3, (CPDictionary.isa.method_msgSend["dictionaryWithObject:forKey:"] || _objj_forward)(CPDictionary, "dictionaryWithObject:forKey:", err.message, CPLocalizedDescriptionKey));
+        completionHandler(nil, cpError);
+        ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+        return;
+    }
+    (    async function()
+    {
+        var lastChunk = "";
+        try {
+for await (const chunk of stream)
+            {
+                lastChunk = chunk;
+                if (chunkHandler)
+                {
+                    chunkHandler(chunk);
+                }
+            }
+            if (completionHandler)
+            {
+                completionHandler(lastChunk, nil);
+                ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+            }
+        }
+        catch(err) {
+            if (completionHandler)
+            {
+                var cpError = (CPError.isa.method_msgSend["errorWithDomain:code:userInfo:"] || _objj_forward)(CPError, "errorWithDomain:code:userInfo:", "CPLanguageModelErrorDomain", 2, (CPDictionary.isa.method_msgSend["dictionaryWithObject:forKey:"] || _objj_forward)(CPDictionary, "dictionaryWithObject:forKey:", err.message, CPLocalizedDescriptionKey));
+                completionHandler(nil, cpError);
+                ((___r1 = (CPRunLoop.isa.method_msgSend["currentRunLoop"] || _objj_forward)(CPRunLoop, "currentRunLoop")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["limitDateForMode:"] || _objj_forward)(___r1, "limitDateForMode:", CPDefaultRunLoopMode));
+            }
+        }
+        var ___r1;
+    })();
+    var ___r1;
+}
+
+,["void","CPString","Function","Function"])]);
+class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function $CPLanguageModelSession__initialize(self, _cmd)
+{
+    if (self === (CPLanguageModelSession.isa.method_msgSend["class"] || _objj_forward)(CPLanguageModelSession, "class"))
+    {
+        var bundle = (CPBundle.isa.method_msgSend["mainBundle"] || _objj_forward)(CPBundle, "mainBundle");
+        CPLanguageModelSessionEndorsesFallback = !!(bundle == null ? bundle : (bundle.isa.method_msgSend["objectForInfoDictionaryKey:"] || _objj_forward)(bundle, "objectForInfoDictionaryKey:", "CPEndorseLanguageModelFallback"));
+        CPLanguageModelSessionFallbackServiceType = (bundle == null ? bundle : (bundle.isa.method_msgSend["objectForInfoDictionaryKey:"] || _objj_forward)(bundle, "objectForInfoDictionaryKey:", "CPDefaultLanguageModelService")) || "ollama";
+        CPLanguageModelSessionFallbackEndpoint = (bundle == null ? bundle : (bundle.isa.method_msgSend["objectForInfoDictionaryKey:"] || _objj_forward)(bundle, "objectForInfoDictionaryKey:", "CPDefaultLanguageModelEndpoint")) || "http://localhost:11434/api/generate";
+        CPLanguageModelSessionFallbackModel = (bundle == null ? bundle : (bundle.isa.method_msgSend["objectForInfoDictionaryKey:"] || _objj_forward)(bundle, "objectForInfoDictionaryKey:", "CPDefaultLanguageModelModel")) || "gemma4:e4b";
+        CPLanguageModelSessionFallbackAPIKey = (bundle == null ? bundle : (bundle.isa.method_msgSend["objectForInfoDictionaryKey:"] || _objj_forward)(bundle, "objectForInfoDictionaryKey:", "CPDefaultLanguageModelAPIKey")) || "";
+        CPLanguageModelSessionFallbackAPIKeyUserDefaultKey = (bundle == null ? bundle : (bundle.isa.method_msgSend["objectForInfoDictionaryKey:"] || _objj_forward)(bundle, "objectForInfoDictionaryKey:", "CPDefaultLanguageModelAPIKeyUserDefaultKey")) || "";
+    }
+}
+
+,["void"]), new objj_method(sel_getUid("setEndorsesFallback:"), function $CPLanguageModelSession__setEndorsesFallback_(self, _cmd, shouldEndorse)
+{
+    CPLanguageModelSessionEndorsesFallback = shouldEndorse;
+}
+
+,["void","BOOL"]), new objj_method(sel_getUid("endorsesFallback"), function $CPLanguageModelSession__endorsesFallback(self, _cmd)
+{
+    return CPLanguageModelSessionEndorsesFallback;
+}
+
+,["BOOL"]), new objj_method(sel_getUid("setFallbackServiceType:endpoint:model:apiKey:"), function $CPLanguageModelSession__setFallbackServiceType_endpoint_model_apiKey_(self, _cmd, serviceType, endpoint, model, apiKey)
+{
+    CPLanguageModelSessionFallbackServiceType = serviceType;
+    CPLanguageModelSessionFallbackEndpoint = endpoint;
+    CPLanguageModelSessionFallbackModel = model;
+    CPLanguageModelSessionFallbackAPIKey = apiKey;
+}
+
+,["void","CPString","CPString","CPString","CPString"]), new objj_method(sel_getUid("setFallbackAPIKeyUserDefaultKey:"), function $CPLanguageModelSession__setFallbackAPIKeyUserDefaultKey_(self, _cmd, keyName)
+{
+    CPLanguageModelSessionFallbackAPIKeyUserDefaultKey = keyName;
+}
+
+,["void","CPString"]), new objj_method(sel_getUid("fallbackAPIKeyUserDefaultKey"), function $CPLanguageModelSession__fallbackAPIKeyUserDefaultKey(self, _cmd)
+{
+    return CPLanguageModelSessionFallbackAPIKeyUserDefaultKey;
+}
+
+,["CPString"]), new objj_method(sel_getUid("_getChromeFactoryWithCompletionHandler:"), function $CPLanguageModelSession___getChromeFactoryWithCompletionHandler_(self, _cmd, completionHandler)
+{
+    if (typeof window === "undefined")
+    {
+        var cpError = (CPError.isa.method_msgSend["errorWithDomain:code:userInfo:"] || _objj_forward)(CPError, "errorWithDomain:code:userInfo:", "CPLanguageModelErrorDomain", -1, (CPDictionary.isa.method_msgSend["dictionaryWithObject:forKey:"] || _objj_forward)(CPDictionary, "dictionaryWithObject:forKey:", "Execution environment is not a browser window.", CPLocalizedDescriptionKey));
+        completionHandler(nil, cpError);
+        return;
+    }
+    if (window.ai && window.ai.languageModel)
+        completionHandler(window.ai.languageModel, nil);
+    else if (window.LanguageModel)
+        completionHandler(window.LanguageModel, nil);
+    else
+        completionHandler(nil, (CPError.isa.method_msgSend["errorWithDomain:code:userInfo:"] || _objj_forward)(CPError, "errorWithDomain:code:userInfo:", "CPLanguageModelErrorDomain", 0, nil));
+}
+
+,["void","Function"])]);
+}
 p;10;CPLocale.jt;9223;@STATIC;1.0;i;10;CPObject.jt;9189;objj_executeFile("CPObject.j", YES);CPLocaleIdentifier = "CPLocaleIdentifier";
 CPLocaleLanguageCode = "CPLocaleLanguageCode";
 CPLocaleCountryCode = "CPLocaleCountryCode";
@@ -10857,7 +11339,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 ,["void","CPCoder"])]);
 }
 p;7;CPLog.jt;19;@STATIC;1.0;t;3;1;
-p;12;CPMapTable.jt;2618;@STATIC;1.0;i;10;CPObject.ji;14;CPEnumerator.ji;14;CPDictionary.ji;9;CPArray.jt;2533;objj_executeFile("CPObject.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPArray.j", YES);
+p;12;CPMapTable.jt;2669;@STATIC;1.0;i;10;CPObject.ji;14;CPEnumerator.ji;14;CPDictionary.ji;9;CPArray.jt;2584;objj_executeFile("CPObject.j", YES);objj_executeFile("CPEnumerator.j", YES);objj_executeFile("CPDictionary.j", YES);objj_executeFile("CPArray.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPMapTable"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_map", "id")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPMapTable__init(self, _cmd)
@@ -10910,8 +11392,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPMap
 ,["void"]), new objj_method(sel_getUid("dictionaryRepresentation"), function $CPMapTable__dictionaryRepresentation(self, _cmd)
 {
     var dictionary = (CPDictionary.isa.method_msgSend["dictionary"] || _objj_forward)(CPDictionary, "dictionary");
-for(var [key, value] of self._map.entries())
+for(var entry of self._map.entries())
     {
+        var key = entry[0],
+            value = entry[1];
         (dictionary == null ? dictionary : (dictionary.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(dictionary, "setObject:forKey:", value, key));
     }
     return dictionary;
@@ -14518,7 +15002,7 @@ if (typeof window !== 'undefined')
         window.clearTimeout(aTimeoutID);
     };
 }
-p;12;CPTimeZone.jt;28670;@STATIC;1.0;i;10;CPObject.ji;10;CPString.ji;8;CPDate.ji;10;CPLocale.jt;28593;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPLocale.j", YES);CPTimeZoneNameStyleStandard = 0;
+p;12;CPTimeZone.jt;29458;@STATIC;1.0;i;10;CPObject.ji;10;CPString.ji;8;CPDate.ji;10;CPLocale.jt;29381;objj_executeFile("CPObject.j", YES);objj_executeFile("CPString.j", YES);objj_executeFile("CPDate.j", YES);objj_executeFile("CPLocale.j", YES);CPTimeZoneNameStyleStandard = 0;
 CPTimeZoneNameStyleShortStandard = 1;
 CPTimeZoneNameStyleDaylightSaving = 2;
 CPTimeZoneNameStyleShortDaylightSaving = 3;
@@ -14535,26 +15019,16 @@ var abbreviationDictionary,
     localizedName;
 abbreviationForDate = function(date)
 {
-    var dateString = date.toString();
-    var longNameMatch = dateString.match(/\(([^)]+)\)/);
-    if (longNameMatch)
-    {
-        var timeZoneComponent = longNameMatch[1];
-        if ((abbreviationDictionary == null ? abbreviationDictionary : (abbreviationDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(abbreviationDictionary, "objectForKey:", timeZoneComponent)))
+    try {
+        var parts = new Intl.DateTimeFormat('en-US', {timeZoneName: 'short'}).formatToParts(date),
+            tzPart = parts.filter(        function(p)
         {
-            return timeZoneComponent;
-        }
-        if (timeZoneComponent.indexOf(' ') > -1)
-        {
-            var generatedAbbr = timeZoneComponent.split(' ').map(            function(word)
-            {
-                return word[0];
-            }).join('');
-            if ((abbreviationDictionary == null ? abbreviationDictionary : (abbreviationDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(abbreviationDictionary, "objectForKey:", generatedAbbr)))
-            {
-                return generatedAbbr;
-            }
-        }
+            return p.type === 'timeZoneName';
+        })[0];
+        if (tzPart && (abbreviationDictionary == null ? abbreviationDictionary : (abbreviationDictionary.isa.method_msgSend["objectForKey:"] || _objj_forward)(abbreviationDictionary, "objectForKey:", tzPart.value)))
+            return tzPart.value;
+    }
+    catch(e) {
     }
     try {
         var ianaName = new Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -14581,6 +15055,15 @@ abbreviationForDate = function(date)
         {
             return possibleAbbrs[0];
         }
+        var offsetKeys = (timeDifferenceFromUTC == null ? timeDifferenceFromUTC : (timeDifferenceFromUTC.isa.method_msgSend["keyEnumerator"] || _objj_forward)(timeDifferenceFromUTC, "keyEnumerator")),
+            offsetKey;
+        while (offsetKey = (offsetKeys == null ? offsetKeys : (offsetKeys.isa.method_msgSend["nextObject"] || _objj_forward)(offsetKeys, "nextObject")))
+        {
+            if ((timeDifferenceFromUTC == null ? timeDifferenceFromUTC : (timeDifferenceFromUTC.isa.method_msgSend["valueForKey:"] || _objj_forward)(timeDifferenceFromUTC, "valueForKey:", offsetKey)) === currentOffset)
+            {
+                return offsetKey;
+            }
+        }
     }
     catch(e) {
     }
@@ -14589,14 +15072,12 @@ abbreviationForDate = function(date)
 _abbreviationForNameAndDate = function(tzName, date)
 {
     try {
-        var options = {timeZone: tzName, timeZoneName: 'long'};
-        var dateString = date.toLocaleString('en-US', options);
-        var longTZName = dateString.replace(/^([0]?\d|[1][0-2])\/((?:[0]?|[1-2])\d|[3][0-1])\/([2][01]|[1][6-9])\d{2}(,?\s*([0]?\d|[1][0-2])(\:[0-5]\d){1,2})*\s*([aApP][mM]{0,2})?\s*/, "");
-        var abbreviation = longTZName.split(" ").map(        function(l)
+        var parts = new Intl.DateTimeFormat('en-US', {timeZone: tzName, timeZoneName: 'short'}).formatToParts(date),
+            tzPart = parts.filter(        function(p)
         {
-            return l[0];
-        }).join("");
-        return abbreviation;
+            return p.type === 'timeZoneName';
+        })[0];
+        return tzPart ? tzPart.value : nil;
     }
     catch(e) {
         return nil;
@@ -14726,9 +15207,38 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 {
     if (self !== (CPTimeZone.isa.method_msgSend["class"] || _objj_forward)(CPTimeZone, "class"))
         return;
-    knownTimeZoneNames = ["America/Halifax", "America/Juneau", "America/Juneau", "America/Argentina/Buenos_Aires", "America/Halifax", "Asia/Dhaka", "America/Sao_Paulo", "America/Sao_Paulo", "Europe/London", "Africa/Harare", "America/Chicago", "Europe/Paris", "Europe/Paris", "America/Santiago", "America/Santiago", "America/Bogota", "America/Chicago", "Africa/Addis_Ababa", "America/New_York", "Europe/Istanbul", "Europe/Istanbul", "America/New_York", "GMT", "Asia/Dubai", "Asia/Hong_Kong", "Pacific/Honolulu", "Asia/Bangkok", "Asia/Tehran", "Asia/Calcutta", "Asia/Tokyo", "Asia/Seoul", "America/Denver", "Europe/Moscow", "Europe/Moscow", "America/Denver", "Pacific/Auckland", "Pacific/Auckland", "America/Los_Angeles", "America/Lima", "Asia/Manila", "Asia/Karachi", "America/Los_Angeles", "Asia/Singapore", "UTC", "Africa/Lagos", "Europe/Lisbon", "Europe/Lisbon", "Asia/Jakarta"];
+    knownTimeZoneNames = ["Africa/Addis_Ababa", "Africa/Harare", "Africa/Lagos", "America/Argentina/Buenos_Aires", "America/Bogota", "America/Chicago", "America/Denver", "America/Halifax", "America/Juneau", "America/Lima", "America/Los_Angeles", "America/New_York", "America/Santiago", "America/Sao_Paulo", "Asia/Bangkok", "Asia/Calcutta", "Asia/Dhaka", "Asia/Dubai", "Asia/Hong_Kong", "Asia/Jakarta", "Asia/Karachi", "Asia/Manila", "Asia/Seoul", "Asia/Singapore", "Asia/Tehran", "Asia/Tokyo", "Europe/Istanbul", "Europe/Lisbon", "Europe/London", "Europe/Moscow", "Europe/Paris", "GMT", "Pacific/Auckland", "Pacific/Honolulu", "UTC"];
+    if (typeof Intl !== "undefined" && typeof Intl.supportedValuesOf === "function")
+    {
+        try {
+            var supportedZones = Intl.supportedValuesOf("timeZone");
+            if (supportedZones && supportedZones.length > 0)
+            {
+                var zones = [];
+                var hasGMT = false;
+                var hasUTC = false;
+                var count = supportedZones.length;
+                for (var i = 0; i < count; i++)
+                {
+                    var zone = supportedZones[i];
+                    zones[i] = zone;
+                    if (zone === "GMT")
+                        hasGMT = true;
+                    else if (zone === "UTC")
+                        hasUTC = true;
+                }
+                if (!hasGMT)
+                    zones[zones.length] = "GMT";
+                if (!hasUTC)
+                    zones[zones.length] = "UTC";
+                knownTimeZoneNames = zones;
+            }
+        }
+        catch(e) {
+        }
+    }
     abbreviationDictionary = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", ["America/Halifax", "America/Juneau", "America/Juneau", "America/Argentina/Buenos_Aires", "America/Halifax", "Asia/Dhaka", "America/Sao_Paulo", "America/Sao_Paulo", "Europe/London", "Africa/Harare", "America/Chicago", "Europe/Paris", "Europe/Paris", "America/Santiago", "America/Santiago", "America/Bogota", "UTC", "America/Chicago", "Africa/Addis_Ababa", "America/New_York", "Europe/Istanbul", "Europe/Istanbul", "America/New_York", "GMT", "Asia/Dubai", "Asia/Hong_Kong", "Pacific/Honolulu", "Asia/Bangkok", "Asia/Tehran", "Asia/Calcutta", "Asia/Tokyo", "Asia/Seoul", "America/Denver", "Europe/Moscow", "Europe/Moscow", "America/Denver", "Pacific/Auckland", "Pacific/Auckland", "America/Los_Angeles", "America/Lima", "Asia/Manila", "Asia/Karachi", "America/Los_Angeles", "Asia/Singapore", "UTC", "Africa/Lagos", "Europe/Lisbon", "Europe/Lisbon", "Asia/Jakarta"], ["ADT", "AKDT", "AKST", "ART", "AST", "BDT", "BRST", "BRT", "BST", "CAT", "CDT", "CEST", "CET", "CLST", "CLT", "COT", "CUT", "CST", "EAT", "EDT", "EEST", "EET", "EST", "GMT", "GST", "HKT", "HST", "ICT", "IRST", "IST", "JST", "KST", "MDT", "MSD", "MSK", "MST", "NZDT", "NZST", "PDT", "PET", "PHT", "PKT", "PST", "SGT", "UTC", "WAT", "WEST", "WET", "WIT"]));
-    timeDifferenceFromUTC = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [-180, -480, -540, -180, -240, 360, -120, -180, 60, 120, -300, 120, 60, -180, -240, -300, -360, 180, -240, 180, 120, -300, 0, 240, 480, -600, 420, 210, 330, 540, 540, -300, 240, 240, -420, 900, 900, -420, -300, 480, 300, -480, 480, 0, -540, 60, 0, 540], ["ADT", "AKDT", "AKST", "ART", "AST", "BDT", "BRST", "BRT", "BST", "CAT", "CDT", "CEST", "CET", "CLST", "CLT", "COT", "CST", "EAT", "EDT", "EEST", "EET", "EST", "GMT", "GST", "HKT", "HST", "ICT", "IRST", "IST", "JST", "KST", "MDT", "MSD", "MSK", "MST", "NZDT", "NZST", "PDT", "PET", "PHT", "PKT", "PST", "SGT", "UTC", "WAT", "WEST", "WET", "WIT"]));
+    timeDifferenceFromUTC = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [-180, -480, -540, -180, -240, 360, -120, -180, 60, 120, -300, 120, 60, -180, -240, -300, -360, 180, -240, 180, 120, -300, 0, 240, 480, -600, 420, 210, 330, 540, 540, -360, 240, 180, -420, 780, 720, -420, -300, 480, 300, -480, 480, 0, 60, 60, 0, 420], ["ADT", "AKDT", "AKST", "ART", "AST", "BDT", "BRST", "BRT", "BST", "CAT", "CDT", "CEST", "CET", "CLST", "CLT", "COT", "CST", "EAT", "EDT", "EEST", "EET", "EST", "GMT", "GST", "HKT", "HST", "ICT", "IRST", "IST", "JST", "KST", "MDT", "MSD", "MSK", "MST", "NZDT", "NZST", "PDT", "PET", "PHT", "PKT", "PST", "SGT", "UTC", "WAT", "WEST", "WET", "WIT"]));
     var englishLocalizedName = (___r1 = (CPDictionary.isa.method_msgSend["alloc"] || _objj_forward)(CPDictionary, "alloc"), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithObjects:forKeys:"] || _objj_forward)(___r1, "initWithObjects:forKeys:", [["Eastern Standard Time", "EST", "Eastern Daylight Time", "EDT", "Eastern Time", "ET"], ["GMT", "GMT", "GMT", "GMT", "GMT", "GMT"], ["Atlantic Standard Time", "AST", "Atlantic Daylight Time", "ADT", "Atlantic Time", "AT"], ["Iran Standard Time", "GMT+03:30", "Iran Daylight Time", "GMT+03:30", "Iran Time", "Iran Time"], ["Indochina Time", "GMT+07:00", "GMT+07:00", "GMT+07:00", "Indochina Time", "Thailand Time"], ["Peru Standard Time", "GMT-05:00", "Peru Summer Time", "GMT-05:00", "Peru Standard Time", "Peru Time"], ["Korean Standard Time", "GMT+09:00", "Korean Daylight Time", "GMT+09:00", "Korean Standard Time", "South Korea Time"], ["Pacific Standard Time", "PST", "Pacific Daylight Time", "PDT", "Pacific Time", "PT"], ["Central Standard Time", "CST", "Central Daylight Time", "CDT", "Central Time", "CT"], ["Eastern European Standard Time", "GMT+02:00", "Eastern European Summer Time", "GMT+03:00", "Eastern European Time", "Turkey Time"], ["New Zealand Standard Time", "GMT+12:00", "New Zealand Daylight Time", "GMT+13:00", "New Zealand Time", "New Zealand Time (Auckland)"], ["Western European Standard Time", "GMT", "Western European Summer Time", "GMT+01:00", "Western European Time", "Portugal Time (Lisbon)"], ["East Africa Time", "GMT+03:00", "GMT+03:00", "GMT+03:00", "East Africa Time", "Ethiopia Time"], ["Hong Kong Standard Time", "GMT+08:00", "Hong Kong Summer Time", "GMT+08:00", "Hong Kong Standard Time", "Hong Kong SAR China Time"], ["India Standard Time", "GMT+05:30", "GMT+05:30", "GMT+05:30", "India Standard Time", "India Time"], ["Mountain Standard Time", "MST", "Mountain Daylight Time", "MDT", "Mountain Time", "MT"], ["New Zealand Standard Time", "GMT+12:00", "New Zealand Daylight Time", "GMT+13:00", "New Zealand Time", "New Zealand Time (Auckland)"], ["Western Indonesia Time", "GMT+07:00", "GMT+07:00", "GMT+07:00", "Western Indonesia Time", "Indonesia Time (Jakarta)"], ["Atlantic Standard Time", "AST", "Atlantic Daylight Time", "ADT", "Atlantic Time", "AT"], ["Greenwich Mean Time", "GMT", "British Summer Time", "GMT+01:00", "United Kingdom Time", "United Kingdom Time"], ["Argentina Standard Time", "GMT-03:00", "Argentina Summer Time", "GMT-03:00", "Argentina Standard Time", "Argentina Time (Buenos Aires)"], ["Central Africa Time", "GMT+02:00", "GMT+02:00", "GMT+02:00", "Central Africa Time", "Zimbabwe Time"], ["Gulf Standard Time", "GMT+04:00", "GMT+04:00", "GMT+04:00", "Gulf Standard Time", "United Arab Emirates Time"], ["Pacific Standard Time", "PST", "Pacific Daylight Time", "PDT", "Pacific Time", "PT"], ["Singapore Standard Time", "GMT+08:00", "GMT+08:00", "GMT+08:00", "Singapore Standard Time", "Singapore Time"], ["Colombia Standard Time", "GMT-05:00", "Colombia Summer Time", "GMT-05:00", "Colombia Standard Time", "Colombia Time"], ["Pakistan Standard Time", "GMT+05:00", "Pakistan Summer Time", "GMT+05:00", "Pakistan Standard Time", "Pakistan Time"], ["Eastern European Standard Time", "GMT+02:00", "Eastern European Summer Time", "GMT+03:00", "Eastern European Time", "Turkey Time"], ["GMT", "GMT", "GMT", "GMT", "GMT", "GMT"], ["West Africa Standard Time", "GMT+01:00", "West Africa Summer Time", "GMT+01:00", "West Africa Standard Time", "Nigeria Time"], ["Eastern Standard Time", "EST", "Eastern Daylight Time", "EDT", "Eastern Time", "ET"], ["Japan Standard Time", "GMT+09:00", "Japan Daylight Time", "GMT+09:00", "Japan Standard Time", "Japan Time"], ["Chile Standard Time", "GMT-04:00", "Chile Summer Time", "GMT-04:00", "Chile Time", "Chile Time (Santiago)"], ["Central European Standard Time", "GMT+01:00", "Central European Summer Time", "GMT+02:00", "Central European Time", "France Time"], ["Bangladesh Standard Time", "GMT+06:00", "Bangladesh Summer Time", "GMT+06:00", "Bangladesh Standard Time", "Bangladesh Time"], ["Moscow Standard Time", "GMT+04:00", "Moscow Summer Time", "GMT+04:00", "Moscow Standard Time", "Russia Time (Moscow)"], ["Alaska Standard Time", "AKST", "Alaska Daylight Time", "AKDT", "Alaska Time", "AKT"], ["Chile Standard Time", "GMT-04:00", "Chile Summer Time", "GMT-04:00", "Chile Time", "Chile Time (Santiago)"], ["Alaska Standard Time", "AKST", "Alaska Daylight Time", "AKDT", "Alaska Time", "AKT"], ["Brasilia Standard Time", "GMT-03:00", "Brasilia Summer Time", "GMT-03:00", "Brasilia Time", "Brazil Time (Sao Paulo)"], ["Brasilia Standard Time", "GMT-03:00", "Brasilia Summer Time", "GMT-03:00", "Brasilia Time", "Brazil Time (Sao Paulo)"], ["Central European Standard Time", "GMT+01:00", "Central European Summer Time", "GMT+02:00", "Central European Time", "France Time"], ["Central Standard Time", "CST", "Central Daylight Time", "CDT", "Central Time", "CT"], ["Hawaii-Aleutian Standard Time", "HST", "Hawaii-Aleutian Daylight Time", "HDT", "Hawaii-Aleutian Standard Time", "HST"], ["Moscow Standard Time", "GMT+04:00", "Moscow Summer Time", "GMT+04:00", "Moscow Standard Time", "Russia Time (Moscow)"], ["Mountain Standard Time", "MST", "Mountain Daylight Time", "MDT", "Mountain Time", "MT"], ["Philippine Standard Time", "GMT+08:00", "Philippine Summer Time", "GMT+08:00", "Philippine Standard Time", "Philippines Time"], ["Western European Standard Time", "GMT", "Western European Summer Time", "GMT+01:00", "Western European Time", "Portugal Time (Lisbon)"]], ["EDT", "GMT", "AST", "IRST", "ICT", "PET", "KST", "PST", "CDT", "EEST", "NZDT", "WEST", "EAT", "HKT", "IST", "MDT", "NZST", "WIT", "ADT", "BST", "ART", "CAT", "GST", "PDT", "SGT", "COT", "PKT", "EET", "UTC", "WAT", "EST", "JST", "CLST", "CET", "BDT", "MSK", "AKDT", "CLT", "AKST", "BRST", "BRT", "CEST", "CST", "HST", "MSD", "MST", "PHT", "WET"]));
     var date = (CPDate.isa.method_msgSend["date"] || _objj_forward)(CPDate, "date"),
         abbreviation = abbreviationForDate(date);

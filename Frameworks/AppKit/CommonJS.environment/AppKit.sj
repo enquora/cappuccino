@@ -2883,7 +2883,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("invalidateCurrentToolT
 
 ,["Class","unsigned"])]);
 }
-p;8;AppKit.jt;5776;@STATIC;1.0;i;17;_CPObject+Theme.ji;12;_CPToolTip.ji;9;CALayer.ji;12;CGGeometry.ji;17;CPAccordionView.ji;9;CPAlert.ji;13;CPAnimation.ji;20;CPAnimationContext.ji;14;CPAppearance.ji;15;CPApplication.ji;19;CPArrayController.ji;14;CPBezierPath.ji;7;CPBox.ji;11;CPBrowser.ji;10;CPButton.ji;13;CPButtonBar.ji;12;CPCheckBox.ji;7;CPCib.ji;23;CPCibBindingConnector.ji;16;CPCibConnector.ji;23;CPCibControlConnector.ji;20;CPCibHelpConnector.ji;14;CPCibLoading.ji;22;CPCibOutletConnector.ji;33;CPCibRuntimeAttributesConnector.ji;12;CPClipView.ji;18;CPCollectionView.ji;22;CPCollectionViewItem.ji;9;CPColor.ji;14;CPColorPanel.ji;14;CPColorSpace.ji;13;CPColorWell.ji;12;CPComboBox.ji;17;CPCompatibility.ji;11;CPControl.ji;14;CPController.ji;10;CPCookie.ji;10;CPCursor.ji;14;CPDatePicker.ji;12;CPDocument.ji;22;CPDocumentController.ji;9;CPEvent.ji;8;CPFont.ji;15;CPFontManager.ji;12;CPGradient.ji;12;CPGraphics.ji;9;CPImage.ji;13;CPImageView.ji;14;CPKeyBinding.ji;18;CPLevelIndicator.ji;8;CPMenu.ji;12;CPMenuItem.ji;13;CPOpenPanel.ji;15;CPOutlineView.ji;9;CPPanel.ji;14;CPPasteboard.ji;11;CPPopover.ji;15;CPPopUpButton.ji;19;CPPredicateEditor.ji;30;CPPredicateEditorRowTemplate.ji;21;CPProgressIndicator.ji;9;CPRadio.ji;13;CPResponder.ji;14;CPRuleEditor.ji;12;CPScroller.ji;14;CPScrollView.ji;15;CPSearchField.ji;19;CPSecureTextField.ji;20;CPSegmentedControl.ji;10;CPShadow.ji;10;CPSlider.ji;9;CPSound.ji;13;CPSplitView.ji;11;CPStepper.ji;15;CPTableColumn.ji;13;CPTableView.ji;11;CPTabView.ji;8;CPText.ji;13;CPTextField.ji;12;CPTextView.ji;14;CPTokenField.ji;11;CPToolbar.ji;15;CPToolbarItem.ji;16;CPTrackingArea.ji;12;CPTreeNode.ji;26;CPUserDefaultsController.ji;8;CPView.ji;16;CPViewAnimator.ji;17;CPViewAnimation.ji;18;CPViewController.ji;20;CPVisualEffectView.ji;11;CPWebView.ji;10;CPWindow.ji;20;CPWindowController.ji;13;CPWorkspace.ji;13;CPFontPanel.ji;18;CPTreeController.jt;3904;objj_executeFile("_CPObject+Theme.j", YES);objj_executeFile("_CPToolTip.j", YES);objj_executeFile("CALayer.j", YES);objj_executeFile("CGGeometry.j", YES);objj_executeFile("CPAccordionView.j", YES);objj_executeFile("CPAlert.j", YES);objj_executeFile("CPAnimation.j", YES);objj_executeFile("CPAnimationContext.j", YES);objj_executeFile("CPAppearance.j", YES);objj_executeFile("CPApplication.j", YES);objj_executeFile("CPArrayController.j", YES);objj_executeFile("CPBezierPath.j", YES);objj_executeFile("CPBox.j", YES);objj_executeFile("CPBrowser.j", YES);objj_executeFile("CPButton.j", YES);objj_executeFile("CPButtonBar.j", YES);objj_executeFile("CPCheckBox.j", YES);objj_executeFile("CPCib.j", YES);objj_executeFile("CPCibBindingConnector.j", YES);objj_executeFile("CPCibConnector.j", YES);objj_executeFile("CPCibControlConnector.j", YES);objj_executeFile("CPCibHelpConnector.j", YES);objj_executeFile("CPCibLoading.j", YES);objj_executeFile("CPCibOutletConnector.j", YES);objj_executeFile("CPCibRuntimeAttributesConnector.j", YES);objj_executeFile("CPClipView.j", YES);objj_executeFile("CPCollectionView.j", YES);objj_executeFile("CPCollectionViewItem.j", YES);objj_executeFile("CPColor.j", YES);objj_executeFile("CPColorPanel.j", YES);objj_executeFile("CPColorSpace.j", YES);objj_executeFile("CPColorWell.j", YES);objj_executeFile("CPComboBox.j", YES);objj_executeFile("CPCompatibility.j", YES);objj_executeFile("CPControl.j", YES);objj_executeFile("CPController.j", YES);objj_executeFile("CPCookie.j", YES);objj_executeFile("CPCursor.j", YES);objj_executeFile("CPDatePicker.j", YES);objj_executeFile("CPDocument.j", YES);objj_executeFile("CPDocumentController.j", YES);objj_executeFile("CPEvent.j", YES);objj_executeFile("CPFont.j", YES);objj_executeFile("CPFontManager.j", YES);objj_executeFile("CPGradient.j", YES);objj_executeFile("CPGraphics.j", YES);objj_executeFile("CPImage.j", YES);objj_executeFile("CPImageView.j", YES);objj_executeFile("CPKeyBinding.j", YES);objj_executeFile("CPLevelIndicator.j", YES);objj_executeFile("CPMenu.j", YES);objj_executeFile("CPMenuItem.j", YES);objj_executeFile("CPOpenPanel.j", YES);objj_executeFile("CPOutlineView.j", YES);objj_executeFile("CPPanel.j", YES);objj_executeFile("CPPasteboard.j", YES);objj_executeFile("CPPopover.j", YES);objj_executeFile("CPPopUpButton.j", YES);objj_executeFile("CPPredicateEditor.j", YES);objj_executeFile("CPPredicateEditorRowTemplate.j", YES);objj_executeFile("CPProgressIndicator.j", YES);objj_executeFile("CPRadio.j", YES);objj_executeFile("CPResponder.j", YES);objj_executeFile("CPRuleEditor.j", YES);objj_executeFile("CPScroller.j", YES);objj_executeFile("CPScrollView.j", YES);objj_executeFile("CPSearchField.j", YES);objj_executeFile("CPSecureTextField.j", YES);objj_executeFile("CPSegmentedControl.j", YES);objj_executeFile("CPShadow.j", YES);objj_executeFile("CPSlider.j", YES);objj_executeFile("CPSound.j", YES);objj_executeFile("CPSplitView.j", YES);objj_executeFile("CPStepper.j", YES);objj_executeFile("CPTableColumn.j", YES);objj_executeFile("CPTableView.j", YES);objj_executeFile("CPTabView.j", YES);objj_executeFile("CPText.j", YES);objj_executeFile("CPTextField.j", YES);objj_executeFile("CPTextView.j", YES);objj_executeFile("CPTokenField.j", YES);objj_executeFile("CPToolbar.j", YES);objj_executeFile("CPToolbarItem.j", YES);objj_executeFile("CPTrackingArea.j", YES);objj_executeFile("CPTreeNode.j", YES);objj_executeFile("CPUserDefaultsController.j", YES);objj_executeFile("CPView.j", YES);objj_executeFile("CPViewAnimator.j", YES);objj_executeFile("CPViewAnimation.j", YES);objj_executeFile("CPViewController.j", YES);objj_executeFile("CPVisualEffectView.j", YES);objj_executeFile("CPWebView.j", YES);objj_executeFile("CPWindow.j", YES);objj_executeFile("CPWindowController.j", YES);objj_executeFile("CPWorkspace.j", YES);objj_executeFile("CPFontPanel.j", YES);objj_executeFile("CPTreeController.j", YES);p;17;CPAccordionView.jt;22553;@STATIC;1.0;I;20;Foundation/CPArray.jI;21;Foundation/CPObject.jI;32;Foundation/CPKeyValueObserving.jI;23;Foundation/CPIndexSet.jI;21;Foundation/CPString.ji;8;CPView.ji;10;CPButton.jt;22364;objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("Foundation/CPKeyValueObserving.j", NO);objj_executeFile("Foundation/CPIndexSet.j", NO);objj_executeFile("Foundation/CPString.j", NO);objj_executeFile("CPView.j", YES);objj_executeFile("CPButton.j", YES);
+p;8;AppKit.jt;5833;@STATIC;1.0;i;17;_CPObject+Theme.ji;12;_CPToolTip.ji;9;CALayer.ji;12;CGGeometry.ji;17;CPAccordionView.ji;9;CPAlert.ji;13;CPAnimation.ji;20;CPAnimationContext.ji;14;CPAppearance.ji;15;CPApplication.ji;19;CPArrayController.ji;14;CPBezierPath.ji;7;CPBox.ji;11;CPBrowser.ji;10;CPButton.ji;13;CPButtonBar.ji;12;CPCheckBox.ji;7;CPCib.ji;23;CPCibBindingConnector.ji;16;CPCibConnector.ji;23;CPCibControlConnector.ji;20;CPCibHelpConnector.ji;14;CPCibLoading.ji;22;CPCibOutletConnector.ji;33;CPCibRuntimeAttributesConnector.ji;12;CPClipView.ji;18;CPCollectionView.ji;22;CPCollectionViewItem.ji;9;CPColor.ji;14;CPColorPanel.ji;14;CPColorSpace.ji;13;CPColorWell.ji;12;CPComboBox.ji;17;CPCompatibility.ji;11;CPControl.ji;14;CPController.ji;10;CPCookie.ji;10;CPCursor.ji;14;CPDatePicker.ji;12;CPDocument.ji;22;CPDocumentController.ji;9;CPEvent.ji;8;CPFont.ji;15;CPFontManager.ji;12;CPGradient.ji;12;CPGraphics.ji;9;CPImage.ji;13;CPImageView.ji;14;CPKeyBinding.ji;18;CPLevelIndicator.ji;8;CPMenu.ji;12;CPMenuItem.ji;13;CPOpenPanel.ji;15;CPOutlineView.ji;9;CPPanel.ji;14;CPPasteboard.ji;11;CPPopover.ji;15;CPPopUpButton.ji;19;CPPredicateEditor.ji;30;CPPredicateEditorRowTemplate.ji;21;CPProgressIndicator.ji;9;CPRadio.ji;13;CPResponder.ji;14;CPRuleEditor.ji;12;CPScroller.ji;14;CPScrollView.ji;15;CPSearchField.ji;19;CPSecureTextField.ji;20;CPSegmentedControl.ji;10;CPShadow.ji;10;CPSlider.ji;9;CPSound.ji;13;CPSplitView.ji;13;CPStackView.ji;11;CPStepper.ji;15;CPTableColumn.ji;13;CPTableView.ji;11;CPTabView.ji;8;CPText.ji;13;CPTextField.ji;12;CPTextView.ji;14;CPTokenField.ji;11;CPToolbar.ji;15;CPToolbarItem.ji;16;CPTrackingArea.ji;12;CPTreeNode.ji;26;CPUserDefaultsController.ji;8;CPView.ji;16;CPViewAnimator.ji;17;CPViewAnimation.ji;18;CPViewController.ji;20;CPVisualEffectView.ji;11;CPWebView.ji;10;CPWindow.ji;20;CPWindowController.ji;13;CPWorkspace.ji;13;CPFontPanel.ji;18;CPTreeController.jt;3943;objj_executeFile("_CPObject+Theme.j", YES);objj_executeFile("_CPToolTip.j", YES);objj_executeFile("CALayer.j", YES);objj_executeFile("CGGeometry.j", YES);objj_executeFile("CPAccordionView.j", YES);objj_executeFile("CPAlert.j", YES);objj_executeFile("CPAnimation.j", YES);objj_executeFile("CPAnimationContext.j", YES);objj_executeFile("CPAppearance.j", YES);objj_executeFile("CPApplication.j", YES);objj_executeFile("CPArrayController.j", YES);objj_executeFile("CPBezierPath.j", YES);objj_executeFile("CPBox.j", YES);objj_executeFile("CPBrowser.j", YES);objj_executeFile("CPButton.j", YES);objj_executeFile("CPButtonBar.j", YES);objj_executeFile("CPCheckBox.j", YES);objj_executeFile("CPCib.j", YES);objj_executeFile("CPCibBindingConnector.j", YES);objj_executeFile("CPCibConnector.j", YES);objj_executeFile("CPCibControlConnector.j", YES);objj_executeFile("CPCibHelpConnector.j", YES);objj_executeFile("CPCibLoading.j", YES);objj_executeFile("CPCibOutletConnector.j", YES);objj_executeFile("CPCibRuntimeAttributesConnector.j", YES);objj_executeFile("CPClipView.j", YES);objj_executeFile("CPCollectionView.j", YES);objj_executeFile("CPCollectionViewItem.j", YES);objj_executeFile("CPColor.j", YES);objj_executeFile("CPColorPanel.j", YES);objj_executeFile("CPColorSpace.j", YES);objj_executeFile("CPColorWell.j", YES);objj_executeFile("CPComboBox.j", YES);objj_executeFile("CPCompatibility.j", YES);objj_executeFile("CPControl.j", YES);objj_executeFile("CPController.j", YES);objj_executeFile("CPCookie.j", YES);objj_executeFile("CPCursor.j", YES);objj_executeFile("CPDatePicker.j", YES);objj_executeFile("CPDocument.j", YES);objj_executeFile("CPDocumentController.j", YES);objj_executeFile("CPEvent.j", YES);objj_executeFile("CPFont.j", YES);objj_executeFile("CPFontManager.j", YES);objj_executeFile("CPGradient.j", YES);objj_executeFile("CPGraphics.j", YES);objj_executeFile("CPImage.j", YES);objj_executeFile("CPImageView.j", YES);objj_executeFile("CPKeyBinding.j", YES);objj_executeFile("CPLevelIndicator.j", YES);objj_executeFile("CPMenu.j", YES);objj_executeFile("CPMenuItem.j", YES);objj_executeFile("CPOpenPanel.j", YES);objj_executeFile("CPOutlineView.j", YES);objj_executeFile("CPPanel.j", YES);objj_executeFile("CPPasteboard.j", YES);objj_executeFile("CPPopover.j", YES);objj_executeFile("CPPopUpButton.j", YES);objj_executeFile("CPPredicateEditor.j", YES);objj_executeFile("CPPredicateEditorRowTemplate.j", YES);objj_executeFile("CPProgressIndicator.j", YES);objj_executeFile("CPRadio.j", YES);objj_executeFile("CPResponder.j", YES);objj_executeFile("CPRuleEditor.j", YES);objj_executeFile("CPScroller.j", YES);objj_executeFile("CPScrollView.j", YES);objj_executeFile("CPSearchField.j", YES);objj_executeFile("CPSecureTextField.j", YES);objj_executeFile("CPSegmentedControl.j", YES);objj_executeFile("CPShadow.j", YES);objj_executeFile("CPSlider.j", YES);objj_executeFile("CPSound.j", YES);objj_executeFile("CPSplitView.j", YES);objj_executeFile("CPStackView.j", YES);objj_executeFile("CPStepper.j", YES);objj_executeFile("CPTableColumn.j", YES);objj_executeFile("CPTableView.j", YES);objj_executeFile("CPTabView.j", YES);objj_executeFile("CPText.j", YES);objj_executeFile("CPTextField.j", YES);objj_executeFile("CPTextView.j", YES);objj_executeFile("CPTokenField.j", YES);objj_executeFile("CPToolbar.j", YES);objj_executeFile("CPToolbarItem.j", YES);objj_executeFile("CPTrackingArea.j", YES);objj_executeFile("CPTreeNode.j", YES);objj_executeFile("CPUserDefaultsController.j", YES);objj_executeFile("CPView.j", YES);objj_executeFile("CPViewAnimator.j", YES);objj_executeFile("CPViewAnimation.j", YES);objj_executeFile("CPViewController.j", YES);objj_executeFile("CPVisualEffectView.j", YES);objj_executeFile("CPWebView.j", YES);objj_executeFile("CPWindow.j", YES);objj_executeFile("CPWindowController.j", YES);objj_executeFile("CPWorkspace.j", YES);objj_executeFile("CPFontPanel.j", YES);objj_executeFile("CPTreeController.j", YES);p;17;CPAccordionView.jt;22553;@STATIC;1.0;I;20;Foundation/CPArray.jI;21;Foundation/CPObject.jI;32;Foundation/CPKeyValueObserving.jI;23;Foundation/CPIndexSet.jI;21;Foundation/CPString.ji;8;CPView.ji;10;CPButton.jt;22364;objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("Foundation/CPKeyValueObserving.j", NO);objj_executeFile("Foundation/CPIndexSet.j", NO);objj_executeFile("Foundation/CPString.j", NO);objj_executeFile("CPView.j", YES);objj_executeFile("CPButton.j", YES);
 {var the_class = objj_allocateClassPair(CPObject, "CPAccordionViewItem"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_identifier", "CPString"), new objj_ivar("_view", "CPView"), new objj_ivar("_label", "CPString")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("identifier"), function $CPAccordionViewItem__identifier(self, _cmd)
@@ -20898,7 +20898,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("openPanel"), function 
 
 ,["id"])]);
 }
-p;15;CPOutlineView.jt;126416;@STATIC;1.0;i;10;CPButton.ji;15;CPTableColumn.ji;13;CPTableView.jt;126342;objj_executeFile("CPButton.j", YES);objj_executeFile("CPTableColumn.j", YES);objj_executeFile("CPTableView.j", YES);CPOutlineViewColumnDidMoveNotification = "CPOutlineViewColumnDidMoveNotification";
+p;15;CPOutlineView.jt;126416;@STATIC;1.0;i;10;CPButton.ji;15;CPTableColumn.ji;13;CPTableView.ji;12;CPTreeNode.jt;126325;objj_executeFile("CPButton.j", YES);objj_executeFile("CPTableColumn.j", YES);objj_executeFile("CPTableView.j", YES);objj_executeFile("CPTreeNode.j", YES);CPOutlineViewColumnDidMoveNotification = "CPOutlineViewColumnDidMoveNotification";
 CPOutlineViewColumnDidResizeNotification = "CPOutlineViewColumnDidResizeNotification";
 CPOutlineViewItemDidCollapseNotification = "CPOutlineViewItemDidCollapseNotification";
 CPOutlineViewItemDidExpandNotification = "CPOutlineViewItemDidExpandNotification";
@@ -22337,8 +22337,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setValueFor:"), functio
     var destination = ((___r1 = self._info), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPObservedObjectKey)),
         keyPath = ((___r1 = self._info), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectForKey:"] || _objj_forward)(___r1, "objectForKey:", CPObservedKeyPathKey)),
         value = (destination == null ? destination : (destination.isa.method_msgSend["valueForKeyPath:"] || _objj_forward)(destination, "valueForKeyPath:", keyPath));
-    if (!value || !(value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", (CPTreeNode == null ? CPTreeNode : (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class")))))
-        self._rootNode = ((___r1 = (CPTreeNode == null ? CPTreeNode : (CPTreeNode.isa.method_msgSend["alloc"] || _objj_forward)(CPTreeNode, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRepresentedObject:"] || _objj_forward)(___r1, "initWithRepresentedObject:", nil));
+    if (!value || !(value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))))
+        self._rootNode = ((___r1 = (CPTreeNode.isa.method_msgSend["alloc"] || _objj_forward)(CPTreeNode, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRepresentedObject:"] || _objj_forward)(___r1, "initWithRepresentedObject:", nil));
     else
         self._rootNode = value;
     if (((___r1 = self._source), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["dataSource"] || _objj_forward)(___r1, "dataSource")) !== self)
@@ -22404,6 +22404,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithBinding:name:to
 {
     self = (objj_getClass("_CPOutlineViewSelectionIndexPathsBinder").super_class.method_dtable["initWithBinding:name:to:keyPath:options:from:"] || _objj_forward)(self, "initWithBinding:name:to:keyPath:options:from:", aBinding, aName, aDestination, aKeyPath, options, aSource);
     ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObserver:selector:name:object:"] || _objj_forward)(___r1, "addObserver:selector:name:object:", self, sel_getUid("outlineViewSelectionDidChange:"), CPOutlineViewSelectionDidChangeNotification, aSource));
+    return self;
     var ___r1;
 }
 
@@ -31534,7 +31535,33 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("splitViewItemWithViewC
 
 ,["instancetype","CPViewController"])]);
 }
-p;13;CPStackView.jt;32509;@STATIC;1.0;i;8;CPView.jt;32477;objj_executeFile("CPView.j", YES);{var the_typedef = objj_allocateTypeDef("CPStackViewGravity");
+p;13;CPStackView.jt;34102;@STATIC;1.0;i;8;CPView.jI;23;Foundation/CPMapTable.jt;34042;objj_executeFile("CPView.j", YES);objj_executeFile("Foundation/CPMapTable.j", NO);{var the_typedef = objj_allocateTypeDef("CPUserInterfaceLayoutOrientation");
+objj_registerTypeDef(the_typedef);
+}CPUserInterfaceLayoutOrientationHorizontal = 0;
+CPUserInterfaceLayoutOrientationVertical = 1;
+{var the_typedef = objj_allocateTypeDef("CPLayoutAttribute");
+objj_registerTypeDef(the_typedef);
+}CPLayoutAttributeLeft = 1;
+CPLayoutAttributeRight = 2;
+CPLayoutAttributeTop = 3;
+CPLayoutAttributeBottom = 4;
+CPLayoutAttributeLeading = 5;
+CPLayoutAttributeTrailing = 6;
+CPLayoutAttributeWidth = 7;
+CPLayoutAttributeHeight = 8;
+CPLayoutAttributeCenterX = 9;
+CPLayoutAttributeCenterY = 10;
+{var the_typedef = objj_allocateTypeDef("CPEdgeInsets");
+objj_registerTypeDef(the_typedef);
+}CPEdgeInsetsMake = function(top, left, bottom, right)
+{
+    return CGInsetMake(top, right, bottom, left);
+}
+CPEdgeInsetsEqualToEdgeInsets = function(lhsInsets, rhsInsets)
+{
+    return CGInsetEqualToInset(lhsInsets, rhsInsets);
+}
+{var the_typedef = objj_allocateTypeDef("CPStackViewGravity");
 objj_registerTypeDef(the_typedef);
 }CPStackViewGravityTop = 1;
 CPStackViewGravityLeading = 1;
@@ -31556,13 +31583,14 @@ CPStackViewVisibilityPriorityNotVisible = 0.0;
 var CPStackViewSpacingUseDefault = 3.40282347e+38;
 
 {var the_class = objj_allocateClassPair(CPView, "CPStackView"),
-meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_orientation", "CPUserInterfaceLayoutOrientation"), new objj_ivar("_alignment", "CPLayoutAttribute"), new objj_ivar("_spacing", "float"), new objj_ivar("_edgeInsets", "CPEdgeInsets"), new objj_ivar("_detachesHiddenViews", "BOOL"), new objj_ivar("_viewsLeading", "CPMutableArray"), new objj_ivar("_viewsCenter", "CPMutableArray"), new objj_ivar("_viewsTrailing", "CPMutableArray"), new objj_ivar("_arrangedSubviews", "CPMutableArray"), new objj_ivar("_customSpacings", "CPMapTable"), new objj_ivar("_visibilityPriorities", "CPMapTable")]);objj_registerClassPair(the_class);
+meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_orientation", "CPUserInterfaceLayoutOrientation"), new objj_ivar("_alignment", "CPLayoutAttribute"), new objj_ivar("_distribution", "CPStackViewDistribution"), new objj_ivar("_spacing", "float"), new objj_ivar("_edgeInsets", "CPEdgeInsets"), new objj_ivar("_detachesHiddenViews", "BOOL"), new objj_ivar("_viewsLeading", "CPMutableArray"), new objj_ivar("_viewsCenter", "CPMutableArray"), new objj_ivar("_viewsTrailing", "CPMutableArray"), new objj_ivar("_arrangedSubviews", "CPMutableArray"), new objj_ivar("_customSpacings", "CPMapTable"), new objj_ivar("_visibilityPriorities", "CPMapTable")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), function $CPStackView__initWithFrame_(self, _cmd, aFrame)
 {
     if (self = (objj_getClass("CPStackView").super_class.method_dtable["initWithFrame:"] || _objj_forward)(self, "initWithFrame:", aFrame))
     {
         self._orientation = CPUserInterfaceLayoutOrientationHorizontal;
         self._alignment = CPLayoutAttributeCenterY;
+        self._distribution = CPStackViewDistributionGravityAreas;
         self._spacing = 8.0;
         self._edgeInsets = CPEdgeInsetsMake(0, 0, 0, 0);
         self._detachesHiddenViews = YES;
@@ -31570,8 +31598,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
         self._viewsCenter = ((___r1 = (CPMutableArray.isa.method_msgSend["alloc"] || _objj_forward)(CPMutableArray, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
         self._viewsTrailing = ((___r1 = (CPMutableArray.isa.method_msgSend["alloc"] || _objj_forward)(CPMutableArray, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
         self._arrangedSubviews = ((___r1 = (CPMutableArray.isa.method_msgSend["alloc"] || _objj_forward)(CPMutableArray, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._customSpacings = ((___r1 = (CPMapTable == null ? CPMapTable : (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._visibilityPriorities = ((___r1 = (CPMapTable == null ? CPMapTable : (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._customSpacings = ((___r1 = (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._visibilityPriorities = ((___r1 = (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     }
     return self;
     var ___r1;
@@ -31613,7 +31641,20 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
     (self.isa.method_msgSend["setNeedsLayout:"] || _objj_forward)(self, "setNeedsLayout:", YES);
 }
 
-,["void","CPLayoutAttribute"]), new objj_method(sel_getUid("spacing"), function $CPStackView__spacing(self, _cmd)
+,["void","CPLayoutAttribute"]), new objj_method(sel_getUid("distribution"), function $CPStackView__distribution(self, _cmd)
+{
+    return self._distribution;
+}
+
+,["CPStackViewDistribution"]), new objj_method(sel_getUid("setDistribution:"), function $CPStackView__setDistribution_(self, _cmd, aDistribution)
+{
+    if (self._distribution === aDistribution)
+        return;
+    self._distribution = aDistribution;
+    (self.isa.method_msgSend["setNeedsLayout:"] || _objj_forward)(self, "setNeedsLayout:", YES);
+}
+
+,["void","CPStackViewDistribution"]), new objj_method(sel_getUid("spacing"), function $CPStackView__spacing(self, _cmd)
 {
     return self._spacing;
 }
@@ -31661,13 +31702,22 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
     return self._viewsLeading;
 }
 
-,["CPArray","CPStackViewGravity"]), new objj_method(sel_getUid("addView:inGravity:"), function $CPStackView__addView_inGravity_(self, _cmd, aView, gravity)
+,["CPArray","CPStackViewGravity"]), new objj_method(sel_getUid("_rebuildArrangedSubviews"), function $CPStackView___rebuildArrangedSubviews(self, _cmd)
+{
+    self._arrangedSubviews = ((___r1 = (CPMutableArray.isa.method_msgSend["alloc"] || _objj_forward)(CPMutableArray, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+    ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", self._viewsLeading));
+    ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", self._viewsCenter));
+    ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", self._viewsTrailing));
+    var ___r1;
+}
+
+,["void"]), new objj_method(sel_getUid("addView:inGravity:"), function $CPStackView__addView_inGravity_(self, _cmd, aView, gravity)
 {
     var container = (self.isa.method_msgSend["_containerForGravity:"] || _objj_forward)(self, "_containerForGravity:", gravity);
     if (((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", aView)))
         (self.isa.method_msgSend["removeView:"] || _objj_forward)(self, "removeView:", aView);
     (container == null ? container : (container.isa.method_msgSend["addObject:"] || _objj_forward)(container, "addObject:", aView));
-    ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", aView));
+    (self.isa.method_msgSend["_rebuildArrangedSubviews"] || _objj_forward)(self, "_rebuildArrangedSubviews");
     if ((aView == null ? aView : (aView.isa.method_msgSend["superview"] || _objj_forward)(aView, "superview")) !== self)
         (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", aView);
     (self.isa.method_msgSend["setNeedsLayout:"] || _objj_forward)(self, "setNeedsLayout:", YES);
@@ -31683,7 +31733,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
         (container == null ? container : (container.isa.method_msgSend["addObject:"] || _objj_forward)(container, "addObject:", aView));
     else
         (container == null ? container : (container.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(container, "insertObject:atIndex:", aView, index));
-    ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", aView));
+    (self.isa.method_msgSend["_rebuildArrangedSubviews"] || _objj_forward)(self, "_rebuildArrangedSubviews");
     if ((aView == null ? aView : (aView.isa.method_msgSend["superview"] || _objj_forward)(aView, "superview")) !== self)
         (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", aView);
     (self.isa.method_msgSend["setNeedsLayout:"] || _objj_forward)(self, "setNeedsLayout:", YES);
@@ -31694,19 +31744,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
 {
     var container = (self.isa.method_msgSend["_containerForGravity:"] || _objj_forward)(self, "_containerForGravity:", gravity);
     for (var i = 0; i < (container == null ? container : (container.isa.method_msgSend["count"] || _objj_forward)(container, "count")); i++)
-    {
-        var oldView = container[i];
-        (oldView == null ? oldView : (oldView.isa.method_msgSend["removeFromSuperview"] || _objj_forward)(oldView, "removeFromSuperview"));
-        ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObject:"] || _objj_forward)(___r1, "removeObject:", oldView));
-    }
+        ((___r1 = container[i]), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeFromSuperview"] || _objj_forward)(___r1, "removeFromSuperview"));
     (container == null ? container : (container.isa.method_msgSend["removeAllObjects"] || _objj_forward)(container, "removeAllObjects"));
     for (var i = 0; i < (views == null ? views : (views.isa.method_msgSend["count"] || _objj_forward)(views, "count")); i++)
     {
         var newView = views[i];
         (container == null ? container : (container.isa.method_msgSend["addObject:"] || _objj_forward)(container, "addObject:", newView));
-        ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObject:"] || _objj_forward)(___r1, "addObject:", newView));
         (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", newView);
     }
+    (self.isa.method_msgSend["_rebuildArrangedSubviews"] || _objj_forward)(self, "_rebuildArrangedSubviews");
     (self.isa.method_msgSend["setNeedsLayout:"] || _objj_forward)(self, "setNeedsLayout:", YES);
     var ___r1;
 }
@@ -31718,7 +31764,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
     ((___r1 = self._viewsLeading), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObject:"] || _objj_forward)(___r1, "removeObject:", aView));
     ((___r1 = self._viewsCenter), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObject:"] || _objj_forward)(___r1, "removeObject:", aView));
     ((___r1 = self._viewsTrailing), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObject:"] || _objj_forward)(___r1, "removeObject:", aView));
-    ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObject:"] || _objj_forward)(___r1, "removeObject:", aView));
+    (self.isa.method_msgSend["_rebuildArrangedSubviews"] || _objj_forward)(self, "_rebuildArrangedSubviews");
     (aView == null ? aView : (aView.isa.method_msgSend["removeFromSuperview"] || _objj_forward)(aView, "removeFromSuperview"));
     (self.isa.method_msgSend["setNeedsLayout:"] || _objj_forward)(self, "setNeedsLayout:", YES);
     var ___r1;
@@ -31878,11 +31924,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
     var i = dir === 1 ? 0 : count - 1;
     var limit = dir === 1 ? count : -1;
     var step = dir === 1 ? 1 : -1;
+    var hasPlacedAny = false;
+    var pendingSpacing = 0;
     for (; i !== limit; i += step)
     {
         var view = views[i];
         if (self._detachesHiddenViews && (view == null ? view : (view.isa.method_msgSend["isHidden"] || _objj_forward)(view, "isHidden")))
             continue;
+        if (hasPlacedAny)
+            cursor += dir === 1 ? pendingSpacing : -pendingSpacing;
         var viewFrame = (view == null ? view : (view.isa.method_msgSend["frame"] || _objj_forward)(view, "frame"));
         var viewSizePrimary = isVert ? CGRectGetHeight(viewFrame) : CGRectGetWidth(viewFrame);
         var orthoPos = 0.0;
@@ -31950,13 +32000,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
             if (dir === 1)
             {
                 originY = cursor;
-                cursor += sizeH + (self.isa.method_msgSend["_spacingAfterView:"] || _objj_forward)(self, "_spacingAfterView:", view);
+                cursor += sizeH;
             }
             else
             {
                 cursor -= sizeH;
                 originY = cursor;
-                cursor -= (self.isa.method_msgSend["_spacingAfterView:"] || _objj_forward)(self, "_spacingAfterView:", view);
             }
         }
         else
@@ -31967,16 +32016,17 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
             if (dir === 1)
             {
                 originX = cursor;
-                cursor += sizeW + (self.isa.method_msgSend["_spacingAfterView:"] || _objj_forward)(self, "_spacingAfterView:", view);
+                cursor += sizeW;
             }
             else
             {
                 cursor -= sizeW;
                 originX = cursor;
-                cursor -= (self.isa.method_msgSend["_spacingAfterView:"] || _objj_forward)(self, "_spacingAfterView:", view);
             }
         }
         (view == null ? view : (view.isa.method_msgSend["setFrame:"] || _objj_forward)(view, "setFrame:", CGRectMake(originX, originY, sizeW, sizeH)));
+        pendingSpacing = (self.isa.method_msgSend["_spacingAfterView:"] || _objj_forward)(self, "_spacingAfterView:", view);
+        hasPlacedAny = true;
     }
     return cursor;
 }
@@ -31988,6 +32038,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
     {
         self._orientation = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", "CPStackViewOrientation"));
         self._alignment = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", "CPStackViewAlignment"));
+        self._distribution = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeIntForKey:"] || _objj_forward)(aCoder, "decodeIntForKey:", "CPStackViewDistribution"));
         self._spacing = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeFloatForKey:"] || _objj_forward)(aCoder, "decodeFloatForKey:", "CPStackViewSpacing"));
         self._edgeInsets = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CPStackViewEdgeInsets"));
         if (!self._edgeInsets)
@@ -31996,12 +32047,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
         self._viewsLeading = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CPStackViewViewsLeading")) || [];
         self._viewsCenter = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CPStackViewViewsCenter")) || [];
         self._viewsTrailing = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CPStackViewViewsTrailing")) || [];
-        self._arrangedSubviews = ((___r1 = (CPMutableArray.isa.method_msgSend["alloc"] || _objj_forward)(CPMutableArray, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", self._viewsLeading));
-        ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", self._viewsCenter));
-        ((___r1 = self._arrangedSubviews), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addObjectsFromArray:"] || _objj_forward)(___r1, "addObjectsFromArray:", self._viewsTrailing));
-        self._customSpacings = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CPStackViewCustomSpacings")) || ((___r1 = (CPMapTable == null ? CPMapTable : (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
-        self._visibilityPriorities = ((___r1 = (CPMapTable == null ? CPMapTable : (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        (self == null ? self : (self.isa.method_msgSend["_rebuildArrangedSubviews"] || _objj_forward)(self, "_rebuildArrangedSubviews"));
+        self._customSpacings = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", "CPStackViewCustomSpacings")) || ((___r1 = (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+        self._visibilityPriorities = ((___r1 = (CPMapTable.isa.method_msgSend["alloc"] || _objj_forward)(CPMapTable, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
     }
     return self;
     var ___r1;
@@ -32012,6 +32060,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithFrame:"), funct
     (objj_getClass("CPStackView").super_class.method_dtable["encodeWithCoder:"] || _objj_forward)(self, "encodeWithCoder:", aCoder);
     (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._orientation, "CPStackViewOrientation"));
     (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._alignment, "CPStackViewAlignment"));
+    (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeInt:forKey:"] || _objj_forward)(aCoder, "encodeInt:forKey:", self._distribution, "CPStackViewDistribution"));
     (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeFloat:forKey:"] || _objj_forward)(aCoder, "encodeFloat:forKey:", self._spacing, "CPStackViewSpacing"));
     (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeObject:forKey:"] || _objj_forward)(aCoder, "encodeObject:forKey:", self._edgeInsets, "CPStackViewEdgeInsets"));
     (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["encodeBool:forKey:"] || _objj_forward)(aCoder, "encodeBool:forKey:", self._detachesHiddenViews, "CPStackViewDetachesHiddenViews"));
@@ -43666,7 +43715,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void","CPCoder"])]);
 }
-p;18;CPTreeController.jt;52765;@STATIC;1.0;I;20;Foundation/CPArray.jI;24;Foundation/CPIndexPath.ji;20;CPObjectController.ji;19;CPKeyValueBinding.ji;12;CPTreeNode.jt;52625;objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPIndexPath.j", NO);objj_executeFile("CPObjectController.j", YES);objj_executeFile("CPKeyValueBinding.j", YES);objj_executeFile("CPTreeNode.j", YES);
+p;18;CPTreeController.jt;54013;@STATIC;1.0;I;20;Foundation/CPArray.jI;24;Foundation/CPIndexPath.ji;20;CPObjectController.ji;19;CPKeyValueBinding.ji;12;CPTreeNode.jt;53873;objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPIndexPath.j", NO);objj_executeFile("CPObjectController.j", YES);objj_executeFile("CPKeyValueBinding.j", YES);objj_executeFile("CPTreeNode.j", YES);
 {var the_class = objj_allocateClassPair(CPObjectController, "CPTreeController"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_avoidsEmptySelection", "BOOL"), new objj_ivar("_preservesSelection", "BOOL"), new objj_ivar("_selectsInsertedObjects", "BOOL"), new objj_ivar("_alwaysUsesMultipleValuesMarker", "BOOL"), new objj_ivar("_childrenKeyPath", "CPString"), new objj_ivar("_countKeyPath", "CPString"), new objj_ivar("_leafKeyPath", "CPString"), new objj_ivar("_sortDescriptors", "CPArray"), new objj_ivar("_arrangedObjects", "id"), new objj_ivar("_selectionIndexPaths", "CPArray"), new objj_ivar("_disableSetContent", "BOOL")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTreeController__init(self, _cmd)
@@ -43805,18 +43854,26 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
         value = (CPArray.isa.method_msgSend["array"] || _objj_forward)(CPArray, "array");
     if (!(value == null ? value : (value.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(value, "isKindOfClass:", (CPArray.isa.method_msgSend["class"] || _objj_forward)(CPArray, "class"))))
         value = (CPArray.isa.method_msgSend["arrayWithObject:"] || _objj_forward)(CPArray, "arrayWithObject:", value);
+    if (self._contentObject === value)
+        return;
     var oldSelectedObjects = nil,
         oldSelectionIndexPaths = nil;
     if ((self.isa.method_msgSend["preservesSelection"] || _objj_forward)(self, "preservesSelection"))
         oldSelectedObjects = (self.isa.method_msgSend["selectedObjects"] || _objj_forward)(self, "selectedObjects");
     else
         oldSelectionIndexPaths = (self.isa.method_msgSend["selectionIndexPaths"] || _objj_forward)(self, "selectionIndexPaths");
+    (self.isa.method_msgSend["_selectionWillChange"] || _objj_forward)(self, "_selectionWillChange");
+    (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "content");
+    (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "contentArray");
     self._contentObject = value;
     (self.isa.method_msgSend["_rearrangeObjects"] || _objj_forward)(self, "_rearrangeObjects");
     if ((self.isa.method_msgSend["preservesSelection"] || _objj_forward)(self, "preservesSelection"))
         (self.isa.method_msgSend["__setSelectedObjects:"] || _objj_forward)(self, "__setSelectedObjects:", oldSelectedObjects);
     else
         (self.isa.method_msgSend["__setSelectionIndexPaths:avoidEmpty:"] || _objj_forward)(self, "__setSelectionIndexPaths:avoidEmpty:", oldSelectionIndexPaths, self._avoidsEmptySelection);
+    (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "contentArray");
+    (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "content");
+    (self.isa.method_msgSend["_selectionDidChange"] || _objj_forward)(self, "_selectionDidChange");
 }
 
 ,["void","id"]), new objj_method(sel_getUid("_setContentArray:"), function $CPTreeController___setContentArray_(self, _cmd, anArray)
@@ -43836,9 +43893,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
 
 ,["id"]), new objj_method(sel_getUid("rearrangeObjects"), function $CPTreeController__rearrangeObjects(self, _cmd)
 {
+    (self.isa.method_msgSend["_selectionWillChange"] || _objj_forward)(self, "_selectionWillChange");
     (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "arrangedObjects");
     (self.isa.method_msgSend["_rearrangeObjects"] || _objj_forward)(self, "_rearrangeObjects");
     (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "arrangedObjects");
+    (self.isa.method_msgSend["_selectionDidChange"] || _objj_forward)(self, "_selectionDidChange");
 }
 
 ,["void"]), new objj_method(sel_getUid("_rearrangeObjects"), function $CPTreeController___rearrangeObjects(self, _cmd)
@@ -43916,10 +43975,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
 
 ,["CPArray"]), new objj_method(sel_getUid("setSelectionIndexPaths:"), function $CPTreeController__setSelectionIndexPaths_(self, _cmd, indexPaths)
 {
-    (self.isa.method_msgSend["_selectionWillChange"] || _objj_forward)(self, "_selectionWillChange");
-    var result = (self.isa.method_msgSend["__setSelectionIndexPaths:avoidEmpty:"] || _objj_forward)(self, "__setSelectionIndexPaths:avoidEmpty:", indexPaths, NO);
-    (self.isa.method_msgSend["_selectionDidChange"] || _objj_forward)(self, "_selectionDidChange");
-    return result;
+    return (self.isa.method_msgSend["__setSelectionIndexPaths:avoidEmpty:"] || _objj_forward)(self, "__setSelectionIndexPaths:avoidEmpty:", indexPaths, NO);
 }
 
 ,["BOOL","CPArray"]), new objj_method(sel_getUid("_ensureTreeNodesExistForIndexPaths:"), function $CPTreeController___ensureTreeNodesExistForIndexPaths_(self, _cmd, indexPaths)
@@ -43991,16 +44047,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
     }
     if (((___r1 = self._selectionIndexPaths), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isEqualToArray:"] || _objj_forward)(___r1, "isEqualToArray:", newPaths)))
         return NO;
+    (self.isa.method_msgSend["_selectionWillChange"] || _objj_forward)(self, "_selectionWillChange");
     (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "selectionIndexPaths");
     self._selectionIndexPaths = (newPaths == null ? newPaths : (newPaths.isa.method_msgSend["copy"] || _objj_forward)(newPaths, "copy"));
-    var binderClass = ((___r1 = (self.isa.method_msgSend["class"] || _objj_forward)(self, "class")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_binderClassForBinding:"] || _objj_forward)(___r1, "_binderClassForBinding:", "selectionIndexPaths"));
-    if (binderClass)
-    {
-        var binding = (binderClass == null ? binderClass : (binderClass.isa.method_msgSend["getBinding:forObject:"] || _objj_forward)(binderClass, "getBinding:forObject:", "selectionIndexPaths", self));
-        if (binding)
-            (binding == null ? binding : (binding.isa.method_msgSend["reverseSetValueFor:"] || _objj_forward)(binding, "reverseSetValueFor:", "selectionIndexPaths"));
-    }
     (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "selectionIndexPaths");
+    (self.isa.method_msgSend["_selectionDidChange"] || _objj_forward)(self, "_selectionDidChange");
     return YES;
     var ___r1, ___r2;
 }
@@ -44041,8 +44092,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
         nodes = (self.isa.method_msgSend["selectedNodes"] || _objj_forward)(self, "selectedNodes"),
         count = (nodes == null ? nodes : (nodes.isa.method_msgSend["count"] || _objj_forward)(nodes, "count"));
     for (var i = 0; i < count; i++)
-        (objects == null ? objects : (objects.isa.method_msgSend["addObject:"] || _objj_forward)(objects, "addObject:", ((___r1 = (nodes == null ? nodes : (nodes.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(nodes, "objectAtIndex:", i))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["representedObject"] || _objj_forward)(___r1, "representedObject"))));
-    return objects;
+    {
+        var representedObject = ((___r1 = (nodes == null ? nodes : (nodes.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(nodes, "objectAtIndex:", i))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["representedObject"] || _objj_forward)(___r1, "representedObject"));
+        if (representedObject)
+            (objects == null ? objects : (objects.isa.method_msgSend["addObject:"] || _objj_forward)(objects, "addObject:", representedObject));
+    }
+    return (_CPObservableArray.isa.method_msgSend["arrayWithArray:"] || _objj_forward)(_CPObservableArray, "arrayWithArray:", objects);
     var ___r1;
 }
 
@@ -44147,6 +44202,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
 
 ,["void","id","CPIndexPath"]), new objj_method(sel_getUid("insertObjects:atArrangedObjectIndexPaths:"), function $CPTreeController__insertObjects_atArrangedObjectIndexPaths_(self, _cmd, objects, indexPaths)
 {
+    (self.isa.method_msgSend["_selectionWillChange"] || _objj_forward)(self, "_selectionWillChange");
     (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "content");
     self._disableSetContent = YES;
     var count = (objects == null ? objects : (objects.isa.method_msgSend["count"] || _objj_forward)(objects, "count"));
@@ -44186,6 +44242,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
     if ((self.isa.method_msgSend["selectsInsertedObjects"] || _objj_forward)(self, "selectsInsertedObjects"))
         (self.isa.method_msgSend["setSelectionIndexPaths:"] || _objj_forward)(self, "setSelectionIndexPaths:", indexPaths);
     (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "content");
+    (self.isa.method_msgSend["_selectionDidChange"] || _objj_forward)(self, "_selectionDidChange");
     var ___r1;
 }
 
@@ -44201,6 +44258,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
 
 ,["void","CPIndexPath"]), new objj_method(sel_getUid("removeObjectsAtArrangedObjectIndexPaths:"), function $CPTreeController__removeObjectsAtArrangedObjectIndexPaths_(self, _cmd, indexPaths)
 {
+    (self.isa.method_msgSend["_selectionWillChange"] || _objj_forward)(self, "_selectionWillChange");
     (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "content");
     self._disableSetContent = YES;
     var sortedPaths = (indexPaths == null ? indexPaths : (indexPaths.isa.method_msgSend["sortedArrayUsingSelector:"] || _objj_forward)(indexPaths, "sortedArrayUsingSelector:", sel_getUid("compare:"))),
@@ -44233,6 +44291,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("init"), function $CPTre
     self._disableSetContent = NO;
     (self.isa.method_msgSend["_rearrangeObjects"] || _objj_forward)(self, "_rearrangeObjects");
     (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "content");
+    (self.isa.method_msgSend["_selectionDidChange"] || _objj_forward)(self, "_selectionDidChange");
     var ___r1;
 }
 
@@ -44253,6 +44312,9 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
         return;
     (self.isa.method_msgSend["exposeBinding:"] || _objj_forward)(self, "exposeBinding:", "contentArray");
     (self.isa.method_msgSend["exposeBinding:"] || _objj_forward)(self, "exposeBinding:", "sortDescriptors");
+    (self.isa.method_msgSend["exposeBinding:"] || _objj_forward)(self, "exposeBinding:", "selectionIndexPaths");
+    (self.isa.method_msgSend["exposeBinding:"] || _objj_forward)(self, "exposeBinding:", "selectionIndexPath");
+    (self.isa.method_msgSend["exposeBinding:"] || _objj_forward)(self, "exposeBinding:", "selectedObjects");
 }
 
 ,["void"]), new objj_method(sel_getUid("keyPathsForValuesAffectingContentArray"), function $CPTreeController__keyPathsForValuesAffectingContentArray(self, _cmd)
@@ -44262,7 +44324,7 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 
 ,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingArrangedObjects"), function $CPTreeController__keyPathsForValuesAffectingArrangedObjects(self, _cmd)
 {
-    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "content", "sortDescriptors", "childrenKeyPath");
+    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "content", "contentArray", "sortDescriptors", "childrenKeyPath");
 }
 
 ,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingSelectionIndexPath"), function $CPTreeController__keyPathsForValuesAffectingSelectionIndexPath(self, _cmd)
@@ -44272,27 +44334,27 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("initialize"), function
 
 ,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingSelectedObjects"), function $CPTreeController__keyPathsForValuesAffectingSelectedObjects(self, _cmd)
 {
-    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths");
+    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths", "arrangedObjects");
 }
 
 ,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingSelectedNodes"), function $CPTreeController__keyPathsForValuesAffectingSelectedNodes(self, _cmd)
 {
-    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths");
-}
-
-,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingCanAddChild"), function $CPTreeController__keyPathsForValuesAffectingCanAddChild(self, _cmd)
-{
-    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths");
+    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths", "arrangedObjects");
 }
 
 ,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingCanInsert"), function $CPTreeController__keyPathsForValuesAffectingCanInsert(self, _cmd)
 {
-    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths");
+    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "editable");
 }
 
 ,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingCanInsertChild"), function $CPTreeController__keyPathsForValuesAffectingCanInsertChild(self, _cmd)
 {
-    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths");
+    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths", "editable");
+}
+
+,["CPSet"]), new objj_method(sel_getUid("keyPathsForValuesAffectingCanAddChild"), function $CPTreeController__keyPathsForValuesAffectingCanAddChild(self, _cmd)
+{
+    return (CPSet.isa.method_msgSend["setWithObjects:"] || _objj_forward)(CPSet, "setWithObjects:", "selectionIndexPaths", "editable");
 }
 
 ,["CPSet"])]);
@@ -44351,7 +44413,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void"])]);
 }
-p;12;CPTreeNode.jt;12134;@STATIC;1.0;I;21;Foundation/CPObject.jI;24;Foundation/CPIndexPath.jI;20;Foundation/CPArray.jt;12034;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("Foundation/CPIndexPath.j", NO);objj_executeFile("Foundation/CPArray.j", NO);
+p;12;CPTreeNode.jt;16804;@STATIC;1.0;I;21;Foundation/CPObject.jI;24;Foundation/CPIndexPath.jI;20;Foundation/CPArray.jt;16704;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("Foundation/CPIndexPath.j", NO);objj_executeFile("Foundation/CPArray.j", NO);
 {var the_class = objj_allocateClassPair(CPObject, "CPTreeNode"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_representedObject", "id"), new objj_ivar("_parentNode", "CPTreeNode"), new objj_ivar("_childNodes", "CPMutableArray")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("representedObject"), function $CPTreeNode__representedObject(self, _cmd)
@@ -44359,22 +44421,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("representedObject"), fu
     return self._representedObject;
 }
 
-,["id"]), new objj_method(sel_getUid("setRepresentedObject:"), function $CPTreeNode__setRepresentedObject_(self, _cmd, newValue)
-{
-    self._representedObject = newValue;
-}
-
-,["void","id"]), new objj_method(sel_getUid("parentNode"), function $CPTreeNode__parentNode(self, _cmd)
+,["id"]), new objj_method(sel_getUid("parentNode"), function $CPTreeNode__parentNode(self, _cmd)
 {
     return self._parentNode;
 }
 
-,["CPTreeNode"]), new objj_method(sel_getUid("setParentNode:"), function $CPTreeNode__setParentNode_(self, _cmd, newValue)
-{
-    self._parentNode = newValue;
-}
-
-,["void","CPTreeNode"]), new objj_method(sel_getUid("initWithRepresentedObject:"), function $CPTreeNode__initWithRepresentedObject_(self, _cmd, anObject)
+,["CPTreeNode"]), new objj_method(sel_getUid("initWithRepresentedObject:"), function $CPTreeNode__initWithRepresentedObject_(self, _cmd, anObject)
 {
     self = (objj_getClass("CPTreeNode").super_class.method_dtable["init"] || _objj_forward)(self, "init");
     if (self)
@@ -44385,18 +44437,63 @@ class_addMethods(the_class, [new objj_method(sel_getUid("representedObject"), fu
     return self;
 }
 
-,["id","id"]), new objj_method(sel_getUid("indexPath"), function $CPTreeNode__indexPath(self, _cmd)
+,["id","id"]), new objj_method(sel_getUid("init"), function $CPTreeNode__init(self, _cmd)
 {
-    if (self._parentNode)
+    return (self.isa.method_msgSend["initWithRepresentedObject:"] || _objj_forward)(self, "initWithRepresentedObject:", nil);
+}
+
+,["id"]), new objj_method(sel_getUid("_wouldCreateCycleWithNode:"), function $CPTreeNode___wouldCreateCycleWithNode_(self, _cmd, aTreeNode)
+{
+    for (var node = self; node; node = node._parentNode)
     {
-        var index = ((___r1 = ((___r2 = self._parentNode), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["childNodes"] || _objj_forward)(___r2, "childNodes"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObjectIdenticalTo:"] || _objj_forward)(___r1, "indexOfObjectIdenticalTo:", self));
-        var parentPath = ((___r1 = self._parentNode), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexPath"] || _objj_forward)(___r1, "indexPath"));
-        if (parentPath)
-            return (parentPath == null ? parentPath : (parentPath.isa.method_msgSend["indexPathByAddingIndex:"] || _objj_forward)(parentPath, "indexPathByAddingIndex:", index));
-        return (CPIndexPath.isa.method_msgSend["indexPathWithIndex:"] || _objj_forward)(CPIndexPath, "indexPathWithIndex:", index);
+        if (node === aTreeNode)
+            return YES;
     }
-    return nil;
-    var ___r1, ___r2;
+    return NO;
+}
+
+,["BOOL","CPTreeNode"]), new objj_method(sel_getUid("_validateChildNode:"), function $CPTreeNode___validateChildNode_(self, _cmd, aTreeNode)
+{
+    if (!(aTreeNode == null ? aTreeNode : (aTreeNode.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aTreeNode, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))))
+    {
+        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "CPTreeNode children must be CPTreeNode instances.");
+    }
+}
+
+,["void","id"]), new objj_method(sel_getUid("_removeChildNode:"), function $CPTreeNode___removeChildNode_(self, _cmd, aNode)
+{
+    var index = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObjectIdenticalTo:"] || _objj_forward)(___r1, "indexOfObjectIdenticalTo:", aNode));
+    if (index === CPNotFound)
+    {
+        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInternalInconsistencyException, "CPTreeNode parent and child relationship is inconsistent.");
+    }
+    (self.isa.method_msgSend["removeObjectFromChildNodesAtIndex:"] || _objj_forward)(self, "removeObjectFromChildNodesAtIndex:", index);
+    var ___r1;
+}
+
+,["void","CPTreeNode"]), new objj_method(sel_getUid("indexPath"), function $CPTreeNode__indexPath(self, _cmd)
+{
+    if (!self._parentNode)
+        return (CPIndexPath.isa.method_msgSend["indexPathWithIndexes:"] || _objj_forward)(CPIndexPath, "indexPathWithIndexes:", []);
+    var indexes = [],
+        node = self;
+    while (node._parentNode)
+    {
+        var parent = node._parentNode,
+            index = ((___r1 = parent._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObjectIdenticalTo:"] || _objj_forward)(___r1, "indexOfObjectIdenticalTo:", node));
+        if (index === CPNotFound)
+        {
+            (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInternalInconsistencyException, "CPTreeNode parent and child relationship is inconsistent.");
+        }
+        (indexes == null ? indexes : (indexes.isa.method_msgSend["addObject:"] || _objj_forward)(indexes, "addObject:", index));
+        node = parent;
+    }
+    var orderedIndexes = [],
+        count = (indexes == null ? indexes : (indexes.isa.method_msgSend["count"] || _objj_forward)(indexes, "count"));
+    while (count--)
+        (orderedIndexes == null ? orderedIndexes : (orderedIndexes.isa.method_msgSend["addObject:"] || _objj_forward)(orderedIndexes, "addObject:", (indexes == null ? indexes : (indexes.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(indexes, "objectAtIndex:", count))));
+    return (CPIndexPath.isa.method_msgSend["indexPathWithIndexes:"] || _objj_forward)(CPIndexPath, "indexPathWithIndexes:", orderedIndexes);
+    var ___r1;
 }
 
 ,["CPIndexPath"]), new objj_method(sel_getUid("isLeaf"), function $CPTreeNode__isLeaf(self, _cmd)
@@ -44418,65 +44515,105 @@ class_addMethods(the_class, [new objj_method(sel_getUid("representedObject"), fu
 
 ,["CPMutableArray"]), new objj_method(sel_getUid("insertObject:inChildNodesAtIndex:"), function $CPTreeNode__insertObject_inChildNodesAtIndex_(self, _cmd, aTreeNode, anIndex)
 {
-    if ((aTreeNode == null ? aTreeNode : (aTreeNode.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aTreeNode, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))) && aTreeNode._parentNode)
+    var count = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+    if (anIndex < 0 || anIndex > count)
     {
-        ((___r1 = ((___r2 = aTreeNode._parentNode), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["mutableChildNodes"] || _objj_forward)(___r2, "mutableChildNodes"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectIdenticalTo:"] || _objj_forward)(___r1, "removeObjectIdenticalTo:", aTreeNode));
+        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPRangeException, "index (" + anIndex + ") beyond bounds (0 .. " + count + ") for insertObject:inChildNodesAtIndex:");
     }
-    if ((aTreeNode == null ? aTreeNode : (aTreeNode.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aTreeNode, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))))
-        aTreeNode._parentNode = self;
+    (self.isa.method_msgSend["_validateChildNode:"] || _objj_forward)(self, "_validateChildNode:", aTreeNode);
+    if ((self.isa.method_msgSend["_wouldCreateCycleWithNode:"] || _objj_forward)(self, "_wouldCreateCycleWithNode:", aTreeNode))
+    {
+        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Inserting a CPTreeNode beneath itself or one of its descendants makes a cycle.");
+    }
+    if (aTreeNode._parentNode)
+    {
+        if (aTreeNode._parentNode === self)
+        {
+            var originalIndex = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObjectIdenticalTo:"] || _objj_forward)(___r1, "indexOfObjectIdenticalTo:", aTreeNode));
+            (self.isa.method_msgSend["removeObjectFromChildNodesAtIndex:"] || _objj_forward)(self, "removeObjectFromChildNodesAtIndex:", originalIndex);
+        }
+        else
+        {
+            ((___r1 = aTreeNode._parentNode), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_removeChildNode:"] || _objj_forward)(___r1, "_removeChildNode:", aTreeNode));
+        }
+    }
+    aTreeNode._parentNode = self;
     ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["insertObject:atIndex:"] || _objj_forward)(___r1, "insertObject:atIndex:", aTreeNode, anIndex));
-    var ___r1, ___r2;
+    var ___r1;
 }
 
 ,["void","CPTreeNode","CPInteger"]), new objj_method(sel_getUid("removeObjectFromChildNodesAtIndex:"), function $CPTreeNode__removeObjectFromChildNodesAtIndex_(self, _cmd, anIndex)
 {
     var node = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", anIndex));
-    if ((node == null ? node : (node.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(node, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))))
-        node._parentNode = nil;
+    node._parentNode = nil;
     ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectAtIndex:"] || _objj_forward)(___r1, "removeObjectAtIndex:", anIndex));
     var ___r1;
 }
 
-,["void","CPInteger"]), new objj_method(sel_getUid("replaceObjectFromChildNodesAtIndex:withObject:"), function $CPTreeNode__replaceObjectFromChildNodesAtIndex_withObject_(self, _cmd, anIndex, aTreeNode)
+,["void","CPInteger"]), new objj_method(sel_getUid("replaceObjectInChildNodesAtIndex:withObject:"), function $CPTreeNode__replaceObjectInChildNodesAtIndex_withObject_(self, _cmd, anIndex, aTreeNode)
 {
     var oldTreeNode = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", anIndex));
-    if ((oldTreeNode == null ? oldTreeNode : (oldTreeNode.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(oldTreeNode, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))))
-        oldTreeNode._parentNode = nil;
-    if ((aTreeNode == null ? aTreeNode : (aTreeNode.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(aTreeNode, "isKindOfClass:", (CPTreeNode.isa.method_msgSend["class"] || _objj_forward)(CPTreeNode, "class"))))
-        aTreeNode._parentNode = self;
+    (self.isa.method_msgSend["_validateChildNode:"] || _objj_forward)(self, "_validateChildNode:", aTreeNode);
+    if (oldTreeNode === aTreeNode)
+        return;
+    if ((self.isa.method_msgSend["_wouldCreateCycleWithNode:"] || _objj_forward)(self, "_wouldCreateCycleWithNode:", aTreeNode))
+    {
+        (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInvalidArgumentException, "Replacing a child with itself or one of its ancestors makes a cycle.");
+    }
+    var oldParent = aTreeNode._parentNode;
+    if (oldParent === self)
+    {
+        var replacementIndex = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["indexOfObjectIdenticalTo:"] || _objj_forward)(___r1, "indexOfObjectIdenticalTo:", aTreeNode));
+        if (replacementIndex === CPNotFound)
+        {
+            (CPException.isa.method_msgSend["raise:reason:"] || _objj_forward)(CPException, "raise:reason:", CPInternalInconsistencyException, "CPTreeNode parent and child relationship is inconsistent.");
+        }
+        aTreeNode._parentNode = nil;
+        ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeObjectAtIndex:"] || _objj_forward)(___r1, "removeObjectAtIndex:", replacementIndex));
+        if (replacementIndex < anIndex)
+            --anIndex;
+    }
+    else if (oldParent)
+    {
+        (oldParent == null ? oldParent : (oldParent.isa.method_msgSend["_removeChildNode:"] || _objj_forward)(oldParent, "_removeChildNode:", aTreeNode));
+    }
+    oldTreeNode._parentNode = nil;
+    aTreeNode._parentNode = self;
     ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["replaceObjectAtIndex:withObject:"] || _objj_forward)(___r1, "replaceObjectAtIndex:withObject:", anIndex, aTreeNode));
     var ___r1;
 }
 
-,["void","CPInteger","id"]), new objj_method(sel_getUid("objectInChildNodesAtIndex:"), function $CPTreeNode__objectInChildNodesAtIndex_(self, _cmd, anIndex)
+,["void","CPInteger","CPTreeNode"]), new objj_method(sel_getUid("objectInChildNodesAtIndex:"), function $CPTreeNode__objectInChildNodesAtIndex_(self, _cmd, anIndex)
 {
     return ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", anIndex));
     var ___r1;
 }
 
-,["id","CPInteger"]), new objj_method(sel_getUid("count"), function $CPTreeNode__count(self, _cmd)
+,["id","CPInteger"]), new objj_method(sel_getUid("countOfChildNodes"), function $CPTreeNode__countOfChildNodes(self, _cmd)
 {
     return ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
     var ___r1;
 }
 
-,["CPInteger"]), new objj_method(sel_getUid("objectAtIndex:"), function $CPTreeNode__objectAtIndex_(self, _cmd, anIndex)
+,["CPInteger"]), new objj_method(sel_getUid("sortWithSortDescriptors:recursively:"), function $CPTreeNode__sortWithSortDescriptors_recursively_(self, _cmd, sortDescriptors, shouldSortRecursively)
 {
-    return ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", anIndex));
-    var ___r1;
-}
-
-,["id","CPInteger"]), new objj_method(sel_getUid("sortWithSortDescriptors:recursively:"), function $CPTreeNode__sortWithSortDescriptors_recursively_(self, _cmd, sortDescriptors, shouldSortRecursively)
-{
-    ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["sortUsingDescriptors:"] || _objj_forward)(___r1, "sortUsingDescriptors:", sortDescriptors));
     if (!shouldSortRecursively)
-        return;
-    var count = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
-    while (count--)
     {
-        var child = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", count));
-        if ((child == null ? child : (child.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(child, "respondsToSelector:", sel_getUid("sortWithSortDescriptors:recursively:"))))
-            (child == null ? child : (child.isa.method_msgSend["sortWithSortDescriptors:recursively:"] || _objj_forward)(child, "sortWithSortDescriptors:recursively:", sortDescriptors, YES));
+        ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["sortUsingDescriptors:"] || _objj_forward)(___r1, "sortUsingDescriptors:", sortDescriptors));
+        return;
+    }
+    var stack = [];
+    (stack == null ? stack : (stack.isa.method_msgSend["addObject:"] || _objj_forward)(stack, "addObject:", self));
+    while ((stack == null ? stack : (stack.isa.method_msgSend["count"] || _objj_forward)(stack, "count")))
+    {
+        var node = (stack == null ? stack : (stack.isa.method_msgSend["lastObject"] || _objj_forward)(stack, "lastObject"));
+        (stack == null ? stack : (stack.isa.method_msgSend["removeLastObject"] || _objj_forward)(stack, "removeLastObject"));
+        ((___r1 = node._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["sortUsingDescriptors:"] || _objj_forward)(___r1, "sortUsingDescriptors:", sortDescriptors));
+        var count = ((___r1 = node._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+        while (count--)
+        {
+            (stack == null ? stack : (stack.isa.method_msgSend["addObject:"] || _objj_forward)(stack, "addObject:", ((___r1 = node._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", count))));
+        }
     }
     var ___r1;
 }
@@ -44490,10 +44627,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("representedObject"), fu
     for (var i = 0; i < length; i++)
     {
         var index = (indexPath == null ? indexPath : (indexPath.isa.method_msgSend["indexAtPosition:"] || _objj_forward)(indexPath, "indexAtPosition:", i)),
-            count = (node == null ? node : (node.isa.method_msgSend["count"] || _objj_forward)(node, "count"));
-        if (index >= count || index < 0)
+            count = (node == null ? node : (node.isa.method_msgSend["countOfChildNodes"] || _objj_forward)(node, "countOfChildNodes"));
+        if (index < 0 || index >= count)
             return nil;
-        node = (node == null ? node : (node.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(node, "objectAtIndex:", index));
+        node = (node == null ? node : (node.isa.method_msgSend["objectInChildNodesAtIndex:"] || _objj_forward)(node, "objectInChildNodesAtIndex:", index));
     }
     return node;
 }
@@ -44522,7 +44659,16 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
         self._parentNode = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPTreeNodeParentNodeKey));
         self._childNodes = (aCoder == null ? aCoder : (aCoder.isa.method_msgSend["decodeObjectForKey:"] || _objj_forward)(aCoder, "decodeObjectForKey:", CPTreeNodeChildNodesKey));
         if (!self._childNodes)
-            self._childNodes = ((___r1 = (CPMutableArray.isa.method_msgSend["alloc"] || _objj_forward)(CPMutableArray, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["init"] || _objj_forward)(___r1, "init"));
+            self._childNodes = [];
+        if (!((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPMutableArray.isa.method_msgSend["class"] || _objj_forward)(CPMutableArray, "class"))))
+            self._childNodes = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableCopy"] || _objj_forward)(___r1, "mutableCopy"));
+        var count = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count"));
+        while (count--)
+        {
+            var child = ((___r1 = self._childNodes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", count));
+            (self == null ? self : (self.isa.method_msgSend["_validateChildNode:"] || _objj_forward)(self, "_validateChildNode:", child));
+            child._parentNode = self;
+        }
     }
     return self;
     var ___r1;
@@ -44781,7 +44927,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithController:"), 
 
 ,["BOOL"])]);
 }
-p;8;CPView.jt;144183;@STATIC;1.0;I;20;Foundation/CPArray.jI;26;Foundation/CPObjJRuntime.jI;18;Foundation/CPSet.ji;17;_CPObject+Theme.ji;19;CGAffineTransform.ji;12;CGGeometry.ji;14;CPAppearance.ji;9;CPColor.ji;19;CPGraphicsContext.ji;13;CPResponder.ji;9;CPTheme.ji;16;CPTrackingArea.ji;20;CPWindow_Constants.ji;18;_CPDisplayServer.jt;143864;objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPObjJRuntime.j", NO);objj_executeFile("Foundation/CPSet.j", NO);objj_executeFile("_CPObject+Theme.j", YES);objj_executeFile("CGAffineTransform.j", YES);objj_executeFile("CGGeometry.j", YES);objj_executeFile("CPAppearance.j", YES);objj_executeFile("CPColor.j", YES);objj_executeFile("CPGraphicsContext.j", YES);objj_executeFile("CPResponder.j", YES);objj_executeFile("CPTheme.j", YES);objj_executeFile("CPTrackingArea.j", YES);objj_executeFile("CPWindow_Constants.j", YES);objj_executeFile("_CPDisplayServer.j", YES);{var the_typedef = objj_allocateTypeDef("_CPViewFullScreenModeState");
+p;8;CPView.jt;145052;@STATIC;1.0;I;20;Foundation/CPArray.jI;26;Foundation/CPObjJRuntime.jI;18;Foundation/CPSet.ji;17;_CPObject+Theme.ji;19;CGAffineTransform.ji;12;CGGeometry.ji;14;CPAppearance.ji;9;CPColor.ji;19;CPGraphicsContext.ji;13;CPResponder.ji;9;CPTheme.ji;16;CPTrackingArea.ji;20;CPWindow_Constants.ji;18;_CPDisplayServer.jt;144733;objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPObjJRuntime.j", NO);objj_executeFile("Foundation/CPSet.j", NO);objj_executeFile("_CPObject+Theme.j", YES);objj_executeFile("CGAffineTransform.j", YES);objj_executeFile("CGGeometry.j", YES);objj_executeFile("CPAppearance.j", YES);objj_executeFile("CPColor.j", YES);objj_executeFile("CPGraphicsContext.j", YES);objj_executeFile("CPResponder.j", YES);objj_executeFile("CPTheme.j", YES);objj_executeFile("CPTrackingArea.j", YES);objj_executeFile("CPWindow_Constants.j", YES);objj_executeFile("_CPDisplayServer.j", YES);{var the_typedef = objj_allocateTypeDef("_CPViewFullScreenModeState");
 objj_registerTypeDef(the_typedef);
 }CPViewNotSizable = 0;
 CPViewMinXMargin = 1;
@@ -45466,6 +45612,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("identifier"), function 
         origin.x *= size.width / frameSize.width;
         origin.y *= size.height / frameSize.height;
     }
+    var newScaleSize;
+    if (size && size.width !== 0 && size.height !== 0 && frameSize)
+        newScaleSize = CGSizeMake(frameSize.width / size.width, frameSize.height / size.height);
+    else
+        newScaleSize = CGSizeMake(1.0, 1.0);
+    if (!CGSizeEqualToSize(self._scaleSize, newScaleSize))
+    {
+        (self.isa.method_msgSend["willChangeValueForKey:"] || _objj_forward)(self, "willChangeValueForKey:", "scaleSize");
+        self._scaleSize = newScaleSize;
+        self._isScaled = self._scaleSize.width !== 1.0 || self._scaleSize.height !== 1.0;
+        (self.isa.method_msgSend["didChangeValueForKey:"] || _objj_forward)(self, "didChangeValueForKey:", "scaleSize");
+        (self.isa.method_msgSend["_scaleSizeUnitSquareToSize:"] || _objj_forward)(self, "_scaleSizeUnitSquareToSize:", CGSizeMake(1.0, 1.0));
+    }
     if (self._layer)
         ((___r1 = self._layer), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_owningViewBoundsChanged"] || _objj_forward)(___r1, "_owningViewBoundsChanged"));
     if (self._postsBoundsChangedNotifications && !self._inhibitFrameAndBoundsChangedNotifications)
@@ -45978,7 +46137,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("identifier"), function 
 
 ,["void","CGSize"]), new objj_method(sel_getUid("_scaleSizeUnitSquareToSize:"), function $CPView___scaleSizeUnitSquareToSize_(self, _cmd, aSize)
 {
-    self._hierarchyScaleSize = CGSizeMakeCopy(((___r1 = self._superview), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_hierarchyScaleSize"] || _objj_forward)(___r1, "_hierarchyScaleSize")));
+    self._hierarchyScaleSize = self._superview ? CGSizeMakeCopy(((___r1 = self._superview), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_hierarchyScaleSize"] || _objj_forward)(___r1, "_hierarchyScaleSize"))) : CGSizeMake(1.0, 1.0);
     if (self._isScaled)
     {
         self._hierarchyScaleSize.width *= self._scaleSize.width;
@@ -68122,7 +68281,9 @@ class_addMethods(meta_class, [new objj_method(sel_getUid("produceRTF:documentAtt
 
 ,["CPString","CPAttributedString","CPDictionary"])]);
 }
-p;24;_CPTableTextAttachment.jt;32135;@STATIC;1.0;i;8;CPView.ji;12;CPTextView.ji;13;CPTextField.jI;31;Foundation/CPAttributedString.jt;32032;objj_executeFile("CPView.j", YES);objj_executeFile("CPTextView.j", YES);objj_executeFile("CPTextField.j", YES);objj_executeFile("Foundation/CPAttributedString.j", NO);
+p;24;_CPTableTextAttachment.jt;32130;@STATIC;1.0;i;8;CPView.ji;13;CPTextField.jI;31;Foundation/CPAttributedString.jt;32044;objj_executeFile("CPView.j", YES);;
+;
+objj_executeFile("CPTextField.j", YES);objj_executeFile("Foundation/CPAttributedString.j", NO);
 {var the_class = objj_allocateClassPair(CPView, "_CPTableTextAttachment"),
 meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_headers", "CPArray"), new objj_ivar("_rows", "CPArray"), new objj_ivar("_isResizing", "BOOL"), new objj_ivar("_isEditable", "BOOL"), new objj_ivar("_acceptsRichText", "BOOL")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("initWithHeaders:rows:"), function $_CPTableTextAttachment__initWithHeaders_rows_(self, _cmd, headers, rows)
@@ -68315,7 +68476,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithHeaders:rows:")
         borderView._DOMElement.style.boxSizing = "border-box";
     }
     (cellContainer == null ? cellContainer : (cellContainer.isa.method_msgSend["addSubview:"] || _objj_forward)(cellContainer, "addSubview:", borderView));
-    var textContainer = ((___r1 = (CPTextContainer.isa.method_msgSend["alloc"] || _objj_forward)(CPTextContainer, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithContainerSize:"] || _objj_forward)(___r1, "initWithContainerSize:", CGSizeMake(initialWidth - 8, 1e7)));
+    var textContainer = ((___r1 = (CPTextContainer == null ? CPTextContainer : (CPTextContainer.isa.method_msgSend["alloc"] || _objj_forward)(CPTextContainer, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithContainerSize:"] || _objj_forward)(___r1, "initWithContainerSize:", CGSizeMake(initialWidth - 8, 1e7)));
     var textView = ((___r1 = (CPTextView == null ? CPTextView : (CPTextView.isa.method_msgSend["alloc"] || _objj_forward)(CPTextView, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:textContainer:"] || _objj_forward)(___r1, "initWithFrame:textContainer:", CGRectMake(4, 2, initialWidth - 8, initialHeight - 4), textContainer));
     (textView == null ? textView : (textView.isa.method_msgSend["setTextContainerInset:"] || _objj_forward)(textView, "setTextContainerInset:", CGSizeMake(0, 0)));
     (textView == null ? textView : (textView.isa.method_msgSend["setEditable:"] || _objj_forward)(textView, "setEditable:", self._isEditable));
@@ -70447,8 +70608,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithRange:attribute
 
 ,["CPString"])]);
 }
-p;18;CPParagraphStyle.jt;26535;@STATIC;1.0;I;21;Foundation/CPObject.jI;20;Foundation/CPArray.jI;25;Foundation/CPDictionary.jt;26434;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPDictionary.j", NO);CPParagraphStyleAttributeName = "CPParagraphStyleAttributeName";
-CPLeftTabStopType = 0;
+p;18;CPParagraphStyle.jt;26629;@STATIC;1.0;I;21;Foundation/CPObject.jI;20;Foundation/CPArray.jI;25;Foundation/CPDictionary.jt;26528;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("Foundation/CPArray.j", NO);objj_executeFile("Foundation/CPDictionary.j", NO);CPParagraphStyleAttributeName = "CPParagraphStyleAttributeName";
+{var the_typedef = objj_allocateTypeDef("CPTabStopType");
+objj_registerTypeDef(the_typedef);
+}CPLeftTabStopType = 0;
 CPRightTabStopType = 1;
 CPCenterTabStopType = 2;
 CPDecimalTabStopType = 3;
@@ -70849,7 +71012,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("initWithParagraphStyle:
 
 ,["id","CPZone"])]);
 }
-p;13;CPRulerView.jt;44796;@STATIC;1.0;I;21;Foundation/CPObject.ji;8;CPView.ji;13;CPTextField.ji;9;CPColor.ji;8;CPFont.ji;8;CPMenu.ji;12;CPMenuItem.jt;44666;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("CPView.j", YES);objj_executeFile("CPTextField.j", YES);objj_executeFile("CPColor.j", YES);objj_executeFile("CPFont.j", YES);objj_executeFile("CPMenu.j", YES);objj_executeFile("CPMenuItem.j", YES);(CPHorizontalRuler = 0, CPVerticalRuler = 1, CPRulerOrientationHorizontal = 0, CPRulerOrientationVertical = 1);
+p;13;CPRulerView.jt;46908;@STATIC;1.0;I;21;Foundation/CPObject.ji;8;CPView.ji;13;CPTextField.ji;9;CPColor.ji;8;CPFont.ji;8;CPMenu.ji;12;CPMenuItem.jt;46778;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("CPView.j", YES);objj_executeFile("CPTextField.j", YES);objj_executeFile("CPColor.j", YES);objj_executeFile("CPFont.j", YES);objj_executeFile("CPMenu.j", YES);objj_executeFile("CPMenuItem.j", YES);{var the_typedef = objj_allocateTypeDef("CPRulerOrientation");
+objj_registerTypeDef(the_typedef);
+}CPHorizontalRuler = 0;
+CPVerticalRuler = 1;
+CPRulerOrientationHorizontal = 0;
+CPRulerOrientationVertical = 1;
+;
+;
 ;
 
 {var the_class = objj_allocateClassPair(CPView, "CPRulerMarker"),
@@ -70891,12 +71061,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
         self._rulerView = aRulerView;
         self._imageValue = anImageValue;
         self._representedObject = anObject;
+        (self == null ? self : (self.isa.method_msgSend["setHitTests:"] || _objj_forward)(self, "setHitTests:", NO));
         self._label = ((___r1 = (CPTextField.isa.method_msgSend["alloc"] || _objj_forward)(CPTextField, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(0, 0, 12, 12)));
         ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setFont:"] || _objj_forward)(___r1, "setFont:", (CPFont.isa.method_msgSend["systemFontOfSize:"] || _objj_forward)(CPFont, "systemFontOfSize:", 10.0)));
         ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setTextColor:"] || _objj_forward)(___r1, "setTextColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.2, 1.0)));
         ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setAlignment:"] || _objj_forward)(___r1, "setAlignment:", CPCenterTextAlignment));
+        ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setHitTests:"] || _objj_forward)(___r1, "setHitTests:", NO));
         (self == null ? self : (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", self._label));
         self._customHandleView = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMakeZero()));
+        ((___r1 = self._customHandleView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setHitTests:"] || _objj_forward)(___r1, "setHitTests:", NO));
         (self == null ? self : (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", self._customHandleView));
         (self == null ? self : (self.isa.method_msgSend["updateMarkerIcon"] || _objj_forward)(self, "updateMarkerIcon"));
     }
@@ -70932,15 +71105,14 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
         ((___r1 = self._customHandleView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setFrame:"] || _objj_forward)(___r1, "setFrame:", CGRectMake(0, 0, frame.size.width, frame.size.height)));
         ((___r1 = ((___r2 = self._customHandleView), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["subviews"] || _objj_forward)(___r2, "subviews"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["makeObjectsPerformSelector:"] || _objj_forward)(___r1, "makeObjectsPerformSelector:", sel_getUid("removeFromSuperview")));
         var isFirstLine = self._representedObject === "CPFirstLineIndent";
-        ((___r1 = self._customHandleView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(___r1, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.5, 1.0)));
-        var innerView = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(1.0, 1.0, frame.size.width - 2.0, frame.size.height - 2.0)));
-        if (isFirstLine)
-            (innerView == null ? innerView : (innerView.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(innerView, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.92, 1.0)));
-        else
-            (innerView == null ? innerView : (innerView.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(innerView, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.80, 1.0)));
+        ((___r1 = self._customHandleView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(___r1, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.45, 1.0)));
+        var innerView = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(1.0, 1.0, Math.max(1.0, frame.size.width - 2.0), Math.max(1.0, frame.size.height - 2.0))));
+        (innerView == null ? innerView : (innerView.isa.method_msgSend["setHitTests:"] || _objj_forward)(innerView, "setHitTests:", NO));
+        (innerView == null ? innerView : (innerView.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(innerView, "setBackgroundColor:", isFirstLine ? (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.95, 1.0) : (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.80, 1.0)));
         ((___r1 = self._customHandleView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addSubview:"] || _objj_forward)(___r1, "addSubview:", innerView));
-        var gripLine = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(Math.floor(frame.size.width / 2.0) - 1.0, 2.0, 1.0, frame.size.height - 4.0)));
-        (gripLine == null ? gripLine : (gripLine.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(gripLine, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.6, 1.0)));
+        var gripLine = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(Math.floor(frame.size.width / 2.0) - 1.0, 1.0, 1.0, Math.max(1.0, frame.size.height - 3.0))));
+        (gripLine == null ? gripLine : (gripLine.isa.method_msgSend["setHitTests:"] || _objj_forward)(gripLine, "setHitTests:", NO));
+        (gripLine == null ? gripLine : (gripLine.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(gripLine, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.5, 1.0)));
         (innerView == null ? innerView : (innerView.isa.method_msgSend["addSubview:"] || _objj_forward)(innerView, "addSubview:", gripLine));
     }
     else
@@ -70958,16 +71130,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
             else if (align === CPRightTextAlignment)
                 ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setStringValue:"] || _objj_forward)(___r1, "setStringValue:", "◀"));
         }
-        else if (((___r1 = self._representedObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
-        {
-            if (self._representedObject === "CPTailIndent")
-                ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setStringValue:"] || _objj_forward)(___r1, "setStringValue:", "⥘"));
-            else
-                ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setStringValue:"] || _objj_forward)(___r1, "setStringValue:", "⇡"));
-        }
         else
         {
-            ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setStringValue:"] || _objj_forward)(___r1, "setStringValue:", "⇡"));
+            ((___r1 = self._label), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setStringValue:"] || _objj_forward)(___r1, "setStringValue:", "▲"));
         }
     }
     var ___r1, ___r2;
@@ -70994,15 +71159,10 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
         (menu == null ? menu : (menu.isa.method_msgSend["addItem:"] || _objj_forward)(menu, "addItem:", (CPMenuItem.isa.method_msgSend["separatorItem"] || _objj_forward)(CPMenuItem, "separatorItem")));
     }
     var deleteTitle = "Delete Tab Stop";
-    if (((___r1 = self._representedObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
-    {
-        if (self._representedObject === "CPFirstLineIndent")
-            deleteTitle = "Delete 1st line indentation marker";
-        else if (self._representedObject === "CPHeadIndent")
-            deleteTitle = "Delete head indentation marker";
-        else if (self._representedObject === "CPTailIndent")
-            deleteTitle = "Delete tail indentation marker";
-    }
+    if (self._representedObject === "CPFirstLineIndent")
+        deleteTitle = "Reset 1st line indentation";
+    else if (self._representedObject === "CPHeadIndent")
+        deleteTitle = "Reset head indentation";
     var itemDelete = (menu == null ? menu : (menu.isa.method_msgSend["addItemWithTitle:action:keyEquivalent:"] || _objj_forward)(menu, "addItemWithTitle:action:keyEquivalent:", deleteTitle, sel_getUid("deleteMarker:"), ""));
     (itemDelete == null ? itemDelete : (itemDelete.isa.method_msgSend["setTarget:"] || _objj_forward)(itemDelete, "setTarget:", self));
     return menu;
@@ -71028,14 +71188,12 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
 {
     if (!((___r1 = self._representedObject), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(___r1, "isKindOfClass:", (CPTextTab == null ? CPTextTab : (CPTextTab.isa.method_msgSend["class"] || _objj_forward)(CPTextTab, "class")))))
         return;
-    var oldTab = self._representedObject;
-    var newTab = ((___r1 = (CPTextTab == null ? CPTextTab : (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", alignment, self._imageValue));
+    var oldTab = self._representedObject,
+        newTab = ((___r1 = (CPTextTab == null ? CPTextTab : (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", alignment, self._imageValue));
     (self.isa.method_msgSend["setRepresentedObject:"] || _objj_forward)(self, "setRepresentedObject:", newTab);
     var client = ((___r1 = self._rulerView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["clientView"] || _objj_forward)(___r1, "clientView"));
     if (client && (client == null ? client : (client.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(client, "respondsToSelector:", sel_getUid("rulerView:didUpdateMarker:oldTab:"))))
-    {
         (client == null ? client : (client.isa.method_msgSend["rulerView:didUpdateMarker:oldTab:"] || _objj_forward)(client, "rulerView:didUpdateMarker:oldTab:", self._rulerView, self, oldTab));
-    }
     var ___r1;
 }
 
@@ -71043,9 +71201,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
 {
     var client = ((___r1 = self._rulerView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["clientView"] || _objj_forward)(___r1, "clientView"));
     if (client && (client == null ? client : (client.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(client, "respondsToSelector:", sel_getUid("rulerView:didRemoveMarker:"))))
-    {
         (client == null ? client : (client.isa.method_msgSend["rulerView:didRemoveMarker:"] || _objj_forward)(client, "rulerView:didRemoveMarker:", self._rulerView, self));
-    }
     ((___r1 = self._rulerView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["removeMarker:"] || _objj_forward)(___r1, "removeMarker:", self));
     var ___r1;
 }
@@ -71054,7 +71210,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("rulerView"), function $
 }
 
 {var the_class = objj_allocateClassPair(CPView, "CPRulerView"),
-meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_scrollView", "CPScrollView"), new objj_ivar("_orientation", "CPRulerOrientation"), new objj_ivar("_clientView", "CPView"), new objj_ivar("_ruleThickness", "float"), new objj_ivar("_reservedThicknessForMarkers", "float"), new objj_ivar("_markers", "CPArray"), new objj_ivar("_draggingMarker", "CPRulerMarker"), new objj_ivar("_dragStartPoint", "CGPoint"), new objj_ivar("_dragStartLocation", "float")]);objj_registerClassPair(the_class);
+meta_class = the_class.isa;class_addIvars(the_class, [new objj_ivar("_scrollView", "CPScrollView"), new objj_ivar("_orientation", "CPRulerOrientation"), new objj_ivar("_ruleThickness", "float"), new objj_ivar("_reservedThicknessForMarkers", "float"), new objj_ivar("_markers", "CPArray"), new objj_ivar("_draggingMarker", "CPRulerMarker"), new objj_ivar("_dragStartPoint", "CGPoint"), new objj_ivar("_dragStartLocation", "float")]);objj_registerClassPair(the_class);
 class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function $CPRulerView__scrollView(self, _cmd)
 {
     return self._scrollView;
@@ -71075,17 +71231,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
     self._orientation = newValue;
 }
 
-,["void","CPRulerOrientation"]), new objj_method(sel_getUid("clientView"), function $CPRulerView__clientView(self, _cmd)
-{
-    return self._clientView;
-}
-
-,["CPView"]), new objj_method(sel_getUid("setClientView:"), function $CPRulerView__setClientView_(self, _cmd, newValue)
-{
-    self._clientView = newValue;
-}
-
-,["void","CPView"]), new objj_method(sel_getUid("ruleThickness"), function $CPRulerView__ruleThickness(self, _cmd)
+,["void","CPRulerOrientation"]), new objj_method(sel_getUid("ruleThickness"), function $CPRulerView__ruleThickness(self, _cmd)
 {
     return self._ruleThickness;
 }
@@ -71095,13 +71241,23 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
     self._ruleThickness = newValue;
 }
 
-,["void","float"]), new objj_method(sel_getUid("initWithScrollView:orientation:"), function $CPRulerView__initWithScrollView_orientation_(self, _cmd, aScrollView, anOrientation)
+,["void","float"]), new objj_method(sel_getUid("draggingMarker"), function $CPRulerView__draggingMarker(self, _cmd)
+{
+    return self._draggingMarker;
+}
+
+,["CPRulerMarker"]), new objj_method(sel_getUid("_setDraggingMarker:"), function $CPRulerView___setDraggingMarker_(self, _cmd, newValue)
+{
+    self._draggingMarker = newValue;
+}
+
+,["void","CPRulerMarker"]), new objj_method(sel_getUid("initWithScrollView:orientation:"), function $CPRulerView__initWithScrollView_orientation_(self, _cmd, aScrollView, anOrientation)
 {
     if (self = (objj_getClass("CPRulerView").super_class.method_dtable["initWithFrame:"] || _objj_forward)(self, "initWithFrame:", CGRectMakeZero()))
     {
         self._scrollView = aScrollView;
         self._orientation = anOrientation;
-        self._clientView = (aScrollView == null ? aScrollView : (aScrollView.isa.method_msgSend["documentView"] || _objj_forward)(aScrollView, "documentView"));
+        _clientView = (aScrollView == null ? aScrollView : (aScrollView.isa.method_msgSend["documentView"] || _objj_forward)(aScrollView, "documentView"));
         self._ruleThickness = anOrientation === CPHorizontalRuler ? 16.0 : 24.0;
         self._reservedThicknessForMarkers = 0.0;
         self._markers = [];
@@ -71116,7 +71272,18 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
     (self.isa.method_msgSend["updateRuler"] || _objj_forward)(self, "updateRuler");
 }
 
-,["void","CGRect"]), new objj_method(sel_getUid("addMarker:"), function $CPRulerView__addMarker_(self, _cmd, aMarker)
+,["void","CGRect"]), new objj_method(sel_getUid("clientView"), function $CPRulerView__clientView(self, _cmd)
+{
+    return _clientView || ((___r1 = self._scrollView), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["documentView"] || _objj_forward)(___r1, "documentView"));
+    var ___r1;
+}
+
+,["CPView"]), new objj_method(sel_getUid("setClientView:"), function $CPRulerView__setClientView_(self, _cmd, aView)
+{
+    _clientView = aView;
+}
+
+,["void","CPView"]), new objj_method(sel_getUid("addMarker:"), function $CPRulerView__addMarker_(self, _cmd, aMarker)
 {
     if (((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containsObject:"] || _objj_forward)(___r1, "containsObject:", aMarker)))
         return;
@@ -71144,15 +71311,18 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
         (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", marker);
         (self.isa.method_msgSend["_positionMarker:"] || _objj_forward)(self, "_positionMarker:", marker);
     }
+    (self.isa.method_msgSend["updateRuler"] || _objj_forward)(self, "updateRuler");
     var ___r1, ___r2;
 }
 
 ,["void","CPArray"]), new objj_method(sel_getUid("_markerAtPoint:"), function $CPRulerView___markerAtPoint_(self, _cmd, aPoint)
 {
-    for (var i = 0; i < ((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")); i++)
+    for (var i = ((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")) - 1; i >= 0; i--)
     {
-        var marker = ((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i));
-        if (CGRectContainsPoint((marker == null ? marker : (marker.isa.method_msgSend["frame"] || _objj_forward)(marker, "frame")), aPoint))
+        var marker = ((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i)),
+            frame = (marker == null ? marker : (marker.isa.method_msgSend["frame"] || _objj_forward)(marker, "frame"));
+        var hitFrame = CGRectMake(frame.origin.x - 3.0, frame.origin.y - 2.0, frame.size.width + 6.0, frame.size.height + 4.0);
+        if (CGRectContainsPoint(hitFrame, aPoint))
             return marker;
     }
     return nil;
@@ -71168,27 +71338,28 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
         isHorizontal = self._orientation === CPHorizontalRuler || self._orientation === CPRulerOrientationHorizontal,
         rulerHeight = CGRectGetHeight((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")),
         rulerWidth = CGRectGetWidth((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")),
-        markerLocation = (aMarker == null ? aMarker : (aMarker.isa.method_msgSend["imageValue"] || _objj_forward)(aMarker, "imageValue"));
+        markerLocation = (aMarker == null ? aMarker : (aMarker.isa.method_msgSend["imageValue"] || _objj_forward)(aMarker, "imageValue")),
+        rep = (aMarker == null ? aMarker : (aMarker.isa.method_msgSend["representedObject"] || _objj_forward)(aMarker, "representedObject"));
     if (isHorizontal)
     {
         var x = markerLocation - scrollPoint.x - 6.0,
             y = rulerHeight - 11.0,
             w = 12.0,
             h = 12.0;
-        if ((aMarker == null ? aMarker : (aMarker.isa.method_msgSend["representedObject"] || _objj_forward)(aMarker, "representedObject")) === "CPFirstLineIndent")
+        if (rep === "CPFirstLineIndent")
         {
             y = 0.0;
             h = Math.floor(rulerHeight / 2.0);
         }
-        else if ((aMarker == null ? aMarker : (aMarker.isa.method_msgSend["representedObject"] || _objj_forward)(aMarker, "representedObject")) === "CPHeadIndent")
+        else if (rep === "CPHeadIndent")
         {
             y = Math.floor(rulerHeight / 2.0);
             h = rulerHeight - y - 1.0;
         }
         else
         {
-            if (x < 0.0)
-                x = 0.0;
+            if (x < -6.0)
+                x = -6.0;
             else if (x + 12.0 > rulerWidth)
                 x = rulerWidth - 12.0;
         }
@@ -71224,9 +71395,11 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
     }
     else
     {
+        var client = (self.isa.method_msgSend["clientView"] || _objj_forward)(self, "clientView");
+        if (client && (client == null ? client : (client.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(client, "respondsToSelector:", sel_getUid("rulerView:willAddMarker:atLocation:"))))
+            rulerLocation = (client == null ? client : (client.isa.method_msgSend["rulerView:willAddMarker:atLocation:"] || _objj_forward)(client, "rulerView:willAddMarker:atLocation:", self, nil, rulerLocation));
         var newMarker = ((___r1 = (CPRulerMarker.isa.method_msgSend["alloc"] || _objj_forward)(CPRulerMarker, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithRulerView:markerLocation:imageValue:representedObject:"] || _objj_forward)(___r1, "initWithRulerView:markerLocation:imageValue:representedObject:", self, rulerLocation, rulerLocation, nil));
         (self.isa.method_msgSend["addMarker:"] || _objj_forward)(self, "addMarker:", newMarker);
-        var client = (self.isa.method_msgSend["clientView"] || _objj_forward)(self, "clientView");
         if (client && (client == null ? client : (client.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(client, "respondsToSelector:", sel_getUid("rulerView:didAddMarker:"))))
             (client == null ? client : (client.isa.method_msgSend["rulerView:didAddMarker:"] || _objj_forward)(client, "rulerView:didAddMarker:", self, newMarker));
         self._draggingMarker = newMarker;
@@ -71244,12 +71417,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
         localPoint = (self.isa.method_msgSend["convertPoint:fromView:"] || _objj_forward)(self, "convertPoint:fromView:", locationInWindow, nil),
         isHorizontal = self._orientation === CPHorizontalRuler || self._orientation === CPRulerOrientationHorizontal;
     var delta = isHorizontal ? localPoint.x - self._dragStartPoint.x : localPoint.y - self._dragStartPoint.y,
-        newLocation = self._dragStartLocation + delta;
-    if (newLocation < 0)
-        newLocation = 0;
+        newLocation = Math.max(0.0, self._dragStartLocation + delta);
+    var client = (self.isa.method_msgSend["clientView"] || _objj_forward)(self, "clientView");
+    if (client && (client == null ? client : (client.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(client, "respondsToSelector:", sel_getUid("rulerView:willMoveMarker:toLocation:"))))
+        newLocation = (client == null ? client : (client.isa.method_msgSend["rulerView:willMoveMarker:toLocation:"] || _objj_forward)(client, "rulerView:willMoveMarker:toLocation:", self, self._draggingMarker, newLocation));
     ((___r1 = self._draggingMarker), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setImageValue:"] || _objj_forward)(___r1, "setImageValue:", newLocation));
-    (self.isa.method_msgSend["updateRuler"] || _objj_forward)(self, "updateRuler");
-    var draggedOff = isHorizontal ? localPoint.y < -15 || localPoint.y > CGRectGetHeight((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15 : localPoint.x < -15 || localPoint.x > CGRectGetWidth((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15;
+    (self.isa.method_msgSend["_positionMarker:"] || _objj_forward)(self, "_positionMarker:", self._draggingMarker);
+    var rep = ((___r1 = self._draggingMarker), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["representedObject"] || _objj_forward)(___r1, "representedObject")),
+        isIndent = rep === "CPFirstLineIndent" || rep === "CPHeadIndent" || rep === "CPTailIndent";
+    var draggedOff = !isIndent && (isHorizontal ? localPoint.y < -15 || localPoint.y > CGRectGetHeight((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15 : localPoint.x < -15 || localPoint.x > CGRectGetWidth((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15);
     if (draggedOff)
     {
         ((___r1 = self._draggingMarker), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setAlphaValue:"] || _objj_forward)(___r1, "setAlphaValue:", 0.4));
@@ -71260,7 +71436,6 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
         ((___r1 = self._draggingMarker), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setAlphaValue:"] || _objj_forward)(___r1, "setAlphaValue:", 1.0));
         ((___r1 = ((___r2 = self._draggingMarker), ___r2 == null ? ___r2 : (___r2.isa.method_msgSend["label"] || _objj_forward)(___r2, "label"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setTextColor:"] || _objj_forward)(___r1, "setTextColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.2, 1.0)));
     }
-    var client = (self.isa.method_msgSend["clientView"] || _objj_forward)(self, "clientView");
     if (client && (client == null ? client : (client.isa.method_msgSend["respondsToSelector:"] || _objj_forward)(client, "respondsToSelector:", sel_getUid("rulerView:didMoveMarker:"))))
         (client == null ? client : (client.isa.method_msgSend["rulerView:didMoveMarker:"] || _objj_forward)(client, "rulerView:didMoveMarker:", self, self._draggingMarker));
     var ___r1, ___r2;
@@ -71272,7 +71447,9 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
         return;
     var localPoint = (self.isa.method_msgSend["convertPoint:fromView:"] || _objj_forward)(self, "convertPoint:fromView:", (anEvent == null ? anEvent : (anEvent.isa.method_msgSend["locationInWindow"] || _objj_forward)(anEvent, "locationInWindow")), nil),
         isHorizontal = self._orientation === CPHorizontalRuler || self._orientation === CPRulerOrientationHorizontal,
-        draggedOff = isHorizontal ? localPoint.y < -15 || localPoint.y > CGRectGetHeight((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15 : localPoint.x < -15 || localPoint.x > CGRectGetWidth((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15;
+        rep = ((___r1 = self._draggingMarker), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["representedObject"] || _objj_forward)(___r1, "representedObject")),
+        isIndent = rep === "CPFirstLineIndent" || rep === "CPHeadIndent" || rep === "CPTailIndent";
+    var draggedOff = !isIndent && (isHorizontal ? localPoint.y < -15 || localPoint.y > CGRectGetHeight((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15 : localPoint.x < -15 || localPoint.x > CGRectGetWidth((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")) + 15);
     if (draggedOff)
     {
         var client = (self.isa.method_msgSend["clientView"] || _objj_forward)(self, "clientView");
@@ -71307,6 +71484,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
             rulerHeight = CGRectGetHeight((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds")),
             rulerWidth = CGRectGetWidth((self.isa.method_msgSend["bounds"] || _objj_forward)(self, "bounds"));
         var bottomBorder = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(0, rulerHeight - 1, rulerWidth, 1)));
+        (bottomBorder == null ? bottomBorder : (bottomBorder.isa.method_msgSend["setHitTests:"] || _objj_forward)(bottomBorder, "setHitTests:", NO));
         (bottomBorder == null ? bottomBorder : (bottomBorder.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(bottomBorder, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.75, 1.0)));
         (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", bottomBorder);
         var firstLineMarker = nil,
@@ -71326,6 +71504,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
             if (firstLineX > 0)
             {
                 var firstLineBg = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(0, 0, firstLineX, halfHeight)));
+                (firstLineBg == null ? firstLineBg : (firstLineBg.isa.method_msgSend["setHitTests:"] || _objj_forward)(firstLineBg, "setHitTests:", NO));
                 (firstLineBg == null ? firstLineBg : (firstLineBg.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(firstLineBg, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.93, 1.0)));
                 (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", firstLineBg);
             }
@@ -71336,6 +71515,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
             if (headX > 0)
             {
                 var headBg = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(0, halfHeight, headX, rulerHeight - halfHeight - 1.0)));
+                (headBg == null ? headBg : (headBg.isa.method_msgSend["setHitTests:"] || _objj_forward)(headBg, "setHitTests:", NO));
                 (headBg == null ? headBg : (headBg.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(headBg, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.86, 1.0)));
                 (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", headBg);
             }
@@ -71349,6 +71529,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
                 tickHeight = isMajor ? 8.0 : 4.0,
                 tickY = rulerHeight - tickHeight - 1.0;
             var tick = ((___r1 = (CPView.isa.method_msgSend["alloc"] || _objj_forward)(CPView, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(screenX, tickY, 1.0, tickHeight)));
+            (tick == null ? tick : (tick.isa.method_msgSend["setHitTests:"] || _objj_forward)(tick, "setHitTests:", NO));
             (tick == null ? tick : (tick.isa.method_msgSend["setBackgroundColor:"] || _objj_forward)(tick, "setBackgroundColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.65, 1.0)));
             (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", tick);
             if (isMajor)
@@ -71366,6 +71547,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
                     alignment = CPRightTextAlignment;
                 }
                 var label = ((___r1 = (CPTextField.isa.method_msgSend["alloc"] || _objj_forward)(CPTextField, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithFrame:"] || _objj_forward)(___r1, "initWithFrame:", CGRectMake(labelX, 1.0, 40.0, 12.0)));
+                (label == null ? label : (label.isa.method_msgSend["setHitTests:"] || _objj_forward)(label, "setHitTests:", NO));
                 (label == null ? label : (label.isa.method_msgSend["setStringValue:"] || _objj_forward)(label, "setStringValue:", (CPString.isa.method_msgSend["stringWithFormat:"] || _objj_forward)(CPString, "stringWithFormat:", "%d", val)));
                 (label == null ? label : (label.isa.method_msgSend["setFont:"] || _objj_forward)(label, "setFont:", (CPFont.isa.method_msgSend["systemFontOfSize:"] || _objj_forward)(CPFont, "systemFontOfSize:", 8.0)));
                 (label == null ? label : (label.isa.method_msgSend["setTextColor:"] || _objj_forward)(label, "setTextColor:", (CPColor.isa.method_msgSend["colorWithWhite:alpha:"] || _objj_forward)(CPColor, "colorWithWhite:alpha:", 0.4, 1.0)));
@@ -71413,8 +71595,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("scrollView"), function 
     for (var i = 0; i < ((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["count"] || _objj_forward)(___r1, "count")); i++)
     {
         var marker = ((___r1 = self._markers), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(___r1, "objectAtIndex:", i));
-        if ((marker == null ? marker : (marker.isa.method_msgSend["superview"] || _objj_forward)(marker, "superview")) !== self)
-            (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", marker);
+        (self.isa.method_msgSend["addSubview:"] || _objj_forward)(self, "addSubview:", marker);
         (self.isa.method_msgSend["_positionMarker:"] || _objj_forward)(self, "_positionMarker:", marker);
     }
     var ___r1;
@@ -71935,7 +72116,7 @@ var meta_class = the_class.isa;class_addMethods(the_class, [new objj_method(sel_
 
 ,["void"])]);
 }
-p;12;CPTextView.jt;215188;@STATIC;1.0;i;8;CPText.ji;14;CPPasteboard.ji;14;CPColorPanel.ji;15;CPFontManager.ji;15;CPTextStorage.ji;17;CPTextContainer.ji;17;CPLayoutManager.ji;18;CPParagraphStyle.ji;14;_CPRTFParser.ji;16;_CPRTFProducer.jt;214970;objj_executeFile("CPText.j", YES);objj_executeFile("CPPasteboard.j", YES);objj_executeFile("CPColorPanel.j", YES);objj_executeFile("CPFontManager.j", YES);objj_executeFile("CPTextStorage.j", YES);objj_executeFile("CPTextContainer.j", YES);objj_executeFile("CPLayoutManager.j", YES);objj_executeFile("CPParagraphStyle.j", YES);objj_executeFile("_CPRTFParser.j", YES);objj_executeFile("_CPRTFProducer.j", YES);;
+p;12;CPTextView.jt;221145;@STATIC;1.0;i;8;CPText.ji;14;CPPasteboard.ji;14;CPColorPanel.ji;15;CPFontManager.ji;15;CPTextStorage.ji;17;CPTextContainer.ji;17;CPLayoutManager.ji;18;CPParagraphStyle.ji;14;_CPRTFParser.ji;16;_CPRTFProducer.jt;220927;objj_executeFile("CPText.j", YES);objj_executeFile("CPPasteboard.j", YES);objj_executeFile("CPColorPanel.j", YES);objj_executeFile("CPFontManager.j", YES);objj_executeFile("CPTextStorage.j", YES);objj_executeFile("CPTextContainer.j", YES);objj_executeFile("CPLayoutManager.j", YES);objj_executeFile("CPParagraphStyle.j", YES);objj_executeFile("_CPRTFParser.j", YES);objj_executeFile("_CPRTFProducer.j", YES);;
 ;
 ;
 ;
@@ -74017,6 +74198,8 @@ class_addMethods(the_class, [new objj_method(sel_getUid("updateRuler"), function
     var ruler = (scrollView == null ? scrollView : (scrollView.isa.method_msgSend["horizontalRulerView"] || _objj_forward)(scrollView, "horizontalRulerView"));
     if (!ruler)
         return;
+    if ((ruler == null ? ruler : (ruler.isa.method_msgSend["draggingMarker"] || _objj_forward)(ruler, "draggingMarker")))
+        return;
     var selectedRange = (self.isa.method_msgSend["selectedRange"] || _objj_forward)(self, "selectedRange"),
         paragraphStyle = (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle"),
         currentAttributes = self._typingAttributes;
@@ -74051,50 +74234,6 @@ class_addMethods(the_class, [new objj_method(sel_getUid("updateRuler"), function
 
 ,["void"]), new objj_method(sel_getUid("rulerView:didAddMarker:"), function $CPTextView__rulerView_didAddMarker_(self, _cmd, rulerView, marker)
 {
-    if (!(self.isa.method_msgSend["_didBeginEditing"] || _objj_forward)(self, "_didBeginEditing") || !(self.isa.method_msgSend["shouldChangeTextInRange:replacementString:"] || _objj_forward)(self, "shouldChangeTextInRange:replacementString:", self._selectionRange, nil))
-        return;
-    var selectedRange = (self.isa.method_msgSend["selectedRange"] || _objj_forward)(self, "selectedRange"),
-        paragraphStyle = (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle"),
-        currentAttributes = self._typingAttributes;
-    var textLength = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length")),
-        charIndex = selectedRange.location;
-    if (textLength > 0)
-    {
-        if (charIndex >= textLength)
-            charIndex = textLength - 1;
-        if (charIndex < 0)
-            charIndex = 0;
-        currentAttributes = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(___r1, "attributesAtIndex:effectiveRange:", charIndex, nil));
-    }
-    if ((currentAttributes == null ? currentAttributes : (currentAttributes.isa.method_msgSend["objectForKey:"] || _objj_forward)(currentAttributes, "objectForKey:", CPParagraphStyleAttributeName)))
-        paragraphStyle = (currentAttributes == null ? currentAttributes : (currentAttributes.isa.method_msgSend["objectForKey:"] || _objj_forward)(currentAttributes, "objectForKey:", CPParagraphStyleAttributeName));
-    var mutableStyle = (paragraphStyle == null ? paragraphStyle : (paragraphStyle.isa.method_msgSend["mutableCopy"] || _objj_forward)(paragraphStyle, "mutableCopy"));
-    var newTab = ((___r1 = (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", CPLeftTextAlignment, (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue")))),
-        tabs = ((___r1 = (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["tabStops"] || _objj_forward)(mutableStyle, "tabStops"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableCopy"] || _objj_forward)(___r1, "mutableCopy"));
-    (tabs == null ? tabs : (tabs.isa.method_msgSend["addObject:"] || _objj_forward)(tabs, "addObject:", newTab));
-    (tabs == null ? tabs : (tabs.isa.method_msgSend["sortUsingFunction:context:"] || _objj_forward)(tabs, "sortUsingFunction:context:", compareTabStops, nil));
-    (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTabStops:"] || _objj_forward)(mutableStyle, "setTabStops:", tabs));
-    (marker == null ? marker : (marker.isa.method_msgSend["setRepresentedObject:"] || _objj_forward)(marker, "setRepresentedObject:", newTab));
-    var targetRange = selectedRange;
-    if (targetRange.length === 0)
-        targetRange = (self.isa.method_msgSend["selectionRangeForProposedRange:granularity:"] || _objj_forward)(self, "selectionRangeForProposedRange:granularity:", CPMakeRange(targetRange.location, 0), CPSelectByParagraph);
-    if (targetRange.length > 0)
-    {
-        ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addAttribute:value:range:"] || _objj_forward)(___r1, "addAttribute:value:range:", CPParagraphStyleAttributeName, mutableStyle, CPMakeRangeCopy(targetRange)));
-        ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["textStorage:edited:range:changeInLength:invalidatedRange:"] || _objj_forward)(___r1, "textStorage:edited:range:changeInLength:invalidatedRange:", self._textStorage, 0, CPMakeRangeCopy(targetRange), 0, CPMakeRangeCopy(targetRange)));
-    }
-    if (selectedRange.length === 0)
-    {
-        ((___r1 = self._typingAttributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", mutableStyle, CPParagraphStyleAttributeName));
-        ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPTextViewDidChangeTypingAttributesNotification, self));
-    }
-    var ___r1;
-}
-
-,["void","CPRulerView","CPRulerMarker"]), new objj_method(sel_getUid("rulerView:didMoveMarker:"), function $CPTextView__rulerView_didMoveMarker_(self, _cmd, rulerView, marker)
-{
-    if (!(self.isa.method_msgSend["_didBeginEditing"] || _objj_forward)(self, "_didBeginEditing") || !(self.isa.method_msgSend["shouldChangeTextInRange:replacementString:"] || _objj_forward)(self, "shouldChangeTextInRange:replacementString:", self._selectionRange, nil))
-        return;
     var selectedRange = (self.isa.method_msgSend["selectedRange"] || _objj_forward)(self, "selectedRange"),
         paragraphStyle = (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle"),
         currentAttributes = self._typingAttributes;
@@ -74111,41 +74250,71 @@ class_addMethods(the_class, [new objj_method(sel_getUid("updateRuler"), function
     if ((currentAttributes == null ? currentAttributes : (currentAttributes.isa.method_msgSend["objectForKey:"] || _objj_forward)(currentAttributes, "objectForKey:", CPParagraphStyleAttributeName)))
         paragraphStyle = (currentAttributes == null ? currentAttributes : (currentAttributes.isa.method_msgSend["objectForKey:"] || _objj_forward)(currentAttributes, "objectForKey:", CPParagraphStyleAttributeName));
     var mutableStyle = (paragraphStyle == null ? paragraphStyle : (paragraphStyle.isa.method_msgSend["mutableCopy"] || _objj_forward)(paragraphStyle, "mutableCopy")),
-        oldTab = (marker == null ? marker : (marker.isa.method_msgSend["representedObject"] || _objj_forward)(marker, "representedObject"));
-    if (!oldTab)
-        return;
-    if ((oldTab == null ? oldTab : (oldTab.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(oldTab, "isKindOfClass:", (CPTextTab.isa.method_msgSend["class"] || _objj_forward)(CPTextTab, "class"))))
-    {
-        var newTab = ((___r1 = (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", (oldTab == null ? oldTab : (oldTab.isa.method_msgSend["alignment"] || _objj_forward)(oldTab, "alignment")), (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue")))),
-            tabs = ((___r1 = (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["tabStops"] || _objj_forward)(mutableStyle, "tabStops"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableCopy"] || _objj_forward)(___r1, "mutableCopy"));
-        (tabs == null ? tabs : (tabs.isa.method_msgSend["removeObject:"] || _objj_forward)(tabs, "removeObject:", oldTab));
-        (tabs == null ? tabs : (tabs.isa.method_msgSend["addObject:"] || _objj_forward)(tabs, "addObject:", newTab));
-        (tabs == null ? tabs : (tabs.isa.method_msgSend["sortUsingFunction:context:"] || _objj_forward)(tabs, "sortUsingFunction:context:", compareTabStops, nil));
-        (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTabStops:"] || _objj_forward)(mutableStyle, "setTabStops:", tabs));
-        (marker == null ? marker : (marker.isa.method_msgSend["setRepresentedObject:"] || _objj_forward)(marker, "setRepresentedObject:", newTab));
-    }
-    else if ((oldTab == null ? oldTab : (oldTab.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(oldTab, "isKindOfClass:", (CPString.isa.method_msgSend["class"] || _objj_forward)(CPString, "class"))))
-    {
-        if (oldTab === "CPFirstLineIndent")
-            (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setFirstLineHeadIndent:"] || _objj_forward)(mutableStyle, "setFirstLineHeadIndent:", (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue"))));
-        else if (oldTab === "CPHeadIndent")
-            (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setHeadIndent:"] || _objj_forward)(mutableStyle, "setHeadIndent:", (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue"))));
-        else if (oldTab === "CPTailIndent")
-            (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTailIndent:"] || _objj_forward)(mutableStyle, "setTailIndent:", (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue"))));
-    }
+        newTab = ((___r1 = (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", CPLeftTextAlignment, (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue")))),
+        tabs = ((___r1 = (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["tabStops"] || _objj_forward)(mutableStyle, "tabStops"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableCopy"] || _objj_forward)(___r1, "mutableCopy"));
+    (tabs == null ? tabs : (tabs.isa.method_msgSend["addObject:"] || _objj_forward)(tabs, "addObject:", newTab));
+    (tabs == null ? tabs : (tabs.isa.method_msgSend["sortUsingFunction:context:"] || _objj_forward)(tabs, "sortUsingFunction:context:", compareTabStops, nil));
+    (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTabStops:"] || _objj_forward)(mutableStyle, "setTabStops:", tabs));
+    (marker == null ? marker : (marker.isa.method_msgSend["setRepresentedObject:"] || _objj_forward)(marker, "setRepresentedObject:", newTab));
     var targetRange = selectedRange;
-    if (targetRange.length === 0)
+    if (targetRange.length === 0 && textLength > 0)
         targetRange = (self.isa.method_msgSend["selectionRangeForProposedRange:granularity:"] || _objj_forward)(self, "selectionRangeForProposedRange:granularity:", CPMakeRange(targetRange.location, 0), CPSelectByParagraph);
     if (targetRange.length > 0)
     {
         ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addAttribute:value:range:"] || _objj_forward)(___r1, "addAttribute:value:range:", CPParagraphStyleAttributeName, mutableStyle, CPMakeRangeCopy(targetRange)));
         ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["textStorage:edited:range:changeInLength:invalidatedRange:"] || _objj_forward)(___r1, "textStorage:edited:range:changeInLength:invalidatedRange:", self._textStorage, 0, CPMakeRangeCopy(targetRange), 0, CPMakeRangeCopy(targetRange)));
     }
-    if (selectedRange.length === 0)
+    ((___r1 = self._typingAttributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", mutableStyle, CPParagraphStyleAttributeName));
+    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPTextViewDidChangeTypingAttributesNotification, self));
+    var ___r1;
+}
+
+,["void","CPRulerView","CPRulerMarker"]), new objj_method(sel_getUid("rulerView:didMoveMarker:"), function $CPTextView__rulerView_didMoveMarker_(self, _cmd, rulerView, marker)
+{
+    var selectedRange = (self.isa.method_msgSend["selectedRange"] || _objj_forward)(self, "selectedRange"),
+        paragraphStyle = (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle"),
+        currentAttributes = self._typingAttributes;
+    var textLength = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length")),
+        charIndex = selectedRange.location;
+    if (textLength > 0)
     {
-        ((___r1 = self._typingAttributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", mutableStyle, CPParagraphStyleAttributeName));
-        ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPTextViewDidChangeTypingAttributesNotification, self));
+        if (charIndex >= textLength)
+            charIndex = textLength - 1;
+        if (charIndex < 0)
+            charIndex = 0;
+        currentAttributes = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["attributesAtIndex:effectiveRange:"] || _objj_forward)(___r1, "attributesAtIndex:effectiveRange:", charIndex, nil));
     }
+    if ((currentAttributes == null ? currentAttributes : (currentAttributes.isa.method_msgSend["objectForKey:"] || _objj_forward)(currentAttributes, "objectForKey:", CPParagraphStyleAttributeName)))
+        paragraphStyle = (currentAttributes == null ? currentAttributes : (currentAttributes.isa.method_msgSend["objectForKey:"] || _objj_forward)(currentAttributes, "objectForKey:", CPParagraphStyleAttributeName));
+    var mutableStyle = (paragraphStyle == null ? paragraphStyle : (paragraphStyle.isa.method_msgSend["mutableCopy"] || _objj_forward)(paragraphStyle, "mutableCopy")),
+        rep = (marker == null ? marker : (marker.isa.method_msgSend["representedObject"] || _objj_forward)(marker, "representedObject"));
+    if (!rep)
+        return;
+    if ((rep == null ? rep : (rep.isa.method_msgSend["isKindOfClass:"] || _objj_forward)(rep, "isKindOfClass:", (CPTextTab.isa.method_msgSend["class"] || _objj_forward)(CPTextTab, "class"))))
+    {
+        var newTab = ((___r1 = (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", (rep == null ? rep : (rep.isa.method_msgSend["alignment"] || _objj_forward)(rep, "alignment")), (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue")))),
+            tabs = ((___r1 = (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["tabStops"] || _objj_forward)(mutableStyle, "tabStops"))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["mutableCopy"] || _objj_forward)(___r1, "mutableCopy"));
+        (tabs == null ? tabs : (tabs.isa.method_msgSend["removeObject:"] || _objj_forward)(tabs, "removeObject:", rep));
+        (tabs == null ? tabs : (tabs.isa.method_msgSend["addObject:"] || _objj_forward)(tabs, "addObject:", newTab));
+        (tabs == null ? tabs : (tabs.isa.method_msgSend["sortUsingFunction:context:"] || _objj_forward)(tabs, "sortUsingFunction:context:", compareTabStops, nil));
+        (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTabStops:"] || _objj_forward)(mutableStyle, "setTabStops:", tabs));
+        (marker == null ? marker : (marker.isa.method_msgSend["setRepresentedObject:"] || _objj_forward)(marker, "setRepresentedObject:", newTab));
+    }
+    else if (rep === "CPFirstLineIndent")
+        (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setFirstLineHeadIndent:"] || _objj_forward)(mutableStyle, "setFirstLineHeadIndent:", (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue"))));
+    else if (rep === "CPHeadIndent")
+        (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setHeadIndent:"] || _objj_forward)(mutableStyle, "setHeadIndent:", (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue"))));
+    else if (rep === "CPTailIndent")
+        (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTailIndent:"] || _objj_forward)(mutableStyle, "setTailIndent:", (marker == null ? marker : (marker.isa.method_msgSend["imageValue"] || _objj_forward)(marker, "imageValue"))));
+    var targetRange = selectedRange;
+    if (targetRange.length === 0 && textLength > 0)
+        targetRange = (self.isa.method_msgSend["selectionRangeForProposedRange:granularity:"] || _objj_forward)(self, "selectionRangeForProposedRange:granularity:", CPMakeRange(targetRange.location, 0), CPSelectByParagraph);
+    if (targetRange.length > 0)
+    {
+        ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addAttribute:value:range:"] || _objj_forward)(___r1, "addAttribute:value:range:", CPParagraphStyleAttributeName, mutableStyle, CPMakeRangeCopy(targetRange)));
+        ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["textStorage:edited:range:changeInLength:invalidatedRange:"] || _objj_forward)(___r1, "textStorage:edited:range:changeInLength:invalidatedRange:", self._textStorage, 0, CPMakeRangeCopy(targetRange), 0, CPMakeRangeCopy(targetRange)));
+    }
+    ((___r1 = self._typingAttributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", mutableStyle, CPParagraphStyleAttributeName));
     ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_validateLayoutAndGlyphs"] || _objj_forward)(___r1, "_validateLayoutAndGlyphs"));
     (self.isa.method_msgSend["sizeToFit"] || _objj_forward)(self, "sizeToFit");
     (self.isa.method_msgSend["setNeedsDisplay:"] || _objj_forward)(self, "setNeedsDisplay:", YES);
@@ -74154,8 +74323,6 @@ class_addMethods(the_class, [new objj_method(sel_getUid("updateRuler"), function
 
 ,["void","CPRulerView","CPRulerMarker"]), new objj_method(sel_getUid("rulerView:didRemoveMarker:"), function $CPTextView__rulerView_didRemoveMarker_(self, _cmd, rulerView, marker)
 {
-    if (!(self.isa.method_msgSend["_didBeginEditing"] || _objj_forward)(self, "_didBeginEditing") || !(self.isa.method_msgSend["shouldChangeTextInRange:replacementString:"] || _objj_forward)(self, "shouldChangeTextInRange:replacementString:", self._selectionRange, nil))
-        return;
     var selectedRange = (self.isa.method_msgSend["selectedRange"] || _objj_forward)(self, "selectedRange"),
         paragraphStyle = (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle"),
         currentAttributes = self._typingAttributes;
@@ -74179,18 +74346,15 @@ class_addMethods(the_class, [new objj_method(sel_getUid("updateRuler"), function
     (tabs == null ? tabs : (tabs.isa.method_msgSend["removeObject:"] || _objj_forward)(tabs, "removeObject:", oldTab));
     (mutableStyle == null ? mutableStyle : (mutableStyle.isa.method_msgSend["setTabStops:"] || _objj_forward)(mutableStyle, "setTabStops:", tabs));
     var targetRange = selectedRange;
-    if (targetRange.length === 0)
+    if (targetRange.length === 0 && textLength > 0)
         targetRange = (self.isa.method_msgSend["selectionRangeForProposedRange:granularity:"] || _objj_forward)(self, "selectionRangeForProposedRange:granularity:", CPMakeRange(targetRange.location, 0), CPSelectByParagraph);
     if (targetRange.length > 0)
     {
         ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["addAttribute:value:range:"] || _objj_forward)(___r1, "addAttribute:value:range:", CPParagraphStyleAttributeName, mutableStyle, CPMakeRangeCopy(targetRange)));
         ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["textStorage:edited:range:changeInLength:invalidatedRange:"] || _objj_forward)(___r1, "textStorage:edited:range:changeInLength:invalidatedRange:", self._textStorage, 0, CPMakeRangeCopy(targetRange), 0, CPMakeRangeCopy(targetRange)));
     }
-    if (selectedRange.length === 0)
-    {
-        ((___r1 = self._typingAttributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", mutableStyle, CPParagraphStyleAttributeName));
-        ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPTextViewDidChangeTypingAttributesNotification, self));
-    }
+    ((___r1 = self._typingAttributes), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["setObject:forKey:"] || _objj_forward)(___r1, "setObject:forKey:", mutableStyle, CPParagraphStyleAttributeName));
+    ((___r1 = (CPNotificationCenter.isa.method_msgSend["defaultCenter"] || _objj_forward)(CPNotificationCenter, "defaultCenter")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["postNotificationName:object:"] || _objj_forward)(___r1, "postNotificationName:object:", CPTextViewDidChangeTypingAttributesNotification, self));
     var ___r1;
 }
 
@@ -74225,7 +74389,115 @@ class_addMethods(the_class, [new objj_method(sel_getUid("updateRuler"), function
     var ___r1;
 }
 
-,["void","CPRulerView","CPRulerMarker","id"])]);
+,["void","CPRulerView","CPRulerMarker","id"]), new objj_method(sel_getUid("rulerView:willMoveMarker:toLocation:"), function $CPTextView__rulerView_willMoveMarker_toLocation_(self, _cmd, aRulerView, aMarker, proposedLocation)
+{
+    var rep = (aMarker == null ? aMarker : (aMarker.isa.method_msgSend["representedObject"] || _objj_forward)(aMarker, "representedObject"));
+    if (rep === "CPFirstLineIndent" || rep === "CPHeadIndent" || rep === "CPTailIndent")
+        return Math.max(0.0, proposedLocation);
+    var textLength = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["length"] || _objj_forward)(___r1, "length"));
+    if (textLength === 0)
+        return Math.max(0.0, proposedLocation);
+    var selectedRange = (self.isa.method_msgSend["selectedRange"] || _objj_forward)(self, "selectedRange"),
+        targetRange = selectedRange;
+    if (targetRange.length === 0)
+        targetRange = (self.isa.method_msgSend["selectionRangeForProposedRange:granularity:"] || _objj_forward)(self, "selectionRangeForProposedRange:granularity:", CPMakeRange(targetRange.location, 0), CPSelectByParagraph);
+    if (targetRange.length === 0)
+        return Math.max(0.0, proposedLocation);
+    ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["_validateLayoutAndGlyphs"] || _objj_forward)(___r1, "_validateLayoutAndGlyphs"));
+    var theString = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["string"] || _objj_forward)(___r1, "string")),
+        minLocation = 0.0,
+        containerWidth = ((___r1 = self._textContainer), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["containerSize"] || _objj_forward)(___r1, "containerSize")).width,
+        maxLocation = containerWidth,
+        currentParagraphStyle = ((___r1 = self._textStorage), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["attribute:atIndex:effectiveRange:"] || _objj_forward)(___r1, "attribute:atIndex:effectiveRange:", CPParagraphStyleAttributeName, targetRange.location, nil)) || (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle"),
+        tabStops = (currentParagraphStyle == null ? currentParagraphStyle : (currentParagraphStyle.isa.method_msgSend["tabStops"] || _objj_forward)(currentParagraphStyle, "tabStops")) || [],
+        tabCount = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["count"] || _objj_forward)(tabStops, "count"));
+    var tailIndent = (currentParagraphStyle == null ? currentParagraphStyle : (currentParagraphStyle.isa.method_msgSend["tailIndent"] || _objj_forward)(currentParagraphStyle, "tailIndent"));
+    if (tailIndent > 0.0)
+        maxLocation = Math.min(maxLocation, tailIndent);
+    else if (tailIndent < 0.0)
+        maxLocation = Math.min(maxLocation, containerWidth + tailIndent);
+    var targetTabIndex = -1;
+    for (var i = 0; i < tabCount; i++)
+    {
+        var tab = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tabStops, "objectAtIndex:", i));
+        if (tab === rep || (tab == null ? tab : (tab.isa.method_msgSend["location"] || _objj_forward)(tab, "location")) === (rep == null ? rep : (rep.isa.method_msgSend["location"] || _objj_forward)(rep, "location")) && (tab == null ? tab : (tab.isa.method_msgSend["alignment"] || _objj_forward)(tab, "alignment")) === (rep == null ? rep : (rep.isa.method_msgSend["alignment"] || _objj_forward)(rep, "alignment")))
+        {
+            targetTabIndex = i;
+            break;
+        }
+    }
+    var safetySpacer = 2.0;
+    if (targetTabIndex !== -1)
+    {
+        if (targetTabIndex > 0)
+        {
+            var prevTab = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tabStops, "objectAtIndex:", targetTabIndex - 1));
+            minLocation = Math.max(minLocation, (prevTab == null ? prevTab : (prevTab.isa.method_msgSend["location"] || _objj_forward)(prevTab, "location")) + safetySpacer);
+        }
+        if (targetTabIndex + 1 < tabCount)
+        {
+            var nextTab = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tabStops, "objectAtIndex:", targetTabIndex + 1));
+            maxLocation = Math.min(maxLocation, (nextTab == null ? nextTab : (nextTab.isa.method_msgSend["location"] || _objj_forward)(nextTab, "location")) - safetySpacer);
+        }
+    }
+    else
+    {
+        for (var i = 0; i < tabCount; i++)
+        {
+            var tabLoc = ((___r1 = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tabStops, "objectAtIndex:", i))), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["location"] || _objj_forward)(___r1, "location"));
+            if (tabLoc < proposedLocation)
+                minLocation = Math.max(minLocation, tabLoc + safetySpacer);
+            else if (tabLoc > proposedLocation)
+                maxLocation = Math.min(maxLocation, tabLoc - safetySpacer);
+        }
+    }
+    var start = targetRange.location,
+        end = CPMaxRange(targetRange),
+        tabCountInLine = 0,
+        lineStart = start;
+    for (var i = start; i < end; i++)
+    {
+        var charCode = theString.charCodeAt(i);
+        if (charCode === 10 || charCode === 13)
+        {
+            tabCountInLine = 0;
+            lineStart = i + 1;
+            continue;
+        }
+        if (charCode === 9)
+        {
+            if (tabCountInLine === targetTabIndex || targetTabIndex === -1)
+            {
+                var precedingX = 0.0;
+                if (i === lineStart)
+                {
+                    var isFirstLine = lineStart === 0 || theString.charCodeAt(lineStart - 1) === 10 || theString.charCodeAt(lineStart - 1) === 13;
+                    precedingX = isFirstLine ? (currentParagraphStyle == null ? currentParagraphStyle : (currentParagraphStyle.isa.method_msgSend["firstLineHeadIndent"] || _objj_forward)(currentParagraphStyle, "firstLineHeadIndent")) : (currentParagraphStyle == null ? currentParagraphStyle : (currentParagraphStyle.isa.method_msgSend["headIndent"] || _objj_forward)(currentParagraphStyle, "headIndent"));
+                }
+                else
+                {
+                    var glyphRect = ((___r1 = self._layoutManager), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["boundingRectForGlyphRange:inTextContainer:"] || _objj_forward)(___r1, "boundingRectForGlyphRange:inTextContainer:", CPMakeRange(i - 1, 1), self._textContainer));
+                    precedingX = CGRectGetMaxX(glyphRect);
+                }
+                var textLimit = precedingX + safetySpacer;
+                if (textLimit > minLocation)
+                    minLocation = textLimit;
+            }
+            tabCountInLine++;
+        }
+    }
+    if (minLocation > maxLocation)
+        minLocation = maxLocation;
+    return Math.min(maxLocation, Math.max(minLocation, proposedLocation));
+    var ___r1;
+}
+
+,["float","CPRulerView","CPRulerMarker","float"]), new objj_method(sel_getUid("rulerView:willAddMarker:atLocation:"), function $CPTextView__rulerView_willAddMarker_atLocation_(self, _cmd, aRulerView, aMarker, proposedLocation)
+{
+    return (self.isa.method_msgSend["rulerView:willMoveMarker:toLocation:"] || _objj_forward)(self, "rulerView:willMoveMarker:toLocation:", aRulerView, aMarker, proposedLocation);
+}
+
+,["float","CPRulerView","CPRulerMarker","float"])]);
 }
 {
 var the_class = objj_getClass("CPTextView")
@@ -74514,7 +74786,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("setPlaceholderValue:wit
 
 ,["void","id","CPString"])]);
 }
-p;14;CPTypesetter.jt;29623;@STATIC;1.0;I;21;Foundation/CPObject.ji;18;CPParagraphStyle.ji;15;CPTextStorage.ji;8;CPFont.jt;29522;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("CPParagraphStyle.j", YES);objj_executeFile("CPTextStorage.j", YES);objj_executeFile("CPFont.j", YES);CPTypesetterZeroAdvancementAction = 1 << 0;
+p;14;CPTypesetter.jt;28988;@STATIC;1.0;I;21;Foundation/CPObject.ji;18;CPParagraphStyle.ji;15;CPTextStorage.ji;8;CPFont.jt;28887;objj_executeFile("Foundation/CPObject.j", NO);objj_executeFile("CPParagraphStyle.j", YES);objj_executeFile("CPTextStorage.j", YES);objj_executeFile("CPFont.j", YES);CPTypesetterZeroAdvancementAction = 1 << 0;
 CPTypesetterWhitespaceAction = 1 << 1;
 CPSTypesetterHorizontalTabAction = 1 << 2;
 CPTypesetterLineBreakAction = 1 << 3;
@@ -74599,20 +74871,19 @@ class_addMethods(the_class, [new objj_method(sel_getUid("layoutManager"), functi
 
 ,["CPArray"]), new objj_method(sel_getUid("textTabForWidth:writingDirection:"), function $CPSimpleTypesetter__textTabForWidth_writingDirection_(self, _cmd, aWidth, direction)
 {
-    var tabStops = ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["tabStops"] || _objj_forward)(___r1, "tabStops"));
-    if (!tabStops)
-        tabStops = ((___r1 = (CPParagraphStyle.isa.method_msgSend["defaultParagraphStyle"] || _objj_forward)(CPParagraphStyle, "defaultParagraphStyle")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["tabStops"] || _objj_forward)(___r1, "tabStops"));
-    var l = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["count"] || _objj_forward)(tabStops, "count"));
-    if (l === 0)
-        return nil;
-    for (var i = 0; i < l; i++)
+    var tabStops = ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["tabStops"] || _objj_forward)(___r1, "tabStops")),
+        defaultInterval = ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["defaultTabInterval"] || _objj_forward)(___r1, "defaultTabInterval")) || 28.0;
+    var l = tabStops ? (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["count"] || _objj_forward)(tabStops, "count")) : 0;
+    if (l > 0)
     {
-        var tab = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tabStops, "objectAtIndex:", i));
-        if ((tab == null ? tab : (tab.isa.method_msgSend["location"] || _objj_forward)(tab, "location")) > aWidth)
-            return tab;
+        for (var i = 0; i < l; i++)
+        {
+            var tab = (tabStops == null ? tabStops : (tabStops.isa.method_msgSend["objectAtIndex:"] || _objj_forward)(tabStops, "objectAtIndex:", i));
+            if ((tab == null ? tab : (tab.isa.method_msgSend["location"] || _objj_forward)(tab, "location")) > aWidth)
+                return tab;
+        }
     }
-    var defaultInterval = ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["defaultTabInterval"] || _objj_forward)(___r1, "defaultTabInterval")) || 28.0;
-    var nextLocation = CEIL((aWidth + 1.0) / defaultInterval) * defaultInterval;
+    var nextLocation = (Math.floor(aWidth / defaultInterval) + 1) * defaultInterval;
     return ((___r1 = (CPTextTab.isa.method_msgSend["alloc"] || _objj_forward)(CPTextTab, "alloc")), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["initWithType:location:"] || _objj_forward)(___r1, "initWithType:location:", CPLeftTextAlignment, nextLocation));
     var ___r1;
 }
@@ -74735,13 +75006,6 @@ class_addMethods(the_class, [new objj_method(sel_getUid("layoutManager"), functi
                 lineOrigin.x = isFirstLineOfParagraph ? ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["firstLineHeadIndent"] || _objj_forward)(___r1, "firstLineHeadIndent")) : ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["headIndent"] || _objj_forward)(___r1, "headIndent"));
                 isFirstLineOfLayout = NO;
             }
-            var tailIndent = ((___r1 = self._currentParagraph), ___r1 == null ? ___r1 : (___r1.isa.method_msgSend["tailIndent"] || _objj_forward)(___r1, "tailIndent"));
-            if (tailIndent > 0.0)
-                rightMargin = tailIndent;
-            else if (tailIndent < 0.0)
-                rightMargin = containerSizeWidth + tailIndent;
-            else
-                rightMargin = containerSizeWidth;
             if (isFirstLineOfLayout)
             {
                 if (glyphIndex > 0)
@@ -74827,7 +75091,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("layoutManager"), functi
             }
             case 9:
             {
-                var nextTab = (self.isa.method_msgSend["textTabForWidth:writingDirection:"] || _objj_forward)(self, "textTabForWidth:writingDirection:", rangeWidth + lineOrigin.x, 0);
+                var nextTab = (self.isa.method_msgSend["textTabForWidth:writingDirection:"] || _objj_forward)(self, "textTabForWidth:writingDirection:", prevRangeWidth + lineOrigin.x, 0);
                 isTabStop = YES;
                 if (nextTab)
                 {
@@ -74864,7 +75128,7 @@ class_addMethods(the_class, [new objj_method(sel_getUid("layoutManager"), functi
                 }
                 else
                 {
-                    rangeWidth += 28.0;
+                    rangeWidth = prevRangeWidth + 28.0;
                 }
                 break;
             }
