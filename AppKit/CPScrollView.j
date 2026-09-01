@@ -30,6 +30,7 @@
 @import "CPScroller.j"
 @import "CPView.j"
 @import "CPRulerView.j"
+@import "CPCompatibility.j"
 
 @class CPTableView
 @class CPRulerView
@@ -49,7 +50,8 @@
 /*! @ignore */
 var _isBrowserUsingOverlayScrollers = function()
 {
-#if PLATFORM(DOM)
+    if (!CPDOMAvailable) return NO;
+
     /*
         Even if the system supports overlay (Lion) scrollers,
         the browser (e.g. FireFox *cough*) may not.
@@ -85,9 +87,6 @@ var _isBrowserUsingOverlayScrollers = function()
     document.body.removeChild(outer);
 
     return usingOverlayScrollers;
-#else
-    return NO;
-#endif
 };
 
 var TIMER_INTERVAL                              = 0.2,
