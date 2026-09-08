@@ -1,8 +1,9 @@
 /*
  * Jakefile
- * LayoutEphemeralSubviewTest
+ * CPTimeZoneTest
  *
- * Created by Aparajita Fishman on October 8, 2010.
+ * Created by You on April 16, 2013.
+ * Copyright 2013, Your Company All rights reserved.
  */
 
 var ENV = require("system").env,
@@ -14,17 +15,17 @@ var ENV = require("system").env,
     configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
     OS = require("os");
 
-app ("LayoutEphemeralSubviewTest", function(task)
+app ("CPTimeZoneTest", function(task)
 {
-    task.setBuildIntermediatesPath(FILE.join("Build", "LayoutEphemeralSubviewTest.build", configuration));
+    task.setBuildIntermediatesPath(FILE.join("Build", "CPTimeZoneTest.build", configuration));
     task.setBuildPath(FILE.join("Build", configuration));
 
-    task.setProductName("LayoutEphemeralSubviewTest");
-    task.setIdentifier("com.yourcompany.LayoutEphemeralSubviewTest");
+    task.setProductName("CPTimeZoneTest");
+    task.setIdentifier("com.yourcompany.CPTimeZoneTest");
     task.setVersion("1.0");
-    task.setAuthor("WireLoad, LLC");
+    task.setAuthor("Your Company");
     task.setEmail("feedback @nospam@ yourcompany.com");
-    task.setSummary("LayoutEphemeralSubviewTest");
+    task.setSummary("CPTimeZoneTest");
     task.setSources((new FileList("**/*.j")).exclude(FILE.join("Build", "**")));
     task.setResources(new FileList("Resources/**"));
     task.setIndexFilePath("index.html");
@@ -36,7 +37,7 @@ app ("LayoutEphemeralSubviewTest", function(task)
         task.setCompilerFlags("-O");
 });
 
-task ("default", ["LayoutEphemeralSubviewTest"], function()
+task ("default", ["CPTimeZoneTest"], function()
 {
     printResults(configuration);
 });
@@ -57,36 +58,36 @@ task ("release", function()
 
 task ("run", ["debug"], function()
 {
-    OS.system(["open", FILE.join("Build", "Debug", "LayoutEphemeralSubviewTest", "index.html")]);
+    OS.system(["open", FILE.join("Build", "Debug", "CPTimeZoneTest", "index.html")]);
 });
 
 task ("run-release", ["release"], function()
 {
-    OS.system(["open", FILE.join("Build", "Release", "LayoutEphemeralSubviewTest", "index.html")]);
+    OS.system(["open", FILE.join("Build", "Release", "CPTimeZoneTest", "index.html")]);
 });
 
 task ("deploy", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Deployment", "LayoutEphemeralSubviewTest"));
-    OS.system(["press", "-f", FILE.join("Build", "Release", "LayoutEphemeralSubviewTest"), FILE.join("Build", "Deployment", "LayoutEphemeralSubviewTest")]);
+    FILE.mkdirs(FILE.join("Build", "Deployment", "CPTimeZoneTest"));
+    OS.system(["press", "-f", FILE.join("Build", "Release", "CPTimeZoneTest"), FILE.join("Build", "Deployment", "CPTimeZoneTest")]);
     printResults("Deployment")
 });
 
 task ("desktop", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Desktop", "LayoutEphemeralSubviewTest"));
-    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "LayoutEphemeralSubviewTest"), FILE.join("Build", "Desktop", "LayoutEphemeralSubviewTest", "LayoutEphemeralSubviewTest.app"));
+    FILE.mkdirs(FILE.join("Build", "Desktop", "CPTimeZoneTest"));
+    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "CPTimeZoneTest"), FILE.join("Build", "Desktop", "CPTimeZoneTest", "CPTimeZoneTest.app"));
     printResults("Desktop")
 });
 
 task ("run-desktop", ["desktop"], function()
 {
-    OS.system([FILE.join("Build", "Desktop", "LayoutEphemeralSubviewTest", "LayoutEphemeralSubviewTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
+    OS.system([FILE.join("Build", "Desktop", "CPTimeZoneTest", "CPTimeZoneTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
 });
 
 function printResults(configuration)
 {
     print("----------------------------");
-    print(configuration+" app built at path: "+FILE.join("Build", configuration, "LayoutEphemeralSubviewTest"));
+    print(configuration+" app built at path: "+FILE.join("Build", configuration, "CPTimeZoneTest"));
     print("----------------------------");
 }

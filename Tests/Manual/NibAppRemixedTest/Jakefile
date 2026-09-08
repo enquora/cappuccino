@@ -1,8 +1,9 @@
 /*
  * Jakefile
- * LayoutEphemeralSubviewTest
+ * NibAppRemixedTest
  *
- * Created by Aparajita Fishman on October 8, 2010.
+ * Created by Alexander Ljungberg on May 17, 2011.
+ * Copyright 2011, WireLoad All rights reserved.
  */
 
 var ENV = require("system").env,
@@ -14,21 +15,22 @@ var ENV = require("system").env,
     configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
     OS = require("os");
 
-app ("LayoutEphemeralSubviewTest", function(task)
+app ("NibAppRemixedTest", function(task)
 {
-    task.setBuildIntermediatesPath(FILE.join("Build", "LayoutEphemeralSubviewTest.build", configuration));
+    task.setBuildIntermediatesPath(FILE.join("Build", "NibAppRemixedTest.build", configuration));
     task.setBuildPath(FILE.join("Build", configuration));
 
-    task.setProductName("LayoutEphemeralSubviewTest");
-    task.setIdentifier("com.yourcompany.LayoutEphemeralSubviewTest");
+    task.setProductName("NibApp.new");
+    task.setIdentifier("com.yourcompany.NibAppRemixedTest");
     task.setVersion("1.0");
-    task.setAuthor("WireLoad, LLC");
+    task.setAuthor("WireLoad");
     task.setEmail("feedback @nospam@ yourcompany.com");
-    task.setSummary("LayoutEphemeralSubviewTest");
+    task.setSummary("NibApp.new");
     task.setSources((new FileList("**/*.j")).exclude(FILE.join("Build", "**")));
     task.setResources(new FileList("Resources/**"));
     task.setIndexFilePath("index.html");
     task.setInfoPlistPath("Info.plist");
+    task.setNib2CibFlags("-R Resources/");
 
     if (configuration === "Debug")
         task.setCompilerFlags("-DDEBUG -g");
@@ -36,7 +38,7 @@ app ("LayoutEphemeralSubviewTest", function(task)
         task.setCompilerFlags("-O");
 });
 
-task ("default", ["LayoutEphemeralSubviewTest"], function()
+task ("default", ["NibAppRemixedTest"], function()
 {
     printResults(configuration);
 });
@@ -57,36 +59,36 @@ task ("release", function()
 
 task ("run", ["debug"], function()
 {
-    OS.system(["open", FILE.join("Build", "Debug", "LayoutEphemeralSubviewTest", "index.html")]);
+    OS.system(["open", FILE.join("Build", "Debug", "NibAppRemixedTest", "index.html")]);
 });
 
 task ("run-release", ["release"], function()
 {
-    OS.system(["open", FILE.join("Build", "Release", "LayoutEphemeralSubviewTest", "index.html")]);
+    OS.system(["open", FILE.join("Build", "Release", "NibAppRemixedTest", "index.html")]);
 });
 
 task ("deploy", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Deployment", "LayoutEphemeralSubviewTest"));
-    OS.system(["press", "-f", FILE.join("Build", "Release", "LayoutEphemeralSubviewTest"), FILE.join("Build", "Deployment", "LayoutEphemeralSubviewTest")]);
+    FILE.mkdirs(FILE.join("Build", "Deployment", "NibAppRemixedTest"));
+    OS.system(["press", "-f", FILE.join("Build", "Release", "NibAppRemixedTest"), FILE.join("Build", "Deployment", "NibAppRemixedTest")]);
     printResults("Deployment")
 });
 
 task ("desktop", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Desktop", "LayoutEphemeralSubviewTest"));
-    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "LayoutEphemeralSubviewTest"), FILE.join("Build", "Desktop", "LayoutEphemeralSubviewTest", "LayoutEphemeralSubviewTest.app"));
+    FILE.mkdirs(FILE.join("Build", "Desktop", "NibAppRemixedTest"));
+    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "NibAppRemixedTest"), FILE.join("Build", "Desktop", "NibAppRemixedTest", "NibAppRemixedTest.app"));
     printResults("Desktop")
 });
 
 task ("run-desktop", ["desktop"], function()
 {
-    OS.system([FILE.join("Build", "Desktop", "LayoutEphemeralSubviewTest", "LayoutEphemeralSubviewTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
+    OS.system([FILE.join("Build", "Desktop", "NibAppRemixedTest", "NibAppRemixedTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
 });
 
 function printResults(configuration)
 {
     print("----------------------------");
-    print(configuration+" app built at path: "+FILE.join("Build", configuration, "LayoutEphemeralSubviewTest"));
+    print(configuration+" app built at path: "+FILE.join("Build", configuration, "NibAppRemixedTest"));
     print("----------------------------");
 }

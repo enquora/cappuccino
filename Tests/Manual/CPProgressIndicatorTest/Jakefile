@@ -1,0 +1,94 @@
+/*
+ * Jakefile
+ * CPProgressIndicatorTest
+ *
+ * Created by Alexander Ljungberg on May 3, 2012.
+ * Copyright 2012, SlevenBits Ltd. All rights reserved.
+ */
+
+var ENV = require("system").env,
+    FILE = require("file"),
+    JAKE = require("jake"),
+    task = JAKE.task,
+    FileList = JAKE.FileList,
+    app = require("cappuccino/jake").app,
+    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
+    OS = require("os");
+
+app ("CPProgressIndicatorTest", function(task)
+{
+    task.setBuildIntermediatesPath(FILE.join("Build", "CPProgressIndicatorTest.build", configuration));
+    task.setBuildPath(FILE.join("Build", configuration));
+
+    task.setProductName("CPProgressIndicatorTest");
+    task.setIdentifier("com.yourcompany.CPProgressIndicatorTest");
+    task.setVersion("1.0");
+    task.setAuthor("SlevenBits Ltd");
+    task.setEmail("feedback @nospam@ yourcompany.com");
+    task.setSummary("CPProgressIndicatorTest");
+    task.setSources((new FileList("**/*.j")).exclude(FILE.join("Build", "**")));
+    task.setResources(new FileList("Resources/**"));
+    task.setIndexFilePath("index.html");
+    task.setInfoPlistPath("Info.plist");
+    task.setNib2CibFlags("-R Resources/");
+
+    if (configuration === "Debug")
+        task.setCompilerFlags("-DDEBUG -g");
+    else
+        task.setCompilerFlags("-O");
+});
+
+task ("default", ["CPProgressIndicatorTest"], function()
+{
+    printResults(configuration);
+});
+
+task ("build", ["default"]);
+
+task ("debug", function()
+{
+    ENV["CONFIGURATION"] = "Debug";
+    JAKE.subjake(["."], "build", ENV);
+});
+
+task ("release", function()
+{
+    ENV["CONFIGURATION"] = "Release";
+    JAKE.subjake(["."], "build", ENV);
+});
+
+task ("run", ["debug"], function()
+{
+    OS.system(["open", FILE.join("Build", "Debug", "CPProgressIndicatorTest", "index.html")]);
+});
+
+task ("run-release", ["release"], function()
+{
+    OS.system(["open", FILE.join("Build", "Release", "CPProgressIndicatorTest", "index.html")]);
+});
+
+task ("deploy", ["release"], function()
+{
+    FILE.mkdirs(FILE.join("Build", "Deployment", "CPProgressIndicatorTest"));
+    OS.system(["press", "-f", FILE.join("Build", "Release", "CPProgressIndicatorTest"), FILE.join("Build", "Deployment", "CPProgressIndicatorTest")]);
+    printResults("Deployment")
+});
+
+task ("desktop", ["release"], function()
+{
+    FILE.mkdirs(FILE.join("Build", "Desktop", "CPProgressIndicatorTest"));
+    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "CPProgressIndicatorTest"), FILE.join("Build", "Desktop", "CPProgressIndicatorTest", "CPProgressIndicatorTest.app"));
+    printResults("Desktop")
+});
+
+task ("run-desktop", ["desktop"], function()
+{
+    OS.system([FILE.join("Build", "Desktop", "CPProgressIndicatorTest", "CPProgressIndicatorTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
+});
+
+function printResults(configuration)
+{
+    print("----------------------------");
+    print(configuration+" app built at path: "+FILE.join("Build", configuration, "CPProgressIndicatorTest"));
+    print("----------------------------");
+}
