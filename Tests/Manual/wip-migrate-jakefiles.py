@@ -68,6 +68,9 @@ def transform_jakefile(content):
 
 def migrate(apply_changes):
     root_dir = "."
+    candidates = []
+
+    # Pass 1: Gather candidates
     for item in sorted(os.listdir(root_dir)):
         target_dir = os.path.join(root_dir, item)
 
@@ -82,33 +85,35 @@ def migrate(apply_changes):
                 break
 
         if jakefile_path:
-            backup_path = os.path.join(target_dir, "JakefileBackup")
+            candidates.append((target_dir, jakefile_path))
 
-            with open(jakefile_path, "r") as f:
-                original_content = f.read()
+    print(f"Found {len(candidates)} candidate Jakefile(s).")
 
-            transformed_content = transform_jakefile(original_content)
+    if not apply_changes:
+        print("Dry run mode. Use --apply to execute the transformations.")
+        return
 
-            if apply_changes:
-                if not os.path.exists(backup_path):
-                    os.rename(jakefile_path, backup_path)
-                elif jakefile_path != os.path.join(target_dir, "Jakefile"):
-                    os.remove(jakefile_path)
+    # Pass 2: Apply transformations
+    for target_dir, jakefile_path in candidates:
+        with open(jakefile_path, "r") as f:
+            original_content = f.read()
 
-                new_path = os.path.join(target_dir, "Jakefile")
-                with open(new_path, "w") as f:
-                    f.write(transformed_content)
+        transformed_content = transform_jakefile(original_content)
 
-                print(f"Surgically migrated: {target_dir}/Jakefile")
-            else:
-                print(f"Would migrate: {jakefile_path}")
+        new_path = os.path.join(target_dir, "Jakefile")
+
+        # Ensure we don't end up with both 'jakefile' and 'Jakefile' on case-sensitive filesystems
+        if jakefile_path != new_path:
+            os.remove(jakefile_path)
+
+        with open(new_path, "w") as f:
+            f.write(transformed_content)
+
+        print(f'Migrated: "{new_path}"')
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Surgically modernize subsidiary Jakefiles.")
-    parser.add_argument("--apply", action="store_true", help="Apply the transformations and create backups.")
+    parser = argparse.ArgumentParser(description="Modernize subsidiary Jakefiles.")
+    parser.add_argument("--apply", action="store_true", help="Apply the transformations directly (no backups).")
     args = parser.parse_args()
-
-    if not args.apply:
-        print("Dry run. Use --apply to execute the transformation.")
 
     migrate(args.apply)
