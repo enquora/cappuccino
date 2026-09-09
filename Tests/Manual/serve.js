@@ -3,6 +3,9 @@
  * serve.js
  * Tests/Manual
  *
+ * Created September 5, 2026
+ * Copyright (C) 2026 David Richardson
+ *
  * Regenerates index.html, then serves this directory over plain HTTP,
  * so tests run in any browser -- not only Safari via file://.
  *
