@@ -6,19 +6,19 @@
  * Copyright 2013, Your Company All rights reserved.
  */
 
-var ENV = require("system").env,
-    FILE = require("file"),
-    JAKE = require("jake"),
+var ENV = process.env,
+    cp = require("child_process"),
+    fs = require("fs"),
+    path = require("path"),
     task = JAKE.task,
     FileList = JAKE.FileList,
-    app = require("cappuccino/jake").app,
-    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
-    OS = require("os");
+    app = CAPPUCCINO.Jake.applicationtask.app,
+    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug";
 
 app ("CPByteCountFormatterTest", function(task)
 {
-    task.setBuildIntermediatesPath(FILE.join("Build", "CPByteCountFormatterTest.build", configuration));
-    task.setBuildPath(FILE.join("Build", configuration));
+    task.setBuildIntermediatesPath(path.join("Build", "CPByteCountFormatterTest.build", configuration));
+    task.setBuildPath(path.join("Build", configuration));
 
     task.setProductName("CPByteCountFormatterTest");
     task.setIdentifier("com.yourcompany.CPByteCountFormatterTest");
@@ -26,7 +26,7 @@ app ("CPByteCountFormatterTest", function(task)
     task.setAuthor("Your Company");
     task.setEmail("feedback @nospam@ yourcompany.com");
     task.setSummary("CPByteCountFormatterTest");
-    task.setSources((new FileList("**/*.j")).exclude(FILE.join("Build", "**")));
+    task.setSources((new FileList("**/*.j")).exclude(path.join("Build", "**")));
     task.setResources(new FileList("Resources/**"));
     task.setIndexFilePath("index.html");
     task.setInfoPlistPath("Info.plist");
@@ -59,36 +59,36 @@ task ("release", function()
 
 task ("run", ["debug"], function()
 {
-    OS.system(["open", FILE.join("Build", "Debug", "CPByteCountFormatterTest", "index.html")]);
+    cp.execSync(["open", path.join("Build", "Debug", "CPByteCountFormatterTest", "index.html")].join(" "), { stdio: "inherit" });
 });
 
 task ("run-release", ["release"], function()
 {
-    OS.system(["open", FILE.join("Build", "Release", "CPByteCountFormatterTest", "index.html")]);
+    cp.execSync(["open", path.join("Build", "Release", "CPByteCountFormatterTest", "index.html")].join(" "), { stdio: "inherit" });
 });
 
 task ("deploy", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Deployment", "CPByteCountFormatterTest"));
-    OS.system(["press", "-f", FILE.join("Build", "Release", "CPByteCountFormatterTest"), FILE.join("Build", "Deployment", "CPByteCountFormatterTest")]);
+    fs.mkdirSync(path.join("Build", "Deployment", "CPByteCountFormatterTest"), { recursive: true });
+    cp.execSync(["press", "-f", path.join("Build", "Release", "CPByteCountFormatterTest"), path.join("Build", "Deployment", "CPByteCountFormatterTest")].join(" "), { stdio: "inherit" });
     printResults("Deployment")
 });
 
 task ("desktop", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Desktop", "CPByteCountFormatterTest"));
-    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "CPByteCountFormatterTest"), FILE.join("Build", "Desktop", "CPByteCountFormatterTest", "CPByteCountFormatterTest.app"));
+    fs.mkdirSync(path.join("Build", "Desktop", "CPByteCountFormatterTest"), { recursive: true });
+    require("@objj/nativehost").buildNativeHost(path.join("Build", "Release", "CPByteCountFormatterTest"), path.join("Build", "Desktop", "CPByteCountFormatterTest", "CPByteCountFormatterTest.app"));
     printResults("Desktop")
 });
 
 task ("run-desktop", ["desktop"], function()
 {
-    OS.system([FILE.join("Build", "Desktop", "CPByteCountFormatterTest", "CPByteCountFormatterTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
+    cp.execSync([path.join("Build", "Desktop", "CPByteCountFormatterTest", "CPByteCountFormatterTest.app", "Contents", "MacOS", "NativeHost"), "-i"].join(" "), { stdio: "inherit" });
 });
 
 function printResults(configuration)
 {
-    print("----------------------------");
-    print(configuration+" app built at path: "+FILE.join("Build", configuration, "CPByteCountFormatterTest"));
-    print("----------------------------");
+    console.log("----------------------------");
+    console.log(configuration+" app built at path: "+path.join("Build", configuration, "CPByteCountFormatterTest"));
+    console.log("----------------------------");
 }

@@ -6,24 +6,24 @@
  * Copyright 2013, SlevenBits, Ltd. All rights reserved.
  */
 
-var ENV = require("system").env,
-    FILE = require("file"),
-    JAKE = require("jake"),
+var ENV = process.env,
+    cp = require("child_process"),
+    fs = require("fs"),
+    path = require("path"),
     task = JAKE.task,
     FileList = JAKE.FileList,
-    app = require("cappuccino/jake").app,
-    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
-    OS = require("os");
+    app = CAPPUCCINO.Jake.applicationtask.app,
+    configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug";
 
 app ("CopyAndPasteTest", function(task)
 {
     ENV["OBJJ_INCLUDE_PATHS"] = "Frameworks";
 
     if (configuration === "Debug")
-        ENV["OBJJ_INCLUDE_PATHS"] = FILE.join(ENV["OBJJ_INCLUDE_PATHS"], configuration);
+        ENV["OBJJ_INCLUDE_PATHS"] = path.join(ENV["OBJJ_INCLUDE_PATHS"], configuration);
 
-    task.setBuildIntermediatesPath(FILE.join("Build", "CopyAndPasteTest.build", configuration));
-    task.setBuildPath(FILE.join("Build", configuration));
+    task.setBuildIntermediatesPath(path.join("Build", "CopyAndPasteTest.build", configuration));
+    task.setBuildPath(path.join("Build", configuration));
 
     task.setProductName("CopyAndPasteTest");
     task.setIdentifier("com.yourcompany.CopyAndPasteTest");
@@ -31,7 +31,7 @@ app ("CopyAndPasteTest", function(task)
     task.setAuthor("SlevenBits, Ltd.");
     task.setEmail("feedback @nospam@ yourcompany.com");
     task.setSummary("CopyAndPasteTest");
-    task.setSources(new FileList("**/*.j").exclude(FILE.join("Build", "**")).exclude(FILE.join("Frameworks", "Source", "**")));
+    task.setSources(new FileList("**/*.j").exclude(path.join("Build", "**")).exclude(path.join("Frameworks", "Source", "**")));
     task.setResources(new FileList("Resources/**"));
     task.setIndexFilePath("index.html");
     task.setInfoPlistPath("Info.plist");
@@ -63,36 +63,36 @@ task ("release", function()
 
 task ("run", ["debug"], function()
 {
-    OS.system(["open", FILE.join("Build", "Debug", "CopyAndPasteTest", "index.html")]);
+    cp.execSync(["open", path.join("Build", "Debug", "CopyAndPasteTest", "index.html")].join(" "), { stdio: "inherit" });
 });
 
 task ("run-release", ["release"], function()
 {
-    OS.system(["open", FILE.join("Build", "Release", "CopyAndPasteTest", "index.html")]);
+    cp.execSync(["open", path.join("Build", "Release", "CopyAndPasteTest", "index.html")].join(" "), { stdio: "inherit" });
 });
 
 task ("deploy", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Deployment", "CopyAndPasteTest"));
-    OS.system(["press", "-f", FILE.join("Build", "Release", "CopyAndPasteTest"), FILE.join("Build", "Deployment", "CopyAndPasteTest")]);
+    fs.mkdirSync(path.join("Build", "Deployment", "CopyAndPasteTest"), { recursive: true });
+    cp.execSync(["press", "-f", path.join("Build", "Release", "CopyAndPasteTest"), path.join("Build", "Deployment", "CopyAndPasteTest")].join(" "), { stdio: "inherit" });
     printResults("Deployment")
 });
 
 task ("desktop", ["release"], function()
 {
-    FILE.mkdirs(FILE.join("Build", "Desktop", "CopyAndPasteTest"));
-    require("cappuccino/nativehost").buildNativeHost(FILE.join("Build", "Release", "CopyAndPasteTest"), FILE.join("Build", "Desktop", "CopyAndPasteTest", "CopyAndPasteTest.app"));
+    fs.mkdirSync(path.join("Build", "Desktop", "CopyAndPasteTest"), { recursive: true });
+    require("@objj/nativehost").buildNativeHost(path.join("Build", "Release", "CopyAndPasteTest"), path.join("Build", "Desktop", "CopyAndPasteTest", "CopyAndPasteTest.app"));
     printResults("Desktop")
 });
 
 task ("run-desktop", ["desktop"], function()
 {
-    OS.system([FILE.join("Build", "Desktop", "CopyAndPasteTest", "CopyAndPasteTest.app", "Contents", "MacOS", "NativeHost"), "-i"]);
+    cp.execSync([path.join("Build", "Desktop", "CopyAndPasteTest", "CopyAndPasteTest.app", "Contents", "MacOS", "NativeHost"), "-i"].join(" "), { stdio: "inherit" });
 });
 
 function printResults(configuration)
 {
-    print("----------------------------");
-    print(configuration+" app built at path: "+FILE.join("Build", configuration, "CopyAndPasteTest"));
-    print("----------------------------");
+    console.log("----------------------------");
+    console.log(configuration+" app built at path: "+path.join("Build", configuration, "CopyAndPasteTest"));
+    console.log("----------------------------");
 }
