@@ -1,6 +1,6 @@
 /*
  * Jakefile
- * CappScalingTest
+ * Scaling2Test
  *
  * Created by You on March 15, 2021.
  * Copyright 2021, Your Company All rights reserved.
@@ -14,7 +14,7 @@ var ENV = require("system").env,
     app = require("cappuccino/jake").app,
     configuration = ENV["CONFIG"] || ENV["CONFIGURATION"] || ENV["c"] || "Debug",
     OS = require("os"),
-    projectName = "CappScalingTest";
+    projectName = "Scaling2Test";
 
 app (projectName, function(task)
 {
@@ -23,15 +23,15 @@ app (projectName, function(task)
     if (configuration === "Debug")
         ENV["OBJJ_INCLUDE_PATHS"] = FILE.join(ENV["OBJJ_INCLUDE_PATHS"], configuration);
 
-    task.setBuildIntermediatesPath(FILE.join("Build", "CappScalingTest.build", configuration));
+    task.setBuildIntermediatesPath(FILE.join("Build", "Scaling2Test.build", configuration));
     task.setBuildPath(FILE.join("Build", configuration));
 
-    task.setProductName("CappScalingTest");
-    task.setIdentifier("com.yourcompany.CappScalingTest");
+    task.setProductName("Scaling2Test");
+    task.setIdentifier("com.yourcompany.Scaling2Test");
     task.setVersion("1.0");
     task.setAuthor("Your Company");
     task.setEmail("feedback @nospam@ yourcompany.com");
-    task.setSummary("CappScalingTest");
+    task.setSummary("Scaling2Test");
     task.setSources(new FileList("**/*.j").exclude(FILE.join("Build", "**")).exclude(FILE.join("Frameworks", "Source", "**")));
     task.setResources(new FileList("Resources/**"));
     task.setIndexFilePath("index.html");
