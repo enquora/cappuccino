@@ -48,7 +48,6 @@ CPSystemTimeZoneDidChangeNotification = @"CPSystemTimeZoneDidChangeNotification"
  */
 var abbreviationDictionary,
 knownTimeZoneNames,
-knownTimeZoneNamesSet,
 defaultTimeZone,
 localTimeZone,
 systemTimeZone,
@@ -62,6 +61,24 @@ var _stdDstOffsetCache = {};
 // Per (locale, style) cache of display-name -> zone name, used by
 // +_timeZoneFromString:style:locale: and built lazily on first lookup.
 var _nameToZoneCache = {};
+
+/*!
+ Validates a given time zone name by attempting to construct a lightweight
+ Intl.DateTimeFormat object. The engine throws a RangeError if the timeZone
+ is not recognized.
+ */
+function _isValidTimeZoneName(tzName)
+{
+    try
+    {
+        new Intl.DateTimeFormat('en-US', { timeZone: tzName });
+        return YES;
+    }
+    catch (e)
+    {
+        return NO;
+    }
+}
 
 /*!
  Live UTC offset, in minutes, for an IANA zone name at a given date.
@@ -266,8 +283,7 @@ function _localizedNameForZone(tzName, style, locale, fixedOffsetSecondsOrNil)
 
 /*!
  Resolves the runtime's own current zone as a CPTimeZone: prefer the
- IANA name Intl resolves to (DST-correct, works for any of the 400+
- zones in knownTimeZoneNames), and fall back to a fixed-offset zone
+ IANA name Intl resolves to (DST-correct), and fall back to a fixed-offset zone
  built from the JS Date offset if Intl isn't available at all. Always
  succeeds.
  */
@@ -279,7 +295,7 @@ function _systemTimeZoneFromRuntime()
     {
         var ianaName = new Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-        if (ianaName && knownTimeZoneNamesSet[ianaName])
+        if (ianaName && _isValidTimeZoneName(ianaName))
         {
             var zone = [CPTimeZone timeZoneWithName:ianaName];
 
@@ -320,47 +336,9 @@ function _systemTimeZoneFromRuntime()
     if (self !== [CPTimeZone class])
         return;
 
-    knownTimeZoneNames = [
-        @"Africa/Addis_Ababa",
-        @"Africa/Harare",
-        @"Africa/Lagos",
-        @"America/Argentina/Buenos_Aires",
-        @"America/Bogota",
-        @"America/Chicago",
-        @"America/Denver",
-        @"America/Halifax",
-        @"America/Juneau",
-        @"America/Lima",
-        @"America/Los_Angeles",
-        @"America/New_York",
-        @"America/Santiago",
-        @"America/Sao_Paulo",
-        @"Asia/Bangkok",
-        @"Asia/Calcutta",
-        @"Asia/Dhaka",
-        @"Asia/Dubai",
-        @"Asia/Hong_Kong",
-        @"Asia/Jakarta",
-        @"Asia/Karachi",
-        @"Asia/Manila",
-        @"Asia/Seoul",
-        @"Asia/Singapore",
-        @"Asia/Tehran",
-        @"Asia/Tokyo",
-        @"Europe/Istanbul",
-        @"Europe/Lisbon",
-        @"Europe/London",
-        @"Europe/Moscow",
-        @"Europe/Paris",
-        @"GMT",
-        @"Pacific/Auckland",
-        @"Pacific/Honolulu",
-        @"UTC"
-    ];
+    knownTimeZoneNames = [];
 
-    // Prefer the runtime's own IANA database, when it exposes one, over the
-    // hardcoded 35-city list above: it's the full current set, not a
-    // snapshot that will silently drift the way a hand-maintained list does.
+    // Prefer the runtime's own IANA database when it exposes one.
     if (typeof Intl !== "undefined" && typeof Intl.supportedValuesOf === "function")
     {
         try
@@ -369,51 +347,36 @@ function _systemTimeZoneFromRuntime()
 
             if (supportedZones && supportedZones.length > 0)
             {
-                var zones = [];
-                var hasGMT = false;
-                var hasUTC = false;
                 var count = supportedZones.length;
 
-                // Iterate using primitive property access.
-                // The array returned by Intl across the runtime bridge may lack
-                // standard Array prototypes (e.g., slice, indexOf). A standard loop
-                // ensures safe data extraction into a local array without triggering
-                // prototype resolution exceptions or relying on CPArray.
                 for (var i = 0; i < count; i++)
                 {
-                    var zone = supportedZones[i];
-                    zones[i] = zone;
-
-                    if (zone === @"GMT")
-                        hasGMT = true;
-                    else if (zone === @"UTC")
-                        hasUTC = true;
+                    knownTimeZoneNames[i] = supportedZones[i];
                 }
-
-                // Explicitly restore legacy aliases if the host engine omits them.
-                // Engines adhering strictly to canonical IANA identifiers omit "GMT"
-                // and "UTC", but code in this class treats both as always-known.
-                if (!hasGMT)
-                    zones[zones.length] = @"GMT";
-
-                if (!hasUTC)
-                    zones[zones.length] = @"UTC";
-
-                knownTimeZoneNames = zones;
             }
         }
         catch (e)
         {
-            // Fall through, keep the hardcoded list above.
+            // Fall through.
         }
     }
 
-    // O(1) membership testing for -initWithName: and the runtime zone
-    // resolver, instead of a linear scan over several hundred names.
-    knownTimeZoneNamesSet = {};
+    var hasGMT = false;
+    var hasUTC = false;
 
     for (var i = 0, count = knownTimeZoneNames.length; i < count; i++)
-        knownTimeZoneNamesSet[knownTimeZoneNames[i]] = true;
+    {
+        if (knownTimeZoneNames[i] === @"GMT")
+            hasGMT = true;
+        else if (knownTimeZoneNames[i] === @"UTC")
+            hasUTC = true;
+    }
+
+    if (!hasGMT)
+        knownTimeZoneNames[knownTimeZoneNames.length] = @"GMT";
+
+    if (!hasUTC)
+        knownTimeZoneNames[knownTimeZoneNames.length] = @"UTC";
 
     // A curated abbreviation -> canonical name lookup for +timeZoneWithAbbreviation:.
     // This stays a fixed, hand-maintained set deliberately: abbreviations are
@@ -676,7 +639,7 @@ function _systemTimeZoneFromRuntime()
     if (!tzName)
         [CPException raise:CPInvalidArgumentException reason:"Invalid value provided for tzName"];
 
-    if (!knownTimeZoneNamesSet[tzName] || !abbreviation)
+    if (!_isValidTimeZoneName(tzName) || !abbreviation)
         return nil;
 
     if (self = [super init])
@@ -715,7 +678,7 @@ function _systemTimeZoneFromRuntime()
     if (!tzName)
         [CPException raise:CPInvalidArgumentException reason:"Invalid value provided for tzName"];
 
-    if (!knownTimeZoneNamesSet[tzName])
+    if (!_isValidTimeZoneName(tzName))
         return nil;
 
     if (self = [super init])
