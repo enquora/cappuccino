@@ -46,12 +46,62 @@ filedir ($BUILD_CJS_CAPPUCCINO_DEBUG_FRAMEWORKS, ["debug", "release"], function(
 task ("CommonJS", [$BUILD_CJS_OBJECTIVE_J_DEBUG_FRAMEWORKS, $BUILD_CJS_CAPPUCCINO_DEBUG_FRAMEWORKS, "debug", "release"], function() {
 });
 
-// Install everything in the dist directory
+/*
+ * Install everything in the dist directory
+ * Ensure presence of ./Tests/Manual/.Frameworks,
+ * and that it contains symlinks to both debug and release builds
+ * in the layout used by an application's Frameworks directory.
+ */
 task ("dist", ["CommonJS"], function()
 {
     installCopy($BUILD_CJS_OBJECTIVE_J, false);
     installCopy($BUILD_CJS_CAPPUCCINO, false);
+
+    var manualFrameworksDir = path.join("Tests", "Manual", ".Frameworks");
+    fs.mkdirSync(manualFrameworksDir, { recursive: true });
+
+    ["Objective-J", "Foundation", "AppKit", "BlendKit"].forEach(function(framework) {
+        var frameworkDir = path.join(manualFrameworksDir, framework);
+        fs.mkdirSync(frameworkDir, { recursive: true });
+
+        var debugSrc = path.join($BUILD_DIR, "Debug", framework);
+        
+        // Replicate standard layout: bootstrap JS files at the framework root
+        if (fs.existsSync(debugSrc)) {
+            fs.readdirSync(debugSrc).forEach(function(file) {
+                if (file.endsWith(".js")) {
+                    var srcFile = path.join(debugSrc, file);
+                    var destFile = path.join(frameworkDir, file);
+                    
+                    if (fs.existsSync(destFile) || fs.lstatSync(destFile, {throwIfNoEntry: false})) {
+                        fs.rmSync(destFile, { force: true });
+                    }
+                    fs.symlinkSync(path.resolve(srcFile), destFile, "file");
+                }
+            });
+        }
+
+        // Map configuration-specific directories
+        ["Debug", "Release"].forEach(function(config) {
+            var src = path.join($BUILD_DIR, config, framework);
+            
+            // Fallback to Debug if a Release target does not exist
+            if (!fs.existsSync(src)) {
+                src = path.join($BUILD_DIR, "Debug", framework); 
+            }
+            
+            var dest = path.join(frameworkDir, config);
+            
+            if (fs.existsSync(src)) {
+                if (fs.existsSync(dest) || fs.lstatSync(dest, {throwIfNoEntry: false})) {
+                    fs.rmSync(dest, { recursive: true, force: true });
+                }
+                fs.symlinkSync(path.resolve(src), dest, "dir");
+            }
+        });
+    });
 });
+
 
 task ("sudo-dist", ["CommonJS"], function()
 {
