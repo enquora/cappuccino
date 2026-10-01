@@ -745,9 +745,10 @@ CPTokenFieldDeleteButtonType     = 1;
 // =============
 // = TEXTFIELD =
 // =============
-#if PLATFORM(DOM)
 - (DOMElement)_inputElement
 {
+    if (!CPDOMAvailable) return nil;
+
     if (!CPTokenFieldDOMInputElement)
     {
         CPTokenFieldDOMInputElement = document.createElement("input");
@@ -788,7 +789,6 @@ CPTokenFieldDeleteButtonType     = 1;
 
     return CPTokenFieldDOMInputElement;
 }
-#endif
 
 - (CPString)_editorValue
 {

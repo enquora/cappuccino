@@ -279,9 +279,10 @@ CPTextFieldStatePlaceholder = CPThemeState("placeholder");
 
 // MARK: -
 
-#if PLATFORM(DOM)
 - (DOMElement)_inputElement
 {
+    if (!CPDOMAvailable) return nil;
+
     if (!CPTextFieldDOMTextAreaElement)
     {
         CPTextFieldDOMTextAreaElement                  = document.createElement("textarea");
@@ -384,7 +385,6 @@ CPTextFieldStatePlaceholder = CPThemeState("placeholder");
 
     return CPTextFieldDOMCurrentElement;
 }
-#endif
 
 - (id)initWithFrame:(CGRect)aFrame
 {

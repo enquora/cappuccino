@@ -1031,9 +1031,10 @@ Sets the selection to a range of characters in response to user action.
        [_CPNativeInputManager focusForClipboardOfTextView:self];
 }
 
-#if PLATFORM(DOM)
 - (CGPoint)_cumulativeOffset
 {
+    if (!CPDOMAvailable) return CGPointMake(0, 0);
+
     var top = 0,
         left = 0,
         element = self._DOMElement;
@@ -1048,7 +1049,6 @@ Sets the selection to a range of characters in response to user action.
 
     return CGPointMake(left, top);
 }
-#endif
 
 - (CPArray)selectedRanges
 {
