@@ -30,9 +30,7 @@
 @import "CPDragServer.j"
 @import "CPEvent.j"
 @import "CPPlatformWindow.j"
-#if PLATFORM(BROWSER)
 @import "CPPlatformWindow+DOM.j"
-#endif
 @import "CPResponder.j"
 @import "CPScreen.j"
 @import "CPText.j"
