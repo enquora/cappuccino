@@ -38,8 +38,9 @@
 
 @end
 
-#if PLATFORM(DOM)
 // --- begin AppKit/Platform/DOM/CPPlatformString.j (inlined; file removed to resolve capp-build basename clash) ---
+@global document
+
 var DOMFixedWidthSpanElement    = nil,
     DOMFlexibleWidthSpanElement = nil,
     DOMMetricsDivElement        = nil,
@@ -65,6 +66,8 @@ var DOMFixedWidthSpanElement    = nil,
 
 + (void)createDOMElements
 {
+    if (!CPDOMAvailable) return;
+
     var style,
         bodyElement = [CPPlatform mainBodyElement];
 
@@ -112,6 +115,8 @@ var DOMFixedWidthSpanElement    = nil,
 
 + (void)createDOMMetricsElements
 {
+    if (!CPDOMAvailable) return;
+
     var style,
         bodyElement = [CPPlatform mainBodyElement];
 
@@ -151,6 +156,8 @@ var DOMFixedWidthSpanElement    = nil,
 
 + (int)charPositionOfString:(CPString)aString withFont:(CPFont)aFont forPoint:(CGPoint)aPoint
 {
+    if (!CPDOMAvailable) return 0;
+
     if (!aString)
         return 0;
 
@@ -178,6 +185,8 @@ var DOMFixedWidthSpanElement    = nil,
 
 + (CGSize)sizeOfString:(CPString)aString withFont:(CPFont)aFont forWidth:(float)aWidth
 {
+    if (!CPDOMAvailable) return CGSizeMakeZero();
+
     if (!DOMFixedWidthSpanElement)
         [self createDOMElements];
 
@@ -205,6 +214,13 @@ var DOMFixedWidthSpanElement    = nil,
 
 + (CPDictionary)metricsOfFont:(CPFont)aFont
 {
+    if (!CPDOMAvailable)
+        return @{
+            @"ascender": 0,
+            @"descender": 0,
+            @"lineHeight": 0,
+        };
+
     if (!DOMMetricsDivElement)
         [self createDOMMetricsElements];
 
@@ -222,22 +238,3 @@ var DOMFixedWidthSpanElement    = nil,
 }
 
 @end
-#else
-@implementation CPPlatformString : CPBasePlatformString
-
-+ (CGSize)sizeOfString:(CPString)aString withFont:(CPFont)aFont forWidth:(float)aWidth
-{
-    return CGSizeMakeZero();
-}
-
-+ (CPDictionary)metricsOfFont:(CPFont)aFont
-{
-    return @{
-            @"ascender": 0,
-            @"descender": 0,
-            @"lineHeight": 0,
-        };
-}
-
-@end
-#endif

@@ -70,9 +70,9 @@
 
 @end
 
-#if PLATFORM(DOM)
 // --- begin AppKit/Platform/DOM/CPPlatform.j (inlined; file removed to resolve capp-build basename clash) ---
 @global CPApp
+@global document
 
 if (typeof window["CPPlatformEnableHTMLDragAndDrop"] === "undefined")
     CPPlatformEnableHTMLDragAndDrop = NO;
@@ -133,11 +133,17 @@ var screenNeedsInitialization   = NO,
 
 + (BOOL)isBrowser
 {
+    if (!CPDOMAvailable)
+        return NO;
+
     return typeof window.cpIsDesktop === "undefined";
 }
 
 + (BOOL)supportsDragAndDrop
 {
+    if (!CPDOMAvailable)
+        return NO;
+
     return CPFeatureIsCompatible(CPHTMLDragAndDropFeature) && (CPPlatformEnableHTMLDragAndDrop || ![self isBrowser]);
 }
 
@@ -230,9 +236,3 @@ var screenNeedsInitialization   = NO,
 }
 
 @end
-#else
-@implementation CPPlatform : CPBasePlatform
-{
-}
-@end
-#endif
