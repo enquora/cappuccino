@@ -323,8 +323,6 @@ var CPPasteboards = nil;
 
 @end
 
-#if PLATFORM(DOM)
-
 var DOMDataTransferPasteboard = nil;
 
 @implementation _CPDOMDataTransferPasteboard : CPPasteboard
@@ -387,6 +385,4 @@ var DOMDataTransferPasteboard = nil;
 }
 
 @end
-
-#endif
 
