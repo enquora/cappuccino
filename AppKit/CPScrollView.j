@@ -35,7 +35,6 @@
 @class CPTableView
 @class CPRulerView
 
-#define SHOULD_SHOW_CORNER_VIEW() (_scrollerStyle === CPScrollerStyleLegacy && _verticalScroller && ![_verticalScroller isHidden])
 
 
 @protocol CPScrollViewDelegate <CPObject>
@@ -999,7 +998,7 @@ Notifies the delegate when the scroll view has finished scrolling.
 
         if (_cornerView)
         {
-            [_cornerView setHidden:!SHOULD_SHOW_CORNER_VIEW()];
+            [_cornerView setHidden:![self _shouldShowCornerView]];
             [self addSubview:_cornerView];
         }
     }
@@ -1042,7 +1041,7 @@ Notifies the delegate when the scroll view has finished scrolling.
 
     frame.size.height = CGRectGetHeight([headerView frame]);
 
-    if (SHOULD_SHOW_CORNER_VIEW())
+    if ([self _shouldShowCornerView])
         frame.size.width -= CGRectGetWidth([self _cornerViewFrame]);
 
     return frame;
@@ -1405,7 +1404,7 @@ Notifies the delegate when the scroll view has finished scrolling.
     [_headerClipView setFrame:[self _headerClipViewFrame]];
     [[_headerClipView documentView] setNeedsDisplay:YES];
     
-    if (SHOULD_SHOW_CORNER_VIEW())
+    if ([self _shouldShowCornerView])
     {
         [_cornerView setFrame:[self _cornerViewFrame]];
         [_cornerView setHidden:NO];
@@ -1729,6 +1728,10 @@ Notifies the delegate when the scroll view has finished scrolling.
     [_headerClipView scrollToPoint:CGPointMake(contentBounds.origin.x, 0)];
 }
 
+- (BOOL)_shouldShowCornerView
+{
+    return (_scrollerStyle === CPScrollerStyleLegacy && _verticalScroller && ![_verticalScroller isHidden]);
+}
 @end
 
 // MARK: -
@@ -1904,5 +1907,6 @@ var CPScrollViewContentViewKey          = @"CPScrollViewContentView",
     [aCoder encodeObject:_verticalRuler         forKey:CPScrollViewVRulerKey];
     [aCoder encodeObject:_horizontalRuler       forKey:CPScrollViewHRulerKey];
 }
+
 
 @end

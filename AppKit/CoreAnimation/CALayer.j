@@ -33,7 +33,10 @@
 @import "CAMediaTimingFunction.j"
 
 
-#define DOM(aLayer) aLayer._DOMElement
+function DOM(aLayer)
+{
+    return aLayer._DOMElement;
+}
 
 var CALayerGeometryBoundsMask                   = 1,
     CALayerGeometryPositionMask                 = 2,
@@ -667,10 +670,6 @@ var CALayerRegisteredRunLoopUpdates             = nil;
     return _superlayer;
 }
 
-#define ADJUST_CONTENTS_ZINDEX(aLayer)\
-if (_DOMContentsElement && aLayer._zPosition > _DOMContentsElement.style.zIndex)\
-    _DOMContentsElement.style.zIndex -= 100.0;\
-
 /*!
     Adds the specified layer as a sublayer of the receiver.
 */
@@ -723,7 +722,7 @@ if (_DOMContentsElement && aLayer._zPosition > _DOMContentsElement.style.zIndex)
     else if (superlayer != nil)
         [aLayer removeFromSuperlayer];
 
-    ADJUST_CONTENTS_ZINDEX(aLayer);
+    [self _adjustContentsZIndexForLayer:aLayer];
 
     [_sublayers insertObject:aLayer atIndex:anIndex];
 
@@ -786,7 +785,7 @@ if (_DOMContentsElement && aLayer._zPosition > _DOMContentsElement.style.zIndex)
         return;
     }
 
-    ADJUST_CONTENTS_ZINDEX(aLayer);
+    [self _adjustContentsZIndexForLayer:aLayer];
 
     [_sublayers replaceObjectAtIndex:[_sublayers indexOfObjectIdenticalTo:aSublayer] withObject:aLayer];
     _DOMElement.replaceChild(DOM(aSublayer), DOM(aLayer));
@@ -1269,6 +1268,12 @@ if (_DOMContentsElement && aLayer._zPosition > _DOMContentsElement.style.zIndex)
     _runLoopUpdateMask = 0;
 
     window.loop = false;
+}
+
+- (void)_adjustContentsZIndexForLayer:(CALayer)aLayer
+{
+    if (_DOMContentsElement && aLayer._zPosition > _DOMContentsElement.style.zIndex)
+        _DOMContentsElement.style.zIndex -= 100.0;
 }
 
 @end
