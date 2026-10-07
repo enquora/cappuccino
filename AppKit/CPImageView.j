@@ -25,6 +25,7 @@
 @import "CPControl.j"
 @import "CPImage.j"
 @import "CPShadowView.j"
+@import "CPDOMDisplayServer.j"
 
 @global CPImagesPboardType
 @global appkit_tag_dom_elements

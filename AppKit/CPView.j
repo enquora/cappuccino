@@ -26,6 +26,7 @@
 
 @import "_CPObject+Theme.j"
 @import "CGAffineTransform.j"
+@import "CPDOMDisplayServer.j"
 @import "CGGeometry.j"
 @import "CPAppearance.j"
 @import "CPColor.j"
