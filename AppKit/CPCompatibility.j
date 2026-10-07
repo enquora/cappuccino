@@ -55,8 +55,6 @@ CPJavaScriptClipboardAccessFeature      = 12;
 CPJavaScriptCanvasDrawFeature           = 13;
 CPJavaScriptCanvasTransformFeature      = 14;
 
-CPVMLFeature                            = 15;
-
 CPJavaScriptRemedialKeySupport          = 16;
 CPJavaScriptShadowFeature               = 20;
 
@@ -133,7 +131,6 @@ else if (typeof window !== "undefined" && (window.attachEvent || (!(window.Activ
     PLATFORM_ENGINE |= CPInternetExplorerBrowserEngine;
 
     // Features we can only be sure of with IE (no known independent tests)
-    PLATFORM_FEATURES[CPVMLFeature] = YES;
     PLATFORM_FEATURES[CPJavaScriptRemedialKeySupport] = YES;
     PLATFORM_FEATURES[CPJavaScriptShadowFeature] = YES;
 

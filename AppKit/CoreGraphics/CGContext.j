@@ -732,10 +732,6 @@ if (CPFeatureIsCompatible(CPHTMLCanvasFeature))
 {
 #include "CGContextCanvas.j"
 }
-else if (CPFeatureIsCompatible(CPVMLFeature))
-{
-#include "CGContextVML.j"
-}
 else
 {
     // I have declared these functions here to make it compile without warnings with the new compiler under rhino.
