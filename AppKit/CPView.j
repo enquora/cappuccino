@@ -589,10 +589,8 @@ var CPViewHighDPIDrawingEnabled = YES;
 {
     if (aSubview === self)
         [CPException raise:CPInvalidArgumentException reason:"can't add a view as a subview of itself"];
-#if DEBUG
     if (!aSubview._superview && _subviews.indexOf(aSubview) !== CPNotFound)
         [CPException raise:CPInvalidArgumentException reason:"can't insert a subview in duplicate (probably partially decoded)"];
-#endif
 
     // Notify the subview that it will be moving.
     [aSubview viewWillMoveToSuperview:self];
