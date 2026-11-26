@@ -57,6 +57,31 @@ var _templateImageMap = @{
 
 var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
 
+/*
+    An application may add any view to a button bar, not only the items the bar makes. A view
+    that does not answer the button bar item methods is a fixed item: it keeps its width, has
+    no extra spacing and is not bordered by the bar.
+
+    2026-11-26: the bar refused every view without -isButtonBarItem, so a plain CPButton was
+    logged and dropped, and its layout sent -isFlexible and -extraSpacing to every item, so a
+    decoded bar that held a plain button raised an exception.
+*/
+var ButtonBarItemIsFlexible = function(anItem)
+{
+    return [anItem respondsToSelector:@selector(isFlexible)] && [anItem isFlexible];
+};
+
+var ButtonBarItemExtraSpacing = function(anItem)
+{
+    return [anItem respondsToSelector:@selector(extraSpacing)] ? [anItem extraSpacing] : 0;
+};
+
+var ButtonBarItemSetBordered = function(anItem, shouldBeBordered)
+{
+    if ([anItem respondsToSelector:@selector(setBordered:)])
+        [anItem setBordered:shouldBeBordered];
+};
+
 @protocol CPButtonBarDelegate <CPObject>
 
 @optional
@@ -532,15 +557,15 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
 
 - (void)addButton:(id)button
 {
-    if (![button respondsToSelector:@selector(isButtonBarItem)])
+    if (![button isKindOfClass:[CPView class]])
     {
-        CPLog.error("CPButtonBar: Only regular CPButtonBar items are allowed (trying to add "+[button class]+")");
+        CPLog.error("CPButtonBar: only views can be added (trying to add " + [button class] + ")");
         return;
     }
 
     [_buttons addObject:button];
     [button addObserver:self forKeyPath:@"hidden" options:CPKeyValueObservingOptionNew | CPKeyValueObservingOptionOld context:nil];
-    [button setBordered:_buttonsAreBordered];
+    ButtonBarItemSetBordered(button, _buttonsAreBordered);
     [self addSubview:button];
 
     var newDivider = [[CPView alloc] initWithFrame:CGRectMakeZero()];
@@ -551,7 +576,7 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
 
     if ([button isKindOfClass:_CPButtonBarFlexibleSpace])
         _flexibleSpacesCount++;
-    else if ([button isFlexible])
+    else if (ButtonBarItemIsFlexible(button))
         [_flexibles addObject:button];
 
     [self setNeedsRelayout:YES];
@@ -575,7 +600,7 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
     for (var i = [_rightButtons count] - 1; i >= 0; i--)
     {
         [_rightButtons[i] addObserver:self forKeyPath:@"hidden" options:CPKeyValueObservingOptionNew | CPKeyValueObservingOptionOld context:nil];
-        [_rightButtons[i] setBordered:YES];
+        ButtonBarItemSetBordered(_rightButtons[i], YES);
     }
 
     [self setNeedsLayout];
@@ -602,8 +627,10 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
 
     for (var i = 0, count = [_buttons count]; i < count; i++)
     {
-        [_buttons[i] setBordered:_buttonsAreBordered];
-        [_buttons[i] _initThemedValues];
+        ButtonBarItemSetBordered(_buttons[i], _buttonsAreBordered);
+
+        if ([_buttons[i] respondsToSelector:@selector(_initThemedValues)])
+            [_buttons[i] _initThemedValues];
     }
 
     var useDividers = _buttonsAreBordered && !!_dividerColor;
@@ -828,7 +855,7 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
         if ([button isHidden] || (_buttonsAreBordered && [button isKindOfClass:_CPButtonBarSeparator]))
             continue;
 
-        if ([button isFlexible])
+        if (ButtonBarItemIsFlexible(button))
         {
             width = [button minWidth];
 
@@ -846,7 +873,7 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
         else
             width = [button frame].size.width;
 
-        _neededWidth += width + _spacing - buttonHorizontalOffset + 2 * [button extraSpacing];
+        _neededWidth += width + _spacing - buttonHorizontalOffset + 2 * ButtonBarItemExtraSpacing(button);
 
         if (useDividers)
             _neededWidth += _spacing + 1;
@@ -938,7 +965,7 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
         }
 
         width        = ([button isKindOfClass:_CPButtonBarFlexibleSpace]) ? flexibleSpaceWidth : [button frame].size.width;
-        extraSpace   = [button extraSpacing];
+        extraSpace   = ButtonBarItemExtraSpacing(button);
         buttonHeight = [button frame].size.height;
 
         if ((width == 0) && (nbDividersToRemove > 0))
