@@ -166,7 +166,25 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
 
 - (id)buttonWithImage:(CPImage)image alternateImage:(CPImage)alternateImage
 {
-    return [[_CPButtonBarButton alloc] initWithImage:image alternateImage:alternateImage bordered:_buttonsAreBordered];
+    return [self _buttonWithStandardSize:[[_CPButtonBarButton alloc] initWithImage:image alternateImage:alternateImage bordered:_buttonsAreBordered]];
+}
+
+/*
+    Gives aButton the bar's button size when its theme gives it no size, and returns it.
+
+    2026-11-26: a button took its size only from its own min-size theme value, whose class
+    default is zero. Without a theme that defines it, the plus, minus and action buttons had
+    no size, so they took no space in the bar and could not be clicked. The bar's button-size
+    value, 35 by 25 points by default, was never read.
+*/
+- (id)_buttonWithStandardSize:(CPView)aButton
+{
+    var size = [aButton frameSize];
+
+    if (size.width <= 0 || size.height <= 0)
+        [aButton setFrameSize:[self currentValueForThemeAttribute:@"button-size"]];
+
+    return aButton;
 }
 
 - (id)buttonWithTemplateImage:(CPTemplateImage)templateImage
@@ -194,7 +212,7 @@ var CPButtonBarPopulateButtonBarSelector           = 1 << 1;
 
 - (id)pulldownButtonWithImage:(CPImage)image alternateImage:(CPImage)alternateImage
 {
-    return [[_CPButtonBarPopUpButton alloc] initWithImage:image alternateImage:alternateImage];
+    return [self _buttonWithStandardSize:[[_CPButtonBarPopUpButton alloc] initWithImage:image alternateImage:alternateImage]];
 }
 
 - (id)pulldownButtonWithTemplateImage:(CPTemplateImage)templateImage
@@ -1611,7 +1629,8 @@ var CPButtonBarHasLeftResizeControlKey       = @"CPButtonBarHasLeftResizeControl
     var size         = [self currentValueForThemeAttribute:@"min-size"],
         highlightsBy = [self currentValueForThemeAttribute:@"highlights-by"];
 
-    if (size)
+    // A theme that gives no size leaves the size the button bar gave.
+    if (size && size.width > 0 && size.height > 0)
         [self setFrameSize:size];
 
     if (highlightsBy)
@@ -1676,7 +1695,11 @@ var CPButtonBarHasLeftResizeControlKey       = @"CPButtonBarHasLeftResizeControl
 
 - (void)_initThemedValues
 {
-    [self setFrameSize:[self currentValueForThemeAttribute:@"min-size"]];
+    var size = [self currentValueForThemeAttribute:@"min-size"];
+
+    // A theme that gives no size leaves the size the button bar gave.
+    if (size && size.width > 0 && size.height > 0)
+        [self setFrameSize:size];
 }
 
 // Helper to update the main image from CPButtonBar logic
