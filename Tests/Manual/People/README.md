@@ -66,7 +66,12 @@ spaces, because the legacy toolchain does not accept them.
     toolbar stays (autosave). While the sheet is open, the toolbar items do not act.
     The standard Colors item opens the colour panel. In both appearances its labels, the boxes
     around the preview and the swatches, and the opacity slider's track and knob show.
-13. File ▸ Reset Application…: alert sheet, then sample data, the menu bar shown, default toolbar (items, Icon and Text, regular size), default table columns (order and widths, Notes first), sidebar width, detail pane, empty recent searches and Auto appearance restored at once, without a reload. Cancel changes nothing.
+13. File ▸ Reset Application…: alert sheet, then sample data, the menu bar shown, default toolbar (items, Icon and Text, regular size), default table columns (order and widths, Notes first), sidebar width, detail pane, empty recent searches, Auto appearance and Reduce motion off restored at once, without a reload. Cancel changes nothing.
+14. People ▸ Settings… (⌘,): Appearance Light, Dark or Auto changes the application at once.
+    Check Reduce motion: a sidebar disclosure triangle and the left and right arrow keys expand
+    and collapse at once, without animation. Uncheck it: they animate again. Reload: both
+    choices are restored. With Reduce motion unchecked, the system setting (System Settings ▸
+    Accessibility ▸ Display ▸ Reduce motion) still stops the animation.
 
 ## Items to exercise
 

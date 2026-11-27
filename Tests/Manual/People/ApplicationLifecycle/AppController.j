@@ -22,7 +22,7 @@
  *
  * Data (people, groups, smart folders) is persisted in CPUserDefaults.
  * Use File ▸ Reset Application… to return to the deterministic sample data and the
- * default toolbar, layout and appearance.
+ * default toolbar, layout, appearance and Reduce motion setting.
  *
  * The application catches no exception. It tests the frameworks, so a
  * framework failure must show and must not fall back to a default. If the
@@ -48,7 +48,7 @@
 {
     _library = [[Library alloc] init];
 
-    [SettingsWindowController applySavedAppearance];
+    [SettingsWindowController applySavedSettings];
 
     [self _buildMainMenu];
     [MainWindowController applySavedMenuBarVisibility];

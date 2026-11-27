@@ -610,7 +610,7 @@ var ToolbarSidebarIdentifier    = @"SidebarItem",
     [[CPUserDefaults standardUserDefaults] removeObjectForKey:MenuBarHiddenKey];
     [CPMenu setMenuBarVisible:YES];
 
-    [SettingsWindowController resetAppearance];
+    [SettingsWindowController resetSettings];
 }
 
 // ---------------------------------------------------------------- Validation
