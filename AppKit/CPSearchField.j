@@ -123,15 +123,16 @@ var CPAutosavedRecentsChangedNotification = @"CPAutosavedRecentsChangedNotificat
     [self setEditable:YES];
     [self setContinuous:YES];
 
+    /*
+        2026-11-27: a search field had a search and a cancel button only when a DOM was
+        available. Outside the browser (the unit tests, nib2cib, the theme build) it had none,
+        so a decoded field could not cancel its text and its default construction differed
+        from main. Cause: a 2022 change removed both buttons, and a later one restored them
+        for the DOM only. The buttons are created in every environment, as in AppKit.
+    */
     var bounds = [self bounds],
-        cancelButton = nil,
-        searchButton = nil;
-    
-    if (CPDOMAvailable)
-    {
-        cancelButton = [[CPButton alloc] initWithFrame:[self cancelButtonRectForBounds:bounds]];
+        cancelButton = [[CPButton alloc] initWithFrame:[self cancelButtonRectForBounds:bounds]],
         searchButton = [[CPButton alloc] initWithFrame:[self searchButtonRectForBounds:bounds]];
-    }
 
     [self setCancelButton:cancelButton];
     [self resetCancelButton];
@@ -533,9 +534,18 @@ var CPAutosavedRecentsChangedNotification = @"CPAutosavedRecentsChangedNotificat
   return [super isOpaque] && [_cancelButton isOpaque] && [_searchButton isOpaque];
 }
 
+/*
+    2026-11-27: setting the value of an empty field that centres its placeholder left the search
+    button at its centred place, next to text that now starts at the leading edge. Cause: the
+    button frame was computed only when the button or the placeholder was set, and the centred
+    position depends on the value. The button, the text and the cancel button are now placed
+    again after each value change, without animation, as for any change not made through the
+    animator.
+*/
 - (void)setObjectValue:(id)anObject
 {
     [super setObjectValue:anObject];
+    [self _layoutContent];
     [self _updateCancelButtonVisibility];
 }
 
@@ -1163,15 +1173,22 @@ var CPRecentsAutosaveNameKey            = @"CPRecentsAutosaveNameKey",
 
 - (void)encodeWithCoder:(CPCoder)coder
 {
+    /*
+        2026-11-27: archiving a search field changed the order of its subviews. The buttons
+        are not archived, because the decoded field creates its own, so they are removed
+        for the encode. They were then added back search button first, but -_init adds the
+        cancel button first, so the archived field no longer matched its decoded copy. The
+        subviews are now restored exactly as they were, which also keeps the place of a
+        button an application set with -setSearchButton: or -setCancelButton:.
+    */
+    var subviews = [[self subviews] copy];
+
     [_searchButton removeFromSuperview];
     [_cancelButton removeFromSuperview];
 
     [super encodeWithCoder:coder];
 
-    if (_searchButton)
-        [self addSubview:_searchButton];
-    if (_cancelButton)
-        [self addSubview:_cancelButton];
+    [self setSubviews:subviews];
 
     [coder encodeBool:_sendsWholeSearchString forKey:CPSendsWholeSearchStringKey];
     [coder encodeBool:_sendsSearchStringImmediately forKey:CPSendsSearchStringImmediatelyKey];
