@@ -12,7 +12,9 @@ var _CPAnimationContextStack   = nil,
 
 @implementation CPAnimationContext : CPObject
 {
-    double                  _duration               @accessors(property=duration);
+    double                  _duration               @accessors(getter=duration);
+    BOOL                    _hasExplicitDuration;
+    BOOL                    _isAnimatorOperation;
     CAMediaTimingFunction   _timingFunction         @accessors(property=timingFunction);
     Function                _completionHandlerAgent;
     Map                     _animationsByObject;
@@ -32,6 +34,15 @@ var _CPAnimationContextStack   = nil,
     }
 
     return context;
+}
+
+/*
+    Returns the context of the current group, or nil outside every group. Unlike
+    +currentContext, it creates no context.
+*/
++ (CPAnimationContext)_currentContextIfAny
+{
+    return [_CPAnimationContextStack lastObject] || nil;
 }
 
 + (CPArray)contextStack
@@ -54,11 +65,54 @@ var _CPAnimationContextStack   = nil,
     [CPAnimationContext endGrouping];
 }
 
+/*!
+    Sets the duration of the animations of the group. A duration set here, including 0, also
+    decides whether an operation called through an animator animates: 0 turns it off.
+*/
+- (void)setDuration:(double)aDuration
+{
+    _duration = aDuration;
+    _hasExplicitDuration = YES;
+}
+
+/*
+    An animator proxy marks the current context as an animator operation while it runs a call
+    it forwards. A framework operation that the developer starts, such as
+    -[CPOutlineView expandItem:], animates only in such a group, as in AppKit.
+
+    2026-11-26: there was no way for such an operation to know that it was called through an
+    animator, so CPOutlineView animated every expand and collapse.
+*/
+- (BOOL)_isAnimatorOperation
+{
+    return _isAnimatorOperation;
+}
+
+- (void)_setAnimatorOperation:(BOOL)isAnimatorOperation
+{
+    _isAnimatorOperation = !!isAnimatorOperation;
+}
+
+/*
+    Returns the duration of a framework operation in this group: 0 outside an animator
+    operation, the group's duration when one was set, and 0.25 seconds, as in AppKit, when
+    none was set.
+*/
+- (double)_animatorOperationDuration
+{
+    if (!_isAnimatorOperation)
+        return 0.0;
+
+    return _hasExplicitDuration ? _duration : 0.25;
+}
+
 - (id)init
 {
     self = [super init];
 
     _duration = 0.0;
+    _hasExplicitDuration = NO;
+    _isAnimatorOperation = NO;
     _timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     _completionHandlerAgent = nil;
     _animationsByObject = new Map();
@@ -77,16 +131,22 @@ var _CPAnimationContextStack   = nil,
 
 + (void)beginGrouping
 {
-    var newContext = [[CPAnimationContext alloc] init];
+    var newContext = [[CPAnimationContext alloc] init],
+        contextStack = [self contextStack];
 
-    if ([_CPAnimationContextStack count])
+    if ([contextStack count])
     {
-        var currentContext = [_CPAnimationContextStack lastObject];
-        [newContext setDuration:[currentContext duration]];
+        var currentContext = [contextStack lastObject];
+        newContext._duration = currentContext._duration;
+        newContext._hasExplicitDuration = currentContext._hasExplicitDuration;
         [newContext setTimingFunction:[currentContext timingFunction]];
     }
 
-    [_CPAnimationContextStack addObject:newContext];
+    /*
+        2026-11-26: the stack was created only by +contextStack. A group begun before any
+        context existed was added to no stack and lost, and its end did nothing.
+    */
+    [contextStack addObject:newContext];
 }
 
 + (BOOL)endGrouping
