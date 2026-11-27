@@ -124,11 +124,18 @@ function updateApplicationSize()
             addBundleFileSizes(FILE.join(frameworksDir, framework), totalBytes);
     });
 
-    // Read in the default theme name, and attempt to get its size
-    var themeName = plist.valueForKey("CPDefaultTheme") || "Aristo2",
+    /*
+        Read in the default theme name, and attempt to get its size.
+
+        2026-11-27: an application with no CPDefaultTheme key was sized with Aristo2, but
+        AppKit gives it Aristo3. Cause: this fallback and the list of themes that AppKit
+        provides were not updated when Aristo3 became the default. Both now follow
+        +[CPApplication defaultThemeName] and +[CPApplication loadDefaultTheme].
+    */
+    var themeName = plist.valueForKey("CPDefaultTheme") || "Aristo3",
         themePath = nil;
 
-    if (themeName === "Aristo" || themeName === "Aristo2")
+    if (themeName === "Aristo" || themeName === "Aristo2" || themeName === "Aristo3")
         themePath = FILE.join(frameworksDir, "AppKit", "Resources", themeName + ".blend");
     else
         themePath = FILE.join("Frameworks", "Resources", themeName + ".blend");

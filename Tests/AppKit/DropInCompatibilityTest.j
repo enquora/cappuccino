@@ -42,10 +42,16 @@ function DropInWindowButton(aStyleMask, aName)
     [[CPApplication alloc] init];
 }
 
-- (void)testDefaultThemeNameIsAristo2WithoutInfoPlistKey
+/*
+    Aristo3 is the default theme, as a deliberate change to the drop-in contract. Aristo2
+    depends on DOM structure that the framework no longer supports, so it is not the default.
+    An application that wants another theme names it with the CPDefaultTheme key in its
+    Info.plist.
+*/
+- (void)testDefaultThemeNameIsAristo3WithoutInfoPlistKey
 {
     [self assertNull:[[CPBundle mainBundle] objectForInfoDictionaryKey:@"CPDefaultTheme"]];
-    [self assert:@"Aristo2" equals:[CPApplication defaultThemeName]];
+    [self assert:@"Aristo3" equals:[CPApplication defaultThemeName]];
 }
 
 /*
