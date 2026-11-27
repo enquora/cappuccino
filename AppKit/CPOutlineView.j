@@ -25,6 +25,8 @@
 @import "CPTableColumn.j"
 @import "CPTableView.j"
 @import "CPViewAnimation.j"
+@import "CPWorkspace.j"
+@import "CPAnimationContext.j"
 @import "CPTreeNode.j"
 
 @global CPApp
@@ -304,7 +306,7 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
 
     CPIndexSet                      _animatingDisclosureRows;
 
-    BOOL                            _animates @accessors(property=animates);
+    BOOL                            _isUserDisclosureOperation;
     CPViewAnimation                 _rowsAnimation;
     CPArray                         _animationGhosts;
 }
@@ -339,7 +341,7 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
         [self setDisclosureControlPrototype:[[CPDisclosureButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 10.0)]];
 
         _animatingDisclosureRows = [CPIndexSet indexSet];
-        _animates = YES;
+        _isUserDisclosureOperation = NO;
     }
 
     return self;
@@ -711,7 +713,8 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
 - (void)expandItem:(id)anItem expandChildren:(BOOL)shouldExpandChildren
 {
     var oldRowCount = [self numberOfRows],
-        parentIndex = [self rowForItem:anItem];
+        parentIndex = [self rowForItem:anItem],
+        animationDuration = [self _disclosureAnimationDuration];
 
     if ([self _delegateRespondsToShouldExpandItem])
         if ([_outlineViewDelegate outlineView:self shouldExpandItem:anItem] == NO)
@@ -788,10 +791,10 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
     var newRowCount = [self numberOfRows],
         addedCount = newRowCount - oldRowCount;
 
-    if (_animates && addedCount > 0)
+    if (animationDuration > 0 && addedCount > 0)
     {
         [self _layoutSubviewsInEffectiveAppearance]; // Force views to spawn so we can animate them
-        [self _animateExpandFromIndex:parentIndex addedCount:addedCount];
+        [self _animateExpandFromIndex:parentIndex addedCount:addedCount duration:animationDuration];
     }
 }
 
@@ -854,8 +857,10 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
     }
 
     // Capture visual ghosts BEFORE the data is removed
-    var ghosts = nil;
-    if (_animates && collapseRange.length > 0)
+    var ghosts = nil,
+        animationDuration = [self _disclosureAnimationDuration];
+
+    if (animationDuration > 0 && collapseRange.length > 0)
         ghosts = [self _createGhostsForRowsFrom:collapseRange.location to:CPMaxRange(collapseRange) - 1];
 
     // Collapse the model
@@ -864,10 +869,10 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
     [self _noteItemDidCollapse:anItem];
 
     // Trigger Animation
-    if (_animates && collapseRange.length > 0)
+    if (animationDuration > 0 && collapseRange.length > 0)
     {
-        [self _layoutSubviewsInEffectiveAppearance]; 
-        [self _animateCollapseFromIndex:collapseTopIndex removedCount:collapseRange.length ghosts:ghosts];
+        [self _layoutSubviewsInEffectiveAppearance];
+        [self _animateCollapseFromIndex:collapseTopIndex removedCount:collapseRange.length ghosts:ghosts duration:animationDuration];
     }
 
     var r = _coalesceSelectionNotificationState;
@@ -877,7 +882,50 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
         [self _noteSelectionDidChange];
 }
 
-- (void)_animateCollapseFromIndex:(CPInteger)parentIndex removedCount:(CPInteger)removedCount ghosts:(CPArray)ghosts
+/*
+    Returns the duration of the animation of an expand or a collapse that is starting, or 0 when
+    it does not animate. As in AppKit, a direct -expandItem: or -collapseItem: does not animate.
+    It animates when the developer calls it through the animator, for the context's duration, or
+    when the user clicks a disclosure control or presses an arrow key. Under reduced motion
+    nothing animates, and the rows take their end state at once.
+
+    2026-11-26: every expand and collapse animated, by an animates property that NSOutlineView
+    does not have. A collapse put copies of the removed rows over the table while it animated,
+    in front of what the table draws on its rows.
+*/
+- (double)_disclosureAnimationDuration
+{
+    if ([[CPWorkspace sharedWorkspace] accessibilityDisplayShouldReduceMotion])
+        return 0.0;
+
+    if (_isUserDisclosureOperation)
+        return 0.25;
+
+    var context = [CPAnimationContext _currentContextIfAny];
+
+    return context ? [context _animatorOperationDuration] : 0.0;
+}
+
+/*
+    Runs anOperation, an expand or a collapse that the user started, so that it animates.
+*/
+- (void)_performUserDisclosureOperation:(Function)anOperation
+{
+    var wasUserDisclosureOperation = _isUserDisclosureOperation;
+
+    _isUserDisclosureOperation = YES;
+
+    try
+    {
+        anOperation();
+    }
+    finally
+    {
+        _isUserDisclosureOperation = wasUserDisclosureOperation;
+    }
+}
+
+- (void)_animateCollapseFromIndex:(CPInteger)parentIndex removedCount:(CPInteger)removedCount ghosts:(CPArray)ghosts duration:(double)aDuration
 {
     // Ensure we don't animate if parent is invalid
     if (parentIndex < 0)
@@ -977,7 +1025,7 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
         }
     }
 
-    [self _runAnimation:viewAnimations withGhosts:ghosts];
+    [self _runAnimation:viewAnimations withGhosts:ghosts duration:aDuration];
 }
 
 // MARK: - CPRuleEditor Style Animations
@@ -1011,7 +1059,7 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
     return ghosts;
 }
 
-- (void)_animateExpandFromIndex:(CPInteger)parentIndex addedCount:(CPInteger)addedCount
+- (void)_animateExpandFromIndex:(CPInteger)parentIndex addedCount:(CPInteger)addedCount duration:(double)aDuration
 {
     if (_rowsAnimation && [_rowsAnimation isAnimating])
         [_rowsAnimation stopAnimation];
@@ -1076,10 +1124,10 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
         }
     }
 
-    [self _runAnimation:viewAnimations withGhosts:nil];
+    [self _runAnimation:viewAnimations withGhosts:nil duration:aDuration];
 }
 
-- (void)_runAnimation:(CPArray)viewAnimations withGhosts:(CPArray)ghosts
+- (void)_runAnimation:(CPArray)viewAnimations withGhosts:(CPArray)ghosts duration:(double)aDuration
 {
     // Clean up interrupted animations
     if (_animationGhosts)
@@ -1092,7 +1140,8 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
     if (viewAnimations.length > 0)
     {
         _rowsAnimation = [[CPViewAnimation alloc] initWithViewAnimations:viewAnimations];
-        [_rowsAnimation setDuration:0.25];[_rowsAnimation setAnimationCurve:CPAnimationEaseInOut];
+        [_rowsAnimation setDuration:aDuration];
+        [_rowsAnimation setAnimationCurve:CPAnimationEaseInOut];
         [_rowsAnimation setDelegate:self];
         [_rowsAnimation startAnimation];
     }
@@ -2168,11 +2217,13 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
     var controlFrame = [aControl frame],
         item = [self itemAtRow:[self rowAtPoint:CGPointMake(CGRectGetMinX(controlFrame), CGRectGetMidY(controlFrame))]];
 
-    if ([self isItemExpanded:item])
-        [self collapseItem:item];
-
-    else
-        [self expandItem:item expandChildren:([[CPApp currentEvent] modifierFlags] & CPAlternateKeyMask)];
+    [self _performUserDisclosureOperation:function()
+    {
+        if ([self isItemExpanded:item])
+            [self collapseItem:item];
+        else
+            [self expandItem:item expandChildren:([[CPApp currentEvent] modifierFlags] & CPAlternateKeyMask)];
+    }];
 }
 
 /*!
@@ -2308,8 +2359,11 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
 
     if (character === CPRightArrowFunctionKey)
     {
-        for (var i = 0; i < c; i++)
-            [self expandItem:items[i]];
+        [self _performUserDisclosureOperation:function()
+        {
+            for (var i = 0; i < c; i++)
+                [self expandItem:items[i]];
+        }];
     }
     else if (character === CPLeftArrowFunctionKey)
     {
@@ -2332,8 +2386,11 @@ function SHOULD_SELECT_ITEM(anOutlineView, anItem)
             }
         }
 
-        for (var i = 0; i < c; i++)
-            [self collapseItem:items[i]];
+        [self _performUserDisclosureOperation:function()
+        {
+            for (var i = 0; i < c; i++)
+                [self collapseItem:items[i]];
+        }];
     }
 
     [super keyDown:anEvent];
